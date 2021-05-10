@@ -1,0 +1,74 @@
+@import "../../common/sass/variables"
+
+.Folder, .InactiveFolder
+  color: $gray
+  text-decoration: none
+  width: 263px
+  height: 226px
+  margin-top: 55px
+  position: relative
+  transition: all .3s ease-in-out
+
+  img
+    max-width: 100%
+    height: auto
+    filter: drop-shadow(5px 5px 10px #060D1E)
+
+  .icon
+    position: absolute
+    top: 75px
+    right: 40px
+
+  .path
+    position: absolute
+    font-size: 40px
+    line-height: 40px
+    margin: 11px 0
+    display: block
+    text-align: left
+    z-index: 2
+    top: 120px
+    left: 30px
+    transition: all .3s ease-in-out
+
+  .sub
+    position: absolute
+    top: 178px
+    left: 30px
+    font-size: 16px
+    line-height: 16px
+    z-index: 2
+
+  .sup
+    position: absolute
+    top: 100px
+    left: 30px
+    font-size: 16px
+    line-height: 16px
+    color: $mainColor
+    opacity: 0
+    transform: translateX(-50%)
+    transition: all .3s ease-in-out
+
+  .stroke
+    position: absolute
+    top: 0
+    left: 0
+    opacity: 0
+    transition: all .3s ease-in-out
+
+.Folder:hover
+  transform: translateY(-10px)
+  .stroke
+    opacity: 1
+
+  .path
+    color: $mainColor
+
+  .sup
+    opacity: 1
+    transform: translateX(0)
+
+.InactiveFolder
+  pointer-events: none
+  opacity: .4

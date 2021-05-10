@@ -1,0 +1,35 @@
+@import "../../common/sass/variables"
+
+.FloatingButton
+  padding: 30px 35px
+  background-color: rgba($mainColor, 0.75)
+  box-shadow: 5px 5px 30px $mainColor
+  border: 2px solid rgba($mainColor, 0)
+  border-radius: 20px
+  text-decoration: none
+  display: inline-flex
+  transition: padding .3s ease-out
+
+  .info
+    display: flex
+    flex-direction: column
+    margin-right: 70px
+    color: $white
+
+    .sup 
+      font-size: 16px
+      line-height: 16px
+
+    .txt
+      font-size: 28px
+      line-height: 28px
+
+  .icon
+    display: flex
+    justify-content: center
+    align-items: center
+
+.FloatingButton:hover
+  padding: 30px 45px
+  border: 2px solid rgba($mainColor, 1)
+  background-color: rgba($mainColor, 0.75)

@@ -1,0 +1,29 @@
+@import "../../common/sass/variables"
+
+a.CTAButton
+  font-size: 16px
+  line-height: 16px
+  padding: 6px 20px
+  border: 2px solid $mainColor
+  border-radius: 5px
+  color: $gray
+  display: inline-block
+  text-decoration: none
+  transition: all .3s ease-in-out
+
+  .text
+    display: block
+
+  .hover
+    display: none
+
+  &:hover
+    background-color: $mainColor
+
+    .text
+      display: none
+      
+    .hover
+      display: block
+    
+

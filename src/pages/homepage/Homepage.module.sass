@@ -1,0 +1,42 @@
+@import "../../common/sass/variables"
+  
+.homepage
+  background-color: $darkBlue
+  color: $gray
+  font-family: $fontPrimary
+  font-size: 24px
+
+  *, *:after, *:before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+
+.container
+    position: relative
+    display: flex
+    height: 100%
+    width: 100%
+    margin: 0 auto
+    padding: 0px 15px
+    @media (min-width: 768px)
+        width: 750px
+    @media (min-width: 992px)
+        width: 970px
+    @media (min-width: 1200px)
+        width: 1150px
+    @media (min-width: 1400px)
+        width: 1260px
+
+    &>div:first-of-type
+        width: 62%
+        margin-right: 35px
+    &>div:nth-of-type(2)
+        width: 38%
+
+.folders
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    &>a:not(:last-of-type)
+        margin-right: 50px
