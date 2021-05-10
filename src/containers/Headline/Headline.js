@@ -4,6 +4,8 @@ import styles from "./Headline.module.sass";
 import Count from "../../components/Count/Count";
 import CTAButton from "../../components/CTAButton/CTAButton";
 
+import Appear from "../../components/Appear/Appear";
+
 export default class Headline extends Component {
 	constructor(props) {
 		super();
@@ -25,35 +27,46 @@ export default class Headline extends Component {
 		return (
 			<div>
 				<div className={styles.title}>
-					<div className={styles.title__left}>
-						<h3 className={styles.title__super}>{superscript}</h3>
-						<h1 className={styles.title__firstName}>{firstName}</h1>
+					<Appear sourceDirection="left">
+						<div className={styles.title__left}>
+							<h3 className={styles.title__super}>{superscript}</h3>
+							<h1 className={styles.title__firstName}>{firstName}</h1>
+						</div>
+					</Appear>
+
+					<Appear sourceDirection="right">
+						<div className={styles.title__right}>
+							<h1 className={styles.title__lastName}>{lastName}</h1>
+						</div>
+					</Appear>
+				</div>
+
+				<Appear sourceDirection="up">
+					<div className={styles.info}>
+						<p>{info}</p>
 					</div>
-					<div className={styles.title__right}>
-						<h1 className={styles.title__lastName}>{lastName}</h1>
+				</Appear>
+
+				<Appear sourceDirection="down">
+					<div className={styles.counts}>
+						{counts.map((c, index) => (
+							<Count number={c.number} name={c.name} key={index} />
+						))}
 					</div>
-				</div>
+				</Appear>
 
-				<div className={styles.info}>
-					<p>{info}</p>
-				</div>
-
-				<div className={styles.counts}>
-					{counts.map((c, index) => (
-						<Count number={c.number} name={c.name} key={index} />
-					))}
-				</div>
-
-				<div className={styles.ctabuttons}>
-					{ctabuttons.map((cta, index) => (
-						<CTAButton
-							text={cta.text}
-							hover={cta.hover}
-							link={cta.link}
-							key={index}
-						/>
-					))}
-				</div>
+				<Appear sourceDirection="up">
+					<div className={styles.ctabuttons}>
+						{ctabuttons.map((cta, index) => (
+							<CTAButton
+								text={cta.text}
+								hover={cta.hover}
+								link={cta.link}
+								key={index}
+							/>
+						))}
+					</div>
+				</Appear>
 			</div>
 		);
 	}

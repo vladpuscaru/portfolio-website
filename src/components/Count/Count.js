@@ -7,7 +7,14 @@ const Count = (props) => {
 	return (
 		<div>
 			<div className={styles.number}>{number}</div>
-			<span className={styles.name}>{name}</span>
+			<span className={styles.name}>
+				{name.map((n, index) => (
+					<div key={index}>
+						{n}
+						<br />
+					</div>
+				))}
+			</span>
 		</div>
 	);
 };

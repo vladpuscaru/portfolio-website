@@ -1,5 +1,6 @@
 const data = {
 	backgroundContent: [0, 1],
+	pace: "Monkeys are coding...",
 	headline: {
 		title: {
 			superscript: "HELLO, I'M",
@@ -10,42 +11,38 @@ const data = {
 			"I am a Software Engineer from Romania, specialized in web and cloud technologies. I am currently working as a Backend Developer @ Deloitte Digital Romania.",
 		counts: [
 			{
-				name: "CERTIFICATES",
+				name: ["YEARS", "OF EXPERIENCE"],
 				number: 2,
 			},
 			{
-				name: "YEARS OF EXPERIENCE",
+				name: ["PROGRAMMING", "LANGUAGES"],
 				number: 5,
 			},
 			{
-				name: "PROGRAMMING LANGUAGES",
-				number: 4,
-			},
-			{
-				name: "WIVES",
-				number: 15,
+				name: ["PROJECTS"],
+				number: 2,
 			},
 		],
 		ctabuttons: [
 			{
-				text: "facebook",
+				text: "linkedin",
 				hover: "/vladpuscaru",
-				link: "",
-			},
-			{
-				text: "twitter",
-				hover: "/vladpuscaru",
-				link: "",
+				link: "https://www.linkedin.com/in/vlad-cristian-puscaru-2399b6123/",
 			},
 			{
 				text: "github",
 				hover: "/vladpuscaru",
-				link: "",
+				link: "https://github.com/vladpuscaru",
 			},
 			{
-				text: "youtube",
-				hover: "/vladpuscaru",
-				link: "",
+				text: "e-mail",
+				hover: "vlad.cpuscaru@gmail.com",
+				link: "mailto: vlad.cpuscaru@gmail.com",
+			},
+			{
+				text: "mobile",
+				hover: "+40 736 167 606",
+				link: "tel: +40736167606",
 			},
 		],
 	},

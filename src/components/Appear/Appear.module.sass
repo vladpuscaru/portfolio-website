@@ -1,0 +1,72 @@
+.up
+  opacity: 0
+  animation-name: fromTop
+  animation-duration: .75s
+  animation-delay: .2s
+  animation-iteration-count: 1
+  animation-direction: normal
+  animation-timing-function: ease-in-out
+  animation-fill-mode: forwards
+
+.right
+  opacity: 0
+  animation-name: fromRight
+  animation-duration: .75s
+  animation-delay: .2s
+  animation-iteration-count: 1
+  animation-direction: normal
+  animation-timing-function: ease-in-out
+  animation-fill-mode: forwards
+
+.down
+  opacity: 0
+  animation-name: fromDown
+  animation-duration: .75s
+  animation-delay: .2s
+  animation-iteration-count: 1
+  animation-direction: normal
+  animation-timing-function: ease-in-out
+  animation-fill-mode: forwards
+
+.left
+  opacity: 0
+  animation-name: fromLeft
+  animation-duration: .75s
+  animation-delay: .2s
+  animation-iteration-count: 1
+  animation-direction: normal
+  animation-timing-function: ease-in-out
+  animation-fill-mode: forwards
+
+
+@keyframes fromTop
+  0%
+    opacity: 0
+    transform: translateY(-100%)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes fromRight
+  0%
+    opacity: 0
+    transform: translateX(100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes fromDown
+  0%
+    opacity: 0
+    transform: translateY(100%)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes fromLeft
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
