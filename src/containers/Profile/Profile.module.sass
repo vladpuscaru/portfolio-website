@@ -2,11 +2,41 @@
 
 .profile
   position: relative
+  margin-top: -55px
 
-  img
+  .profileBg
     mix-blend-mode: color-dodge
+    position: absolute
+    top: 0
+    left: 0
+
+  .profileImg
+    mix-blend-mode: multiply
+    top: 0
+    left: 0
 
   a
     position: absolute
+    left: -50px
+    bottom: 155px
+
+
+.mobileProfile
+  position: relative
+  text-align: center
+
+  img
+    max-width: 100%
+    height: auto
+
+  .profileBg
+    max-width: 100%
+    mix-blend-mode: color-dodge
+
+  .profileImg
+    mix-blend-mode: multiply
+    position: absolute
+    width: 100%
+    bottom: 0
     left: 0
-    bottom: 125px
+    transform: translateX(-50%)

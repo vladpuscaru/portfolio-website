@@ -3,15 +3,30 @@
 a.CTAButton
   font-size: 16px
   line-height: 16px
-  padding: 6px 20px
-  border: 2px solid $mainColor
-  border-radius: 5px
   color: $gray
-  display: inline-block
+  padding: 6px 0
+  border-radius: 5px
+  display: inline-flex
+  justify-content: center
+  align-items: center
   text-decoration: none
   transition: all .3s ease-in-out
   position: relative
 
+  .hover
+    max-width: 0
+    opacity: 0
+    overflow: hidden
+    transition: all .3s ease-in-out
+    padding-left: 5px
+    transform: translateX(-50%)
+
   &:hover
     background-color: $mainColor
+    padding: 6px 20px
+
+    .hover
+      max-width: 1000px
+      opacity: 1
+      transform: translateX(0)
 

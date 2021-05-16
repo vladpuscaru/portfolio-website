@@ -28,8 +28,16 @@
     display: flex
     justify-content: center
     align-items: center
+    transition: all .3s ease-out
 
 .FloatingButton:hover
   padding: 30px 45px
   border: 2px solid rgba($mainColor, 1)
   background-color: rgba($mainColor, 0.75)
+
+  .icon
+    transform: rotate(360deg)
+
+
+.FixedButton
+  display: none

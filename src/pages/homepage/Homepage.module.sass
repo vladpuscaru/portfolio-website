@@ -5,6 +5,8 @@
   color: $gray
   font-family: $fontPrimary
   font-size: 24px
+  display: flex
+  flex-direction: column
 
   *, *:after, *:before
     box-sizing: border-box
@@ -15,6 +17,7 @@
 .container
     position: relative
     display: flex
+    flex-direction: column
     height: 100%
     width: 100%
     margin: 0 auto
@@ -23,16 +26,19 @@
         width: 750px
     @media (min-width: 992px)
         width: 970px
+        flex-direction: row
     @media (min-width: 1200px)
         width: 1150px
     @media (min-width: 1400px)
         width: 1260px
 
     &>div:first-of-type
-        width: 62%
-        margin-right: 35px
+        @media (min-width: 992px)
+          width: 62%
+          margin-right: 35px
     &>div:nth-of-type(2)
-        width: 38%
+        @media (min-width: 992px)
+          width: 38%
 
 .folders
     display: flex
@@ -40,3 +46,6 @@
     justify-content: center
     &>a:not(:last-of-type)
         margin-right: 50px
+
+    @media (min-width: 992px)
+      margin-top: -60px

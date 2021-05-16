@@ -9,7 +9,10 @@ export default class Header extends Component {
 		return (
 			<header className={styles.header}>
 				<Appear sourceDirection="up">
-					<Logo className={styles.logo} />
+					<a href="http://cd-21.com">
+						<Logo className={styles.logo} />
+						<span>cd-21.com</span>
+					</a>
 				</Appear>
 			</header>
 		);
