@@ -5,25 +5,46 @@
   color: white
   display: flex
   height: 100%
-  padding-top: 50px
+  padding-top: 55px
 
-  &:after
-    content: ""
+  &AvatarSection
+    flex: 1
+    display: flex
+    justify-content: center
+    transition: all 1s ease-out
+
+  &ContentSection
+    flex: 0
+    overflow: hidden
+    opacity: 0
+    transition: all 1s ease-out
+    white-space: nowrap
+
+  &MenuAvatar
     position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    height: 50%
-    display: block
-    box-shadow: inset 0px -100px 65px -40px rgba(0,0,0,1)
+    bottom: 55px
+    left: 50%
+    transform: translate(-50%)
 
-  &Section
-    &:nth-of-type(1)
-      display: flex
+  &MenuSection
+    flex: 0
+    opacity: 0
+    overflow: hidden
+    transition: all 1s ease-in
+
+  &.active
+    .mainAvatarSection
       flex: .2
-    &:nth-of-type(2)
-      flex: .2
-    &:nth-of-type(3)
+
+    .mainContentSection
       flex: 1
-      padding-left: 50px
-      background-color: rgba(#fff, .1)
+      opacity: 100%
+      overflow: initial
+
+    .mainMenuAvatar
+      display: none
+
+    .mainMenuSection
+      flex: .2
+      opacity: 100%
+      overflow: initial

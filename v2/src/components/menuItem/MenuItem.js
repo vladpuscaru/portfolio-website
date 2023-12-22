@@ -1,6 +1,6 @@
 import styles from "./MenuItem.module.sass"
 
-const MenuItem = ({active, text, icon, onClick}) => {
+const MenuItem = ({active, icon, onClick}) => {
     return (
         <div
             className={`
@@ -11,8 +11,6 @@ const MenuItem = ({active, text, icon, onClick}) => {
             onClick={onClick}>
 
             <img src={icon} alt={"menuItem"}/>
-
-            <span>{text}</span>
         </div>
     )
 }
