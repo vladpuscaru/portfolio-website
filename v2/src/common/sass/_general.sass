@@ -1,0 +1,24 @@
+*, *:after, *:before
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+html, body > #root
+  min-height: 100vh
+  max-height: 100vh
+
+.container
+  position: relative
+  height: 100%
+  width: 100%
+  margin: 0 auto
+  padding: 0px 15px
+  @media (min-width: 768px)
+    width: 750px
+  @media (min-width: 992px)
+    width: 970px
+    flex-direction: row
+  @media (min-width: 1200px)
+    width: 1150px
+  @media (min-width: 1400px)
+    width: 1260px
