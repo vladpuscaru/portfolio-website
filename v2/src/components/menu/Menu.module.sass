@@ -1,5 +1,36 @@
+@import "../../common/sass/variables"
+
 .menu
   display: flex
+  flex-direction: column
+  justify-content: space-between
+  width: 100%
+  height: 100%
 
-  &.vertical
-    flex-direction: column
+  .back
+    display: none
+    transition: all .3s ease-in-out
+
+  &.breadcrumb
+    height: auto
+    flex-direction: row
+
+    .back
+      font-size: 1.2em
+      background-color: $white
+      border: 1px solid $white
+      border-radius: 5px
+      color: $black
+      padding: 0 5px
+      display: flex
+      justify-content: center
+      align-items: center
+      max-height: 25px
+
+
+      &:hover
+        cursor: pointer
+        color: $white
+        background-color: $black
+
+

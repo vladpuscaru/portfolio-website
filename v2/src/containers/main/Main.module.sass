@@ -6,45 +6,13 @@
   display: flex
   height: 100%
   padding-top: 55px
+  position: relative
 
   &AvatarSection
-    flex: 1
-    display: flex
-    justify-content: center
-    transition: all 1s ease-out
+    flex: .2
 
   &ContentSection
-    flex: 0
-    overflow: hidden
-    opacity: 0
-    transition: all 1s ease-out
-    white-space: nowrap
-
-  &MenuAvatar
-    position: absolute
-    bottom: 55px
-    left: 50%
-    transform: translate(-50%)
-
-  &MenuSection
-    flex: 0
-    opacity: 0
-    overflow: hidden
-    transition: all 1s ease-in
-
-  &.active
-    .mainAvatarSection
-      flex: .2
-
-    .mainContentSection
-      flex: 1
-      opacity: 100%
-      overflow: initial
-
-    .mainMenuAvatar
-      display: none
-
-    .mainMenuSection
-      flex: .2
-      opacity: 100%
-      overflow: initial
+    flex: .8
+    padding-left: 55px
+    overflow-y: auto
+    overflow-x: hidden

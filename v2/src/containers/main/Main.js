@@ -6,48 +6,49 @@ import SectionAbout from "../sections/sectionAbout/SectionAbout";
 import SectionResume from "../sections/sectionResume/SectionResume";
 import SectionProjects from "../sections/sectionProjects/SectionProjects";
 import MenuItem from "../../components/menuItem/MenuItem";
-import iconResume from "../../images/icon_resume.svg";
 import avatar from "../../images/avatar.png";
+import { getProjectTitle } from "../../data/projects/projects";
+
+const sections = [
+    {text: "About"},
+    {text: "Projects"},
+    {text: "Resume"},
+    {text: "Blog", blocked: true},
+]
 
 const Main = () => {
 
     const [activeSection, setActiveSection] = useState(-1);
+    const [activeProject, setActiveProject] = useState(-1);
 
+    const onMenuItemClick = (index) => {
+        if (index === -1 && activeProject !== -1) {
+            setActiveProject(-1);
+        } else {
+            setActiveSection(index);
+        }
+    }
 
-    const onMenuitemClick = (index) => {
-        setActiveSection(index);
+    const onProjectItemClick = (idx) => {
+        setActiveProject(idx);
     }
 
     return (
         <div className="container">
-            <main className={`${styles.main} ${activeSection !== -1 ? styles.active : ""}`}>
+            <main className={`${styles.main}`}>
                 <div className={styles.mainAvatarSection}>
                     <Avatar path={avatar}/>
                 </div>
                 <div className={styles.mainContentSection}>
+                    <Menu
+                        isBreadcrumb={activeSection !== -1}
+                        sections={sections}
+                        activeSection={activeSection}
+                        breadcrumb={activeProject !== -1 ? getProjectTitle(activeProject) : null}
+                        onMenuItemClick={onMenuItemClick}/>
                     <SectionAbout active={activeSection === 0}/>
-                    <SectionResume active={activeSection === 1}/>
-                    <SectionProjects active={activeSection === 2}/>
-                </div>
-                <div className={styles.mainMenuAvatar}>
-                    <Menu>
-                        <MenuItem active={activeSection === 0} text={"About"} icon={iconResume}
-                                  onClick={() => onMenuitemClick(0)}/>
-                        <MenuItem active={activeSection === 1} text={"Resume"} icon={iconResume}
-                                  onClick={() => onMenuitemClick(1)}/>
-                        <MenuItem active={activeSection === 2} text={"Projects"} icon={iconResume}
-                                  onClick={() => onMenuitemClick(2)}/>
-                    </Menu>
-                </div>
-                <div className={styles.mainMenuSection}>
-                    <Menu vertical={true}>
-                        <MenuItem active={activeSection === 0} text={"About"} icon={iconResume}
-                                  onClick={() => onMenuitemClick(0)}/>
-                        <MenuItem active={activeSection === 1} text={"Resume"} icon={iconResume}
-                                  onClick={() => onMenuitemClick(1)}/>
-                        <MenuItem active={activeSection === 2} text={"Projects"} icon={iconResume}
-                                  onClick={() => onMenuitemClick(2)}/>
-                    </Menu>
+                    <SectionProjects active={activeSection === 1} activeProjectId={activeProject} onProjectItemClick={onProjectItemClick} />
+                    <SectionResume active={activeSection === 2}/>
                 </div>
             </main>
         </div>

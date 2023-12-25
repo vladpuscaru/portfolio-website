@@ -1,16 +1,31 @@
 import styles from "./MenuItem.module.sass"
 
-const MenuItem = ({active, icon, onClick}) => {
+const MenuItem = ({active, text, isBreadcrumb, appendText, blocked, onClick}) => {
     return (
         <div
             className={`
                 ${styles.menuItem} 
                 ${active ? `${styles.active}` : ""}
+                ${blocked ? `${styles.blocked}` : ""}
+                ${isBreadcrumb ? `${styles.breadcrumb}` : ""}
             `
             }
             onClick={onClick}>
 
-            <img src={icon} alt={"menuItem"}/>
+            <a>
+                <div className={styles.background}></div>
+                <span className={styles.text}>{text}</span>
+            </a>
+            {
+                appendText ?
+                    <a className={styles.appendText}>
+                        <div className={styles.b_background}></div>
+                        <span className={styles.b_text}>{appendText}</span>
+                    </a>
+                    :
+                    ""
+            }
+
         </div>
     )
 }

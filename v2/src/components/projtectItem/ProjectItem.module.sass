@@ -1,0 +1,47 @@
+@import "../../common/sass/variables"
+
+.projectItem
+  display: flex
+  padding-top: 12px
+
+  .thumbnail
+    flex: .35
+    transition: all .3s ease-in-out
+
+  .meta
+    flex: .65
+    padding-left: 12px
+
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .description
+      h2
+        font-family: $fontBold
+        margin-bottom: 12px
+        font-size: 2em
+        display: flex
+
+      p
+        text-align: justify
+
+  .technologies
+    display: flex
+
+    .technology
+      border-radius: 5px
+      padding: 2px 5px
+
+      &:not(:last-of-type)
+        margin-right: 5px
+
+  &.onDisplay
+    .thumbnail
+      flex: .55
+      display: flex
+      justify-content: center
+      align-items: center
+
+  &.hidden
+    display: none

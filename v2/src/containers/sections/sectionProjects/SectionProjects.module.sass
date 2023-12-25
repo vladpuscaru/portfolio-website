@@ -1,1 +1,38 @@
+@import "../../../common/sass/variables"
+
 .projects
+  padding-top: 55px
+
+  .content
+    position: relative
+
+  .filters
+    display: flex
+    justify-content: space-between
+
+    input[type=text]
+      padding: 5px
+      border-radius: 5px
+      border: none
+      font-family: $fontRegular
+
+      &:focus
+        outline: none
+
+    .tags
+      display: flex
+
+      .tag
+        padding: 5px
+        border: 1px solid $white
+        border-radius: 5px
+
+        &:not(:last-of-type)
+          margin-right: 5px
+
+        &:hover
+          cursor: pointer
+
+        &.active
+          background-color: $white
+          color: $black

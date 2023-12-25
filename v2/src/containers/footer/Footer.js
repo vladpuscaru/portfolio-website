@@ -13,9 +13,7 @@ const Footer = () => {
     return (
         <div className="container">
             <footer className={styles.footer}>
-                <Thumbnail text={"Project 1"} image={project1} onClick={onProjectClick}/>
-                <Thumbnail text={"Project 2"} image={project2} onClick={onProjectClick}/>
-                <GithubFeed />
+                Footer
             </footer>
         </div>
 )
