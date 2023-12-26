@@ -5,7 +5,6 @@ import { useState } from "react";
 import SectionAbout from "../sections/sectionAbout/SectionAbout";
 import SectionResume from "../sections/sectionResume/SectionResume";
 import SectionProjects from "../sections/sectionProjects/SectionProjects";
-import MenuItem from "../../components/menuItem/MenuItem";
 import avatar from "../../images/avatar.png";
 import { getProjectTitle } from "../../data/projects/projects";
 
