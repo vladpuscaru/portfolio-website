@@ -2,7 +2,6 @@ import styles from "./GithubFeed.module.sass";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const token = "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";
 const query = `query{ 
   user(login: "vladpuscaru"){
     contributionsCollection {
@@ -31,7 +30,7 @@ const GithubFeed = () => {
             JSON.stringify({query: query}),
             {
                 headers: {
-                    Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`
                 }
             })
             .then(data => {
