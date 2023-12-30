@@ -79,7 +79,7 @@ const projects = [
         "tags": [tags.GAME, tags.WEB]
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Test Proj",
         "technologies": [technologies.TYPESCRIPT, technologies.AWS],
         "github": "google.com",
@@ -89,7 +89,7 @@ const projects = [
         "tags": [tags.GAME, tags.WEB]
     },
     {
-        "id": 2,
+        "id": 4,
         "title": "Test Proj",
         "technologies": [technologies.TYPESCRIPT, technologies.AWS],
         "github": "google.com",
@@ -99,7 +99,7 @@ const projects = [
         "tags": [tags.GAME, tags.WEB]
     },
     {
-        "id": 2,
+        "id": 5,
         "title": "Test Proj",
         "technologies": [technologies.TYPESCRIPT, technologies.AWS],
         "github": "google.com",
