@@ -49,6 +49,7 @@ const Main = () => {
                     <SectionProjects active={activeSection === 1} activeProjectId={activeProject} onProjectItemClick={onProjectItemClick} />
                     <SectionResume active={activeSection === 2}/>
                 </div>
+                <div className={styles.shadow}></div>
             </main>
         </div>
     )
