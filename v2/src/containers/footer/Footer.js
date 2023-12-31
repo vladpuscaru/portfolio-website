@@ -5,11 +5,15 @@ const Footer = () => {
     return (
         <div className="container">
             <footer className={styles.footer}>
-                <GithubFeed />
+                <div className={styles.left}>
+
+                </div>
+
+                <GithubFeed/>
             </footer>
         </div>
-)
-    ;
+    )
+        ;
 }
 
 export default Footer;

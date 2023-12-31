@@ -1,5 +1,4 @@
 import styles from "./ProjectItem.module.sass"
-import Project from "../../containers/project/Project";
 
 const ProjectItem = ({title, thumbnail, slug, technologies, onDisplay, hidden, onClick}) => {
     return (
