@@ -1,10 +1,11 @@
 import { technologies } from "../projects/projects";
+import epamLogo from "../../images/epam.png";
 
 export const experience = [
     {
         company: {
             name: "Freelancer",
-            logo: ""
+            logo: epamLogo
         },
         startDate: "April 2022",
         endDate: "Present",
