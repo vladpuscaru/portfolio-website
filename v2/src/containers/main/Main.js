@@ -1,12 +1,12 @@
 import styles from "./Main.module.sass"
 import Avatar from "../../components/avatar/Avatar";
 import Menu from "../../components/menu/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionAbout from "../sections/sectionAbout/SectionAbout";
 import SectionResume from "../sections/sectionResume/SectionResume";
 import SectionProjects from "../sections/sectionProjects/SectionProjects";
 import avatar from "../../images/avatar.png";
-import { getProjectTitle } from "../../data/projects/projects";
+import { getProjects, getProjectTitle } from "../../data/projects/projects";
 
 const sections = [
     {text: "About"},
@@ -15,10 +15,17 @@ const sections = [
     {text: "Blog", blocked: true},
 ]
 
-const Main = () => {
+const Main = ({ selectedProject, onBackClick }) => {
 
     const [activeSection, setActiveSection] = useState(-1);
     const [activeProject, setActiveProject] = useState(-1);
+
+    useEffect(() => {
+        if (selectedProject !== null) {
+            setActiveSection(1);
+            setActiveProject(selectedProject.id);
+        }
+    }, [selectedProject]);
 
     const onMenuItemClick = (index) => {
         if (index === -1 && activeProject !== -1) {
@@ -26,6 +33,7 @@ const Main = () => {
         } else {
             setActiveSection(index);
         }
+        onBackClick();
     }
 
     const onProjectItemClick = (idx) => {

@@ -70,8 +70,6 @@ const GithubFeed = () => {
         }
     }
 
-    console.log(data.data);
-
     return data.loading || !weeks || data.errors ? "Loading..." :
         (
             <div className={styles.githubfeed}>

@@ -4,8 +4,26 @@
   background-color: #000
   color: white
   display: flex
+  align-items: center
   width: 100%
   padding-bottom: 15px
 
-  .left
+  .project
     flex: 1
+    height: 250px
+    position: relative
+    overflow: hidden
+    padding: 0 50px
+
+    &.disabled
+      opacity: .7
+
+    &:hover:not(.disabled)
+      cursor: pointer
+      opacity: .7
+
+    img
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
