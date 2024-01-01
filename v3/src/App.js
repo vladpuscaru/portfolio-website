@@ -4,19 +4,28 @@ import { useState } from "react";
 
 function App() {
     const [active, setActive] = useState({
-        section: -1
+        section: -1,
+        menu: true
     });
 
     const onMenuItemClick = (section) => {
-        setActive({
-            ...active,
-            section
-        })
+        if (section === undefined) {
+            setActive({
+                ...active,
+                menu: !active.menu
+            })
+        } else {
+            setActive({
+                ...active,
+                menu: false,
+                section
+            });
+        }
     }
 
     return (
         <div className="App">
-            <Menu activeSection={active.section} onMenuItemClick={onMenuItemClick} />
+            <Menu active={active.menu} activeSection={active.section} onMenuItemClick={onMenuItemClick}/>
         </div>
     );
 }

@@ -5,9 +5,9 @@ import iconLinkedin from "../../common/images/icons8-linkedin.svg";
 import iconGithub from "../../common/images/icons8-github.svg";
 import { ReactSVG } from "react-svg";
 
-const Menu = ({activeSection, onMenuItemClick}) => {
+const Menu = ({active, activeSection, onMenuItemClick}) => {
     return (
-        <nav className={`${styles.menu} ${activeSection === -1 ? styles.active : ""}`}>
+        <nav className={`${styles.menu} ${active ? styles.active : ""}`}>
             <div onClick={() => onMenuItemClick(0)}
                  className={`${styles.cell} ${activeSection === 0 ? styles.active : ""}`}>
                 <a href="#">about</a>
@@ -38,9 +38,12 @@ const Menu = ({activeSection, onMenuItemClick}) => {
                     <ReactSVG src={iconGithub}/>
                 </a>
             </div>
-            <div onClick={() => onMenuItemClick(-1)}
-                 className={`${styles.back} ${activeSection !== -1 ? styles.active : ""}`}>
-                <a href="#">x</a>
+
+            <div onClick={() => onMenuItemClick()}
+                 className={`${styles.burger} ${!active ? styles.active : ""}`}>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
 
             <div className={styles.shapeMobileTop}></div>
