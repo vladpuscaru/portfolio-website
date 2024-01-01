@@ -1,96 +1,134 @@
 @import "../../common/sass/variables"
 
 .menu
+  position: fixed
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
   display: flex
+  justify-content: space-between
   flex-wrap: wrap
   font-family: $fontRegular
-
+  width: 100%
+  padding: 15px
+  transition: all .3s ease-in-out
   @media (min-width: 768px)
-    width: 100vw
-    height: 100vh
-    font-size: 3em
+    width: 750px
+  @media (min-width: 992px)
+    width: 970px
+  @media (min-width: 1200px)
+    width: 1150px
+  @media (min-width: 1400px)
+    width: 1260px
 
   .cell
-    width: 50%
-    display: flex
-    justify-content: center
-    align-items: center
-    background-color: $black
-    color: $white
-    transition: all .3s ease-in-out
-    position: relative
+    display: none
 
-    a
+    &.active
+      display: flex
+      color: $white
+
+  .back
+    display: none
+
+    &.active
+      display: inline-block
+      color: $white
+
+
+
+
+  &.active
+    padding: 0
+
+    @media (min-width: 768px)
+      width: 100vw
+      height: 100vh
+      font-size: 3em
+
+    .cell
+      width: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      background-color: $black
+      color: $white
+      transition: all .3s ease-in-out
       position: relative
 
-    .shape, .shape2
-      width: 100%
-      height: 100%
-      background-color: $white
-      position: absolute
-
-      &:before
-        user-select: none
-        content: ""
-        width: 100%
-        height: 100%
-        background-color: $black
-        position: absolute
-
-    &:nth-of-type(4)
-      .shape
-        top: -20%
-        left: 0
-        clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
-
-        &:before
-          top: 1px
-          left: 0
-          clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
-          transition: all .3s ease-in-out
-
-      .shape2
-        left: -20%
-        top: 0
-        clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 100% 100%, 14% 100%)
-
-        &:before
-          top: 0
-          left: 1px
-          clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 100% 100%, 14% 100%)
-          transition: all .3s ease-in-out
-
-    &:nth-of-type(3)
-
-      .shape
-        top: -20%
-        left: 0
-        clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
-
-        &:before
-          top: 1px
-          left: 0
-          clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
-          transition: all .3s ease-in-out
-
-    &:nth-of-type(2)
-
-      .shape
-        left: -20%
-        top: 0
-        clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 100% 100%, 20% 100%)
-
-        &:before
-          left: 1px
-          top: 0
-          clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 100% 100%, 20% 100%)
-          transition: all .3s ease-in-out
-
-    &:hover
-      cursor: pointer
-      background-color: $white
-      color: $black
+      a
+        position: relative
 
       .shape, .shape2
+        width: 100%
+        height: 100%
+        background-color: $white
+        position: absolute
+
         &:before
-          background-color: $white
+          user-select: none
+          content: ""
+          width: 100%
+          height: 100%
+          background-color: $black
+          position: absolute
+
+      &:nth-of-type(4)
+        .shape
+          top: -20%
+          left: 0
+          clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
+
+          &:before
+            top: 1px
+            left: 0
+            clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
+            transition: all .3s ease-in-out
+
+        .shape2
+          left: -20%
+          top: 0
+          clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 999% 100%, 14% 100%)
+          // 999 is intentional
+
+          &:before
+            top: 0
+            left: 1px
+            clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 100% 100%, 14% 100%)
+            transition: all .3s ease-in-out
+
+      &:nth-of-type(3)
+
+        .shape
+          top: -20%
+          left: 0
+          clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
+
+          &:before
+            top: 1px
+            left: 0
+            clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
+            transition: all .3s ease-in-out
+
+      &:nth-of-type(2)
+
+        .shape
+          left: -20%
+          top: 0
+          clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 999% 100%, 20% 100%)
+          // 999 is intentional
+
+          &:before
+            left: 1px
+            top: 0
+            clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 100% 100%, 20% 100%)
+            transition: all .3s ease-in-out
+
+      &:hover
+        cursor: pointer
+        background-color: $white
+        color: $black
+
+        .shape, .shape2
+          &:before
+            background-color: $white
