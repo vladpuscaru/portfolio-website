@@ -1,6 +1,16 @@
 
-export const Sections = {
-    ABOUT: "ABOUT",
-    RESUME: "RESUME",
-    PROJECTS: "PROJECTS"
+const sectionAbout = {
+    title: "about"
 };
+
+const sectionResume = {
+    title: "resume"
+};
+
+const sectionProjects = {
+    title: "projects"
+}
+
+export default [
+    sectionAbout, sectionProjects, sectionResume
+];

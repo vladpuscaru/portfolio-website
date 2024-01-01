@@ -6,9 +6,37 @@
   margin: 0
 
 html, body > #root, .App
-  min-height: 100vh
-  max-height: 100vh
   background-color: $black
+
+  @media (min-width: 768px)
+    min-height: 100vh
+    max-height: 100vh
+
+.App
+  display: flex
+
+  .content
+    width: 100%
+    padding-top: 55px
+    padding-bottom: 15px
+
+    .main
+      flex: 1
+
+    .footer
+      display: none
+
+  @media (min-width: 768px)
+    .content
+      display: flex
+      flex-direction: column
+
+      .main
+        flex: .8
+      .footer
+        display: block
+        flex: .2
+
 
 .container
   position: relative
