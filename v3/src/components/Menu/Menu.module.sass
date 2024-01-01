@@ -11,7 +11,6 @@
   font-family: $fontRegular
   width: 100%
   padding: 15px
-  transition: all .3s ease-in-out
   @media (min-width: 768px)
     width: 750px
   @media (min-width: 992px)
@@ -20,6 +19,9 @@
     width: 1150px
   @media (min-width: 1400px)
     width: 1260px
+
+  .shapeMobileTop, .shapeMobileRight, .shapeMobileBottom, .shapeMobileLeft
+    display: none
 
   .cell
     display: none
@@ -35,100 +37,178 @@
       display: inline-block
       color: $white
 
-
-
-
   &.active
+    width: 100vw
+    height: 100vh
     padding: 0
+    flex-direction: column
+    justify-content: center
+    align-items: center
 
-    @media (min-width: 768px)
-      width: 100vw
-      height: 100vh
+    // Mobile
+    .back
+      display: block
+      color: $white
+      position: absolute
+      top: 10%
+      right: 15%
       font-size: 3em
 
     .cell
-      width: 50%
-      display: flex
-      justify-content: center
-      align-items: center
-      background-color: $black
+      display: block
       color: $white
-      transition: all .3s ease-in-out
-      position: relative
+      font-size: 2em
+      border-bottom: 1px solid $white
+      padding: 5px 0
 
-      a
-        position: relative
-
-      .shape, .shape2
-        width: 100%
-        height: 100%
-        background-color: $white
-        position: absolute
-
-        &:before
-          user-select: none
-          content: ""
-          width: 100%
-          height: 100%
-          background-color: $black
-          position: absolute
+      &:nth-of-type(1)
+        padding-top: 0
 
       &:nth-of-type(4)
-        .shape
-          top: -20%
-          left: 0
-          clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
+        border: none
+        padding-top: 35px
+        padding-bottom: 0
+        display: flex
 
-          &:before
-            top: 1px
-            left: 0
-            clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
-            transition: all .3s ease-in-out
+      svg
+        fill: white
 
-        .shape2
-          left: -20%
-          top: 0
-          clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 999% 100%, 14% 100%)
-          // 999 is intentional
+    .shapeMobileTop, .shapeMobileRight, .shapeMobileBottom, .shapeMobileLeft
+      display: block
+      position: absolute
 
-          &:before
-            top: 0
-            left: 1px
-            clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 100% 100%, 14% 100%)
-            transition: all .3s ease-in-out
+    .shapeMobileTop
+      top: 0
+      left: 0
+      width: 100%
+      height: 10%
+      background-color: $white
+      clip-path: polygon(0 0, 100% 0, 100% 74%, 68% 100%, 26% 82%, 0 100%)
 
-      &:nth-of-type(3)
+    .shapeMobileRight
+      top: 0
+      right: 0
+      width: 10%
+      height: 100%
+      background-color: $white
+      clip-path: polygon(100% 0, 100% 100%, 53% 100%, 0% 71%, 37% 34%, 2% 15%)
 
-        .shape
-          top: -20%
-          left: 0
-          clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
+    .shapeMobileBottom
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 10%
+      background-color: $white
+      clip-path: polygon(100% 100%, 0 100%, 0 0, 12% 18%, 72% 0, 100% 18%)
 
-          &:before
-            top: 1px
-            left: 0
-            clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
-            transition: all .3s ease-in-out
+    .shapeMobileLeft
+      top: 0
+      left: 0
+      width: 10%
+      height: 100%
+      background-color: $white
+      clip-path: polygon(0 100%, 0 0, 100% 0, 50% 36%, 100% 66%, 83% 100%)
 
-      &:nth-of-type(2)
+    // Desktop
+    @media (min-width: 768px)
+      flex-direction: row
+      justify-content: initial
+      align-items: initial
 
-        .shape
-          left: -20%
-          top: 0
-          clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 999% 100%, 20% 100%)
-          // 999 is intentional
+      .back
+        display: none
 
-          &:before
-            left: 1px
-            top: 0
-            clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 100% 100%, 20% 100%)
-            transition: all .3s ease-in-out
+      .shapeMobileTop, .shapeMobileRight, .shapeMobileBottom, .shapeMobileLeft
+        display: none
 
-      &:hover
-        cursor: pointer
-        background-color: $white
-        color: $black
+      .cell
+        width: 50%
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: $black
+        color: $white
+        position: relative
+        border: none
+        font-size: 3em
+
+        svg
+          fill: $white
+
+          &:hover
+            cursor: pointer
+            fill: white
+
+        a
+          position: relative
 
         .shape, .shape2
+          width: 100%
+          height: 100%
+          background-color: $white
+          position: absolute
+
           &:before
-            background-color: $white
+            user-select: none
+            content: ""
+            width: 100%
+            height: 100%
+            background-color: $black
+            position: absolute
+
+        &:nth-of-type(4)
+          .shape
+            top: -20%
+            left: 0
+            clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 999%, 0 20%, 31% 13%)
+
+            &:before
+              top: 1px
+              left: 0
+              clip-path: polygon(56% 4%, 100% 16%, 100% 100%, 0 100%, 0 20%, 31% 13%)
+
+          .shape2
+            left: -20%
+            top: 0
+            clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 999% 100%, 14% 100%)
+            // 999 is intentional
+
+            &:before
+              top: 0
+              left: 1px
+              clip-path: polygon(18% 75%, 5% 40%, 20% 0, 100% 0, 100% 100%, 14% 100%)
+
+        &:nth-of-type(3)
+
+          .shape
+            top: -20%
+            left: 0
+            clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 999%, 0 100%, 0 0)
+            // 999 is intentional
+
+            &:before
+              top: 1px
+              left: 0
+              clip-path: polygon(32% 17%, 71% 14%, 100% 20%, 100% 100%, 0 100%, 0 0)
+
+        &:nth-of-type(2)
+
+          .shape
+            left: -20%
+            top: 0
+            clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 999% 100%, 20% 100%)
+            // 999 is intentional
+
+            &:before
+              left: 1px
+              top: 0
+              clip-path: polygon(4% 64%, 14% 42%, 0 0, 100% 0, 100% 100%, 20% 100%)
+
+        &:hover:not(:nth-of-type(4))
+          cursor: pointer
+          background-color: $white
+          color: $black
+
+          .shape, .shape2
+            &:before
+              background-color: $white
