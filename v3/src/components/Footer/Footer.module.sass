@@ -35,11 +35,17 @@
 
     .middle
       flex: .5
+      display: flex
+      justify-content: center
+      align-items: center
 
-    .menuButtonLeft:hover
-      .arrow:before
-        left: -15px
+    .menuButtonLeft
+      &:hover
+        .arrow:before
+          left: -15px
 
-    .menuButtonRight:hover
-      .arrow:before
-        left: 15px
+    .menuButtonRight
+      justify-content: flex-end
+      &:hover
+        .arrow:before
+          left: 15px

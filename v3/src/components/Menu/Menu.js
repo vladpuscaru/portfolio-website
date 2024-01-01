@@ -4,6 +4,7 @@ import iconTwitter from "../../common/images/icons8-twitterx.svg";
 import iconLinkedin from "../../common/images/icons8-linkedin.svg";
 import iconGithub from "../../common/images/icons8-github.svg";
 import { ReactSVG } from "react-svg";
+import SocialLinks from "../SocialLinks/SocialLinks";
 
 const Menu = ({active, activeSection, onMenuItemClick}) => {
     return (
@@ -25,18 +26,7 @@ const Menu = ({active, activeSection, onMenuItemClick}) => {
             <div className={styles.cell}>
                 <div className={styles.shape2}></div>
                 <div className={styles.shape}></div>
-                <a href="#">
-                    <ReactSVG src={iconFacebook}/>
-                </a>
-                <a href="#">
-                    <ReactSVG src={iconTwitter}/>
-                </a>
-                <a href="#">
-                    <ReactSVG src={iconLinkedin}/>
-                </a>
-                <a href="#">
-                    <ReactSVG src={iconGithub}/>
-                </a>
+                <SocialLinks />
             </div>
 
             <div onClick={() => onMenuItemClick()}
