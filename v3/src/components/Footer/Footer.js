@@ -4,7 +4,7 @@ import GithubFeed from "../GithubFeed/GithubFeed";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import DownloadButton from "../DownloadButton/DownloadButton";
 
-const Footer = ({active, activeSection, onMenuItemClick}) => {
+const Footer = ({active, activeSection, onMenuItemClick, githubData}) => {
 
     const sectionsRemaining = sections
         .map((s, idx) => ({...s, idx}))
@@ -19,7 +19,7 @@ const Footer = ({active, activeSection, onMenuItemClick}) => {
             <div className={styles.middle}>
                 {
                     activeSection === 0 ? <SocialLinks/>
-                        : activeSection === 1 ? <GithubFeed/>
+                        : activeSection === 1 ? <GithubFeed data={githubData} />
                             : activeSection === 2 ? <DownloadButton/>
                                 : ""
                 }
