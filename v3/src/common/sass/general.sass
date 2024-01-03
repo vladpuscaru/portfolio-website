@@ -14,6 +14,7 @@ html, body > #root, .App
 
 .App
   display: flex
+  overflow: hidden
 
   .content
     width: 100%
@@ -32,10 +33,11 @@ html, body > #root, .App
       flex-direction: column
 
       .main
-        flex: .8
+        flex: .7
+        max-height: 70%
       .footer
         display: block
-        flex: .2
+        flex: .3
 
 
 .container
@@ -54,6 +56,9 @@ html, body > #root, .App
     width: 1150px
   @media (min-width: 1400px)
     width: 1260px
+
+.scrollable
+  overflow: auto
 
 img
   max-width: 100%
