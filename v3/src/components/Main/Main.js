@@ -10,6 +10,7 @@ const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick}
             <div className={styles.avatar}>
                 <img src={avatarImg}/>
             </div>
+
             <div className={`${styles.content}`}>
                 {
                     mobile && activeProject !== -1 ? ""
@@ -25,6 +26,8 @@ const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick}
                         <SectionResume active={activeSection === 2}/>
                 }
             </div>
+
+            <div className={styles.shadow}></div>
         </div>
     </main>
 }
