@@ -17,7 +17,7 @@ const SectionResume = ({ active }) => {
     }
 
     return (
-        <section className={`${styles.resume} ${ active ? styles.active : "" }`}>
+        <section id={"resume"} className={`${styles.resume} ${ active ? styles.active : "" }`}>
             <div className={styles.header}>
                 <div className={styles.title}>
                     <h2>Software Developer</h2>
@@ -48,7 +48,7 @@ const SectionResume = ({ active }) => {
                         PDF
                     </a>
                 </div>
-                <div className={`${styles.section} scrollable`}>
+                <div className={`${styles.section}`}>
                     <SectionExperience active={activeSection === 0} experience={experience}/>
                     <SectionEducation active={activeSection === 1} education={education}/>
                     <SectionAffiliations active={activeSection === 2} affiliations={affiliations}/>

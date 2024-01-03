@@ -8,22 +8,21 @@ import SocialLinks from "../SocialLinks/SocialLinks";
 import { getProjects } from "../../common/data/projects";
 
 const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
-    console.log(activeProject);
     return (
         <nav className={`${styles.menu} ${active ? styles.active : ""}`}>
             <div onClick={() => onMenuItemClick(0)}
                  className={`${styles.cell} ${activeSection === 0 ? styles.active : ""}`}>
-                <a href="#">about</a>
+                <a href="#about">about</a>
             </div>
             <div onClick={() => onMenuItemClick(1)}
                  className={`${styles.cell} ${activeSection === 1 ? styles.active : ""}`}>
                 <div className={styles.shape}></div>
-                <a href="#">projects</a>
+                <a href="#projects">projects</a>
             </div>
             <div onClick={() => onMenuItemClick(2)}
                  className={`${styles.cell} ${activeSection === 2 ? styles.active : ""}`}>
                 <div className={styles.shape}></div>
-                <a href="#">resume</a>
+                <a href="#resume">resume</a>
             </div>
             <div className={styles.cell}>
                 <div className={styles.shape2}></div>

@@ -2,7 +2,7 @@ import styles from "./SectionAbout.module.sass"
 
 const SectionAbout = ({ active }) => {
     return (
-        <section className={`${styles.about} ${active ? styles.active : ""}`}>
+        <section id={"about"} className={`${styles.about} ${active ? styles.active : ""}`}>
             <div className={styles.header}>
                 <div className={styles.title}>
                     <h2>Formerly a Team Lead, now back to being a student...</h2>

@@ -1,70 +1,77 @@
 @import "../../common/sass/variables"
 
 .resume
-  display: none
   max-height: 100%
+  padding-top: 80px
 
-  &.active
-    display: flex
-    flex-direction: column
+  @media (min-width: 768px)
+    display: none
+    padding-top: 0
 
-  .header
-    .title
-      h2
-        font-size: 2em
-        font-family: $fontBold
-      span
-        font-size: .8em
-
-    .description
-      margin: 12px 0
-      text-align: justify
-
-  .main
-    display: flex
-    max-height: 100%
-    overflow: hidden
-
-    .menu
-      flex: .2
+    &.active
       display: flex
       flex-direction: column
-      justify-content: space-between
 
+      .header
+        .title
+          h2
+            font-size: 2em
+            font-family: $fontBold
+          span
+            font-size: .8em
 
-      .download
-        margin-top: 55px
+        .description
+          margin: 12px 0
+          text-align: justify
+
+      .main
         display: flex
-        justify-content: center
-        align-items: center
+        max-height: 100%
+        overflow: hidden
 
-        background-color: rgba($green, .5)
-        border: 1px solid $green
-        border-radius: 4px
-        svg
-          max-width: 15px
-          margin-right: 5px
-          transform: rotate(-90deg)
-
-        &:hover
-          cursor: pointer
-          background-color: $green
+        .menu
+          flex: .2
+          display: flex
+          flex-direction: column
+          justify-content: space-between
 
 
-      ul
-        list-style: none
+          .download
+            margin-top: 55px
+            display: flex
+            justify-content: center
+            align-items: center
 
-        li
-          padding: 5px 12px
-          border-radius: 4px
-          &:hover
-            cursor: pointer
-            background-color: rgba($white, .5)
+            background-color: rgba($green, .5)
+            border: 1px solid $green
+            border-radius: 4px
+            svg
+              max-width: 15px
+              margin-right: 5px
+              transform: rotate(-90deg)
 
-          &.active
-            color: $black
-            background-color: $white
+            &:hover
+              cursor: pointer
+              background-color: $green
 
-    .section
-      flex: .8
-      padding-left: 12px
+
+          ul
+            list-style: none
+
+            li
+              padding: 5px 12px
+              border-radius: 4px
+              &:hover
+                cursor: pointer
+                background-color: rgba($white, .5)
+
+              &.active
+                color: $black
+                background-color: $white
+
+        .section
+          flex: .8
+          padding-left: 12px
+
+          @media(min-width: 768px)
+            overflow: scroll

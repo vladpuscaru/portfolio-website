@@ -1,61 +1,70 @@
 @import "../../common/sass/variables"
 
 .projects
-  display: none
   max-height: 100%
+  padding-top: 80px
 
-  &.active
-    display: flex
-    flex-direction: column
+  @media (min-width: 768px)
+    display: none
+    padding-top: 0
 
-  .header
-    .title
-      h2
-        font-size: 2em
-        font-family: $fontBold
-      span
-        font-size: .8em
+    &.active
+      display: flex
+      flex-direction: column
 
-    .description
-      margin: 12px 0
-      text-align: justify
+      .header
+        .title
+          h2
+            font-size: 2em
+            font-family: $fontBold
 
-  .main
-    max-height: 100%
-    overflow: hidden
-    display: flex
-    flex-direction: column
+          span
+            font-size: .8em
 
-    .filters
-      justify-content: space-between
-      margin-bottom: 25px
-      display: none
+        .description
+          margin: 12px 0
+          text-align: justify
 
-      &.active
+      .main
+        max-height: 100%
+        overflow: hidden
         display: flex
+        flex-direction: column
 
-      input[type="text"]
-        padding: 5px 10px
-        border: none
-        background-color: $white
-        &:focus
-          outline: none
+        .content
+          overflow: scroll
 
-      .tags
-        display: flex
+        .filters
+          justify-content: space-between
+          margin-bottom: 25px
+          display: none
 
-      .tag
-        border: 1px solid $white
-        padding: 5px 10px
-        border-radius: 4px
+          &.active
+            display: flex
 
-        &:not(:last-of-type)
-          margin-right: 5px
+          input[type="text"]
+            padding: 5px 10px
+            border: none
+            background-color: $white
 
-        &:hover
-          cursor: pointer
-          background-color: rgba($white, .3)
+            &:focus
+              outline: none
 
-        &.active
-          background-color: $white
-          color: $black
+          .tags
+            display: flex
+
+          .tag
+            border: 1px solid $white
+            padding: 5px 10px
+            border-radius: 4px
+
+            &:not(:last-of-type)
+              margin-right: 5px
+
+            &:hover
+              cursor: pointer
+              background-color: rgba($white, .3)
+
+            &.active
+              background-color: $white
+              color: $black

@@ -24,6 +24,17 @@ const query = `query{
 }`;
 
 function App() {
+    const [windowData, setWindowData] = useState({
+        scroll: {
+            x: 0,
+            y: 0
+        },
+        size: {
+            x: window.innerWidth,
+            y: window.innerHeight,
+        },
+        mobile: window.innerWidth < 768
+    });
     const [github, setGithub] = useState({
         data: null,
         loading: true
@@ -31,8 +42,8 @@ function App() {
     const [active, setActive] = useState({
         section: -1,
         project: -1,
-        menu: true,
-        main: false,
+        menu: windowData.mobile ? false : true,
+        main: windowData.mobile ? true : false,
         footer: false
     });
 
@@ -59,6 +70,59 @@ function App() {
                 })
             })
     }, []);
+
+    const updateWindowData = () => {
+        setWindowData({
+            ...windowData,
+            scroll: {
+                x: window.scrollX,
+                y: window.scrollY
+            },
+            size: {
+                x: window.innerWidth,
+                y: window.innerHeight
+            },
+            mobile: window.innerWidth <= 768
+        });
+    };
+
+    useEffect(() => {
+        if (windowData.mobile) {
+            let activeSection = -1;
+
+            const abSection = document.getElementById("about");
+            const prSection = document.getElementById("projects");
+            const reSection = document.getElementById("resume");
+
+
+            if (abSection && prSection && reSection) {
+                const abScroll = abSection.offsetTop;
+                const prScroll = prSection.offsetTop;
+                const reScroll = reSection.offsetTop;
+
+                if (windowData.scroll.y > abScroll) activeSection = 0;
+                if (windowData.scroll.y > prScroll) activeSection = 1;
+                if (windowData.scroll.y > reScroll) activeSection = 2;
+
+                setActive({
+                    ...active,
+                    section: activeSection
+                });
+            }
+        }
+    }, [windowData.mobile, windowData.scroll]);
+
+    useEffect(() => {
+        const watch = () => {
+            window.addEventListener("scroll", updateWindowData);
+            window.addEventListener("resize", updateWindowData);
+        }
+        watch();
+        return () => {
+            window.removeEventListener("scroll", updateWindowData);
+            window.removeEventListener("resize", updateWindowData);
+        };
+    });
 
     const onMenuItemClick = (section) => {
         if (section === undefined) {
@@ -90,10 +154,11 @@ function App() {
     return (
         <div className="App">
             {
-                github.loading ? "Loading..."
+                github.loading || github.errors ? "Loading..."
                     :
                     <Fragment>
-                        <Menu active={active.menu} activeSection={active.section} activeProject={active.project} onMenuItemClick={onMenuItemClick}/>
+                        <Menu active={active.menu} activeSection={active.section} activeProject={active.project}
+                              onMenuItemClick={onMenuItemClick}/>
                         <div className={"content"}>
                             <div className={"main"}>
                                 <Main active={active.main} activeSection={active.section}
@@ -101,7 +166,7 @@ function App() {
                                       onProjectItemClick={onProjectItemClick}/>
                             </div>
                             <div className={"footer"}>
-                                <Footer active={active.footer} activeSection={active.section}
+                                <Footer active={active.footer} mobile={windowData.mobile} activeSection={active.section}
                                         onMenuItemClick={onMenuItemClick} githubData={github.data}/>
                             </div>
                         </div>

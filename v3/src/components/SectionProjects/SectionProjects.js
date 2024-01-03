@@ -47,7 +47,7 @@ const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
     }
 
     return (
-        <section className={`${styles.projects} ${active ? styles.active : ""}`}>
+        <section id={"projects"} className={`${styles.projects} ${active ? styles.active : ""}`}>
             <div className={styles.header}>
                 <div className={styles.title}>
                     <h2>A work in progres..</h2>
@@ -80,7 +80,7 @@ const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
                         }
                     </div>
                 </div>
-                <div className={`${styles.content} scrollable`}>
+                <div className={`${styles.content}`}>
                     <ProjectList active={activeProject === -1} projects={projects}
                                  onProjectItemClick={onProjectItemClick}/>
 

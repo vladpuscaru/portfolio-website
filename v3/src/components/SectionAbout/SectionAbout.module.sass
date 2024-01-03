@@ -1,21 +1,27 @@
 @import "../../common/sass/variables"
 
 .about
-  display: none
-  max-height: 100%
+  min-height: 100vh
+  padding-top: 80px
 
-  &.active
-    display: block
+  @media (min-width: 768px)
+    display: none
+    min-height: auto
+    max-height: 100%
+    padding-top: 0
 
-  .header
-    .title
-      h2
-        font-size: 2em
-        font-family: $fontBold
+    &.active
+      display: block
 
-      span
-        font-size: .8em
+    .header
+      .title
+        h2
+          font-size: 2em
+          font-family: $fontBold
 
-    .description
-      margin: 12px 0
-      text-align: justify
+        span
+          font-size: .8em
+
+      .description
+        margin: 12px 0
+        text-align: justify
