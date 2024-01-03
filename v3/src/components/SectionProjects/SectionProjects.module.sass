@@ -1,6 +1,61 @@
+@import "../../common/sass/variables"
+
 .projects
   display: none
   max-height: 100%
 
   &.active
-    display: block
+    display: flex
+    flex-direction: column
+
+  .header
+    .title
+      h2
+        font-size: 2em
+        font-family: $fontBold
+      span
+        font-size: .8em
+
+    .description
+      margin: 12px 0
+      text-align: justify
+
+  .main
+    max-height: 100%
+    overflow: hidden
+    display: flex
+    flex-direction: column
+
+    .filters
+      justify-content: space-between
+      margin-bottom: 25px
+      display: none
+
+      &.active
+        display: flex
+
+      input[type="text"]
+        padding: 5px 10px
+        border: none
+        background-color: $white
+        &:focus
+          outline: none
+
+      .tags
+        display: flex
+
+      .tag
+        border: 1px solid $white
+        padding: 5px 10px
+        border-radius: 4px
+
+        &:not(:last-of-type)
+          margin-right: 5px
+
+        &:hover
+          cursor: pointer
+          background-color: rgba($white, .3)
+
+        &.active
+          background-color: $white
+          color: $black

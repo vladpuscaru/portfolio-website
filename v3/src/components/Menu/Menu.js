@@ -5,8 +5,10 @@ import iconLinkedin from "../../common/images/icons8-linkedin.svg";
 import iconGithub from "../../common/images/icons8-github.svg";
 import { ReactSVG } from "react-svg";
 import SocialLinks from "../SocialLinks/SocialLinks";
+import { getProjects } from "../../common/data/projects";
 
-const Menu = ({active, activeSection, onMenuItemClick}) => {
+const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
+    console.log(activeProject);
     return (
         <nav className={`${styles.menu} ${active ? styles.active : ""}`}>
             <div onClick={() => onMenuItemClick(0)}
@@ -26,8 +28,16 @@ const Menu = ({active, activeSection, onMenuItemClick}) => {
             <div className={styles.cell}>
                 <div className={styles.shape2}></div>
                 <div className={styles.shape}></div>
-                <SocialLinks />
+                <SocialLinks/>
             </div>
+
+            {
+                (active || activeProject === -1) ? ""
+                    :
+                    (
+                        <h1>{getProjects()[activeProject].title}</h1>
+                    )
+            }
 
             <div onClick={() => onMenuItemClick()}
                  className={`${styles.burger} ${!active ? styles.active : ""}`}>

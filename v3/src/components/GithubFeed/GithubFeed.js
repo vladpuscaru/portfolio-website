@@ -2,8 +2,6 @@ import styles from "./GithubFeed.module.sass";
 import githubIcon from "../../common/images/icons8-github.svg";
 
 const GithubFeed = ({data}) => {
-    console.log(data);
-
     let weeks = null;
     let user = null;
     if (data) {

@@ -30,6 +30,7 @@ function App() {
     });
     const [active, setActive] = useState({
         section: -1,
+        project: -1,
         menu: true,
         main: false,
         footer: false
@@ -70,6 +71,7 @@ function App() {
         } else {
             setActive({
                 ...active,
+                project: -1,
                 menu: false,
                 main: true,
                 footer: true,
@@ -78,16 +80,25 @@ function App() {
         }
     }
 
+    const onProjectItemClick = (project) => {
+        setActive({
+            ...active,
+            project
+        });
+    }
+
     return (
         <div className="App">
             {
                 github.loading ? "Loading..."
                     :
                     <Fragment>
-                        <Menu active={active.menu} activeSection={active.section} onMenuItemClick={onMenuItemClick}/>
+                        <Menu active={active.menu} activeSection={active.section} activeProject={active.project} onMenuItemClick={onMenuItemClick}/>
                         <div className={"content"}>
                             <div className={"main"}>
-                                <Main active={active.main} activeSection={active.section}/>
+                                <Main active={active.main} activeSection={active.section}
+                                      activeProject={active.project}
+                                      onProjectItemClick={onProjectItemClick}/>
                             </div>
                             <div className={"footer"}>
                                 <Footer active={active.footer} activeSection={active.section}

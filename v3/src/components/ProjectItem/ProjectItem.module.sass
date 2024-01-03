@@ -1,0 +1,83 @@
+@import "../../common/sass/variables"
+
+.projectItem
+  position: relative
+  display: flex
+  justify-content: flex-end
+  margin-bottom: 25px
+
+  &.inversed
+    justify-content: flex-start
+
+    .content
+      text-align: left
+
+    .thumbnail
+      left: initial
+      right: 0
+
+  &:hover
+    background-color: rgba($blue, .3)
+    .thumbnail
+      &:after
+        background-color: rgba($blue, 0)
+
+  .thumbnail
+    position: absolute
+    left: 0
+    top: 0
+    width: 60%
+    height: 100%
+    overflow: hidden
+
+    &:after
+      content: ""
+      width: 100%
+      height: 100%
+      background-color: rgba($blue, .5)
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+
+    img
+      max-width: initial
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  .content
+    position: relative
+    text-align: right
+    max-width: 70%
+
+    .title
+
+    .description
+      background-color: $blue
+      box-shadow: 0 10px 30px -15px #000
+      border-radius: 4px
+      margin-top: 20px
+      margin-bottom: 20px
+      margin-right: 15px
+      padding: 25px
+
+    .technologies
+      .technology
+        &:not(:last-of-type)
+          margin-right: 10px
+
+    .links
+      margin-top: 10px
+
+      a
+        display: inline-block
+
+      svg
+        fill: $white
+        max-height: 25px
+
+        &:hover
+          fill: #fff
+
