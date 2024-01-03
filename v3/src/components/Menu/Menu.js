@@ -1,11 +1,9 @@
-import styles from "./Menu.module.sass"
-import iconFacebook from "../../common/images/icons8-facebook.svg";
-import iconTwitter from "../../common/images/icons8-twitterx.svg";
-import iconLinkedin from "../../common/images/icons8-linkedin.svg";
-import iconGithub from "../../common/images/icons8-github.svg";
+import styles from "./Menu.module.sass";
 import { ReactSVG } from "react-svg";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import { getProjects } from "../../common/data/projects";
+import icBack from "../../common/images/ic_back.svg";
+import { Fragment } from "react";
 
 const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
     return (
@@ -34,7 +32,12 @@ const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
                 (active || activeProject === -1) ? ""
                     :
                     (
-                        <h1>{getProjects()[activeProject].title}</h1>
+                        <Fragment>
+                            <div className={styles.back}>
+                                <ReactSVG src={icBack} onClick={() => onMenuItemClick(1)}/>
+                            </div>
+                            <h1>{getProjects()[activeProject].title}</h1>
+                        </Fragment>
                     )
             }
 

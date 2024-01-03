@@ -161,7 +161,7 @@ function App() {
                               onMenuItemClick={onMenuItemClick}/>
                         <div className={"content"}>
                             <div className={"main"}>
-                                <Main active={active.main} activeSection={active.section}
+                                <Main active={active.main} mobile={windowData.mobile} activeSection={active.section}
                                       activeProject={active.project}
                                       onProjectItemClick={onProjectItemClick}/>
                             </div>

@@ -48,7 +48,7 @@ const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
 
     return (
         <section id={"projects"} className={`${styles.projects} ${active ? styles.active : ""}`}>
-            <div className={styles.header}>
+            <div className={`${styles.header} ${activeProject === -1 ? styles.active : ""}`}>
                 <div className={styles.title}>
                     <h2>A work in progres..</h2>
                 </div>

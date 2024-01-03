@@ -4,6 +4,18 @@
   max-height: 100%
   padding-top: 80px
 
+  .header
+    display: none
+
+    &.active
+      display: block
+
+  .filters
+    display: none
+
+    &.active
+      display: flex
+
   @media (min-width: 768px)
     display: none
     padding-top: 0
@@ -13,6 +25,7 @@
       flex-direction: column
 
       .header
+
         .title
           h2
             font-size: 2em
@@ -37,10 +50,6 @@
         .filters
           justify-content: space-between
           margin-bottom: 25px
-          display: none
-
-          &.active
-            display: flex
 
           input[type="text"]
             padding: 5px 10px
