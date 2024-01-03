@@ -154,7 +154,7 @@ function App() {
     return (
         <div className="App">
             {
-                github.loading || github.errors ? "Loading..."
+                github.loading ? "Loading..."
                     :
                     <Fragment>
                         <Menu active={active.menu} activeSection={active.section} activeProject={active.project}

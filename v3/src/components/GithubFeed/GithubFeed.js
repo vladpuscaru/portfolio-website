@@ -20,7 +20,7 @@ const GithubFeed = ({data}) => {
         }
     }
 
-    return (
+    return data ? (
         <div className={styles.githubfeed}>
             <div className={styles.header}>
                 <a href={user.url} target="_blank">
@@ -56,7 +56,7 @@ const GithubFeed = ({data}) => {
 
             </div>
         </div>
-    );
+    ) : "No Github Data";
 }
 
 export default GithubFeed;
