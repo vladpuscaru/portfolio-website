@@ -3,6 +3,8 @@ import sections from "../../common/data/sections";
 import GithubFeed from "../GithubFeed/GithubFeed";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import DownloadButton from "../DownloadButton/DownloadButton";
+import icArrow from "../../common/images/ic_arrow.svg";
+import { ReactSVG } from "react-svg";
 
 const Footer = ({active, mobile, activeSection, onMenuItemClick, githubData}) => {
 
@@ -16,7 +18,9 @@ const Footer = ({active, mobile, activeSection, onMenuItemClick, githubData}) =>
             !mobile ?
                 <div className={`${styles.container} container`}>
                     <div onClick={() => onMenuItemClick(sectionsRemaining[0].idx)} className={styles.menuButtonLeft}>
-                        <div className={styles.arrow}></div>
+                        <div className={styles.arrow}>
+                            <ReactSVG src={icArrow} />
+                        </div>
                         <span>{sectionsRemaining[0].title}</span>
                     </div>
                     <div className={styles.middle}>
@@ -29,7 +33,9 @@ const Footer = ({active, mobile, activeSection, onMenuItemClick, githubData}) =>
                     </div>
                     <div onClick={() => onMenuItemClick(sectionsRemaining[1].idx)} className={styles.menuButtonRight}>
                         <span>{sectionsRemaining[1].title}</span>
-                        <div className={styles.arrow}></div>
+                        <div className={styles.arrow}>
+                            <ReactSVG src={icArrow} />
+                        </div>
                     </div>
                 </div>
                 :
