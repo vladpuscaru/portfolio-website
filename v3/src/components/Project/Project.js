@@ -27,7 +27,7 @@ const Project = ({project, active}) => {
 
     const onGalleryClick = (idx) => {
         if (images && images.length > 0) {
-            if (idx > gallery.images.length) {
+            if (idx > gallery.images.length - 1) {
                 idx = 0;
             }
 
