@@ -2,6 +2,7 @@ import styles from "./Project.module.sass"
 import { Parser } from "html-to-react";
 import { ReactSVG } from "react-svg";
 import icArrow from "../../common/images/ic_arrow.svg";
+import icGithub from "../../common/images/icons8-github.svg";
 import { useState } from "react";
 
 // {
@@ -73,12 +74,14 @@ const Project = ({project, active}) => {
                     images && images.length > 0 ?
                         <div className={styles.gallery}>
                             <div className={styles.onDisplay}>
-                                <div className={styles.btnLeft} onClick={() => onGalleryClick(onDisplayIdx - 1)}>
-                                    <ReactSVG src={icArrow}/>
-                                </div>
                                 <img src={images[onDisplayIdx]}/>
-                                <div className={styles.btnRight} onClick={() => onGalleryClick(onDisplayIdx + 1)}>
-                                    <ReactSVG src={icArrow}/>
+                                <div className={styles.controls}>
+                                    <div className={styles.btnLeft} onClick={() => onGalleryClick(onDisplayIdx - 1)}>
+                                        <ReactSVG src={icArrow}/>
+                                    </div>
+                                    <div className={styles.btnRight} onClick={() => onGalleryClick(onDisplayIdx + 1)}>
+                                        <ReactSVG src={icArrow}/>
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.track}>
@@ -97,7 +100,11 @@ const Project = ({project, active}) => {
             </div>
 
             <div className={styles.footer}>
-                Project footer
+                <h1>Check it on
+                    <a href={project.github}>
+                        <ReactSVG src={icGithub} />
+                    </a>
+                </h1>
             </div>
         </div>
     )

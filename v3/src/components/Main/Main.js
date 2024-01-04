@@ -7,9 +7,14 @@ import SectionResume from "../SectionResume/SectionResume";
 const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick}) => {
     return <main className={`${styles.main} ${active ? styles.active : ""}`}>
         <div className={`${styles.container} container`}>
-            <div className={styles.avatar}>
-                <img src={avatarImg}/>
-            </div>
+
+            {
+                mobile && activeProject !== -1 ? ""
+                    :
+                    <div className={styles.avatar}>
+                        <img src={avatarImg}/>
+                    </div>
+            }
 
             <div className={`${styles.content}`}>
                 {

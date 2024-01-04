@@ -12,7 +12,6 @@
       background-repeat: no-repeat
       background-position: center
       position: relative
-      margin-bottom: 35px
 
       &:before
         content: ""
@@ -31,3 +30,74 @@
         position: relative
         box-shadow: 0 10px 30px -15px #000
         border-radius: 4px
+
+    .main
+      margin: 35px 0
+
+    .footer
+      h1
+        text-align: center
+
+      svg
+        fill: $white
+
+        &:hover
+          fill: #fff
+
+    .gallery
+      display: flex
+      flex-direction: column
+      margin-top: 35px
+
+      .onDisplay
+        max-width: 100%
+        text-align: center
+
+        img
+          width: 100%
+
+          @media (min-width: 768px)
+            width: 80%
+
+        .controls
+          width: 100%
+          margin-top: 5px
+          display: flex
+          justify-content: space-between
+          .btnLeft, .btnRight
+            width: 45%
+            padding: 15px 0
+            border-radius: 4px
+            background-color: $white
+            display: flex
+            justify-content: center
+            align-items: center
+
+            &:hover
+              cursor: pointer
+              background-color: rgba($white, .5)
+
+              svg
+                fill: $white
+
+            svg
+              fill: $black
+
+          .btnLeft
+            svg
+              transform: rotate(180deg)
+
+      .track
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+        margin-top: 15px
+
+        .img
+          max-width: 33%
+          opacity: .5
+
+          &:hover
+            opacity: .8
+
