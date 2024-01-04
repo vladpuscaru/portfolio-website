@@ -16,12 +16,12 @@ const SectionEducation = ({active, education}) => {
                                 <div className={styles.date}>
                                     <p>{ed.startDate} - {ed.endDate}</p>
                                 </div>
-                                <p className={styles.description}>{parser.parse(ed.description)}</p>
                             </div>
                             <div className={styles.logo}>
                                 <img src={ed.university.logo}/>
                             </div>
                         </div>
+                        <p className={styles.description}>{parser.parse(ed.description)}</p>
                     </div>
                 ))
             }

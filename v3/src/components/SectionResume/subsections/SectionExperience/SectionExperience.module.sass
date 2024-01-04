@@ -21,6 +21,10 @@
     .company
       display: flex
       position: relative
+      flex-direction: column
+
+      @media (min-width: 768px)
+        flex-direction: row
 
       &:before
         content: ""
@@ -34,6 +38,12 @@
 
       .logo
         flex: .2
+        max-width: 60%
+        margin-top: 25px
+
+        @media (min-width: 768px)
+          max-width: initial
+          margin: 0
 
       .title
         flex: .8
