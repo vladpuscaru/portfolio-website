@@ -1,4 +1,5 @@
 import styles from "./SectionExperience.module.sass"
+import { Parser } from "html-to-react";
 
 // {
 //     company: {
@@ -13,6 +14,8 @@ import styles from "./SectionExperience.module.sass"
 // },
 
 const SectionExperience = ({active, experience}) => {
+    const parser = new Parser();
+
     return active ? (
         <section className={styles.experience}>
             {
@@ -29,7 +32,7 @@ const SectionExperience = ({active, experience}) => {
                                 <img src={exp.company.logo}/>
                             </div>
                         </div>
-                        <p className={styles.description}>{exp.description}</p>
+                        <p className={styles.description}>{parser.parse(exp.description)}</p>
                         <div className={styles.skills}>
                             {
                                 exp.skills.map((skill, i) => (
