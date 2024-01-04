@@ -32,12 +32,10 @@ const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
                 (active || activeProject === -1) ? ""
                     :
                     (
-                        <Fragment>
-                            <div className={styles.back}>
-                                <ReactSVG src={icBack} onClick={() => onMenuItemClick(1)}/>
-                            </div>
-                            <h1>{getProjects()[activeProject].title}</h1>
-                        </Fragment>
+                        <div className={styles.back}>
+                            <ReactSVG src={icBack} onClick={() => onMenuItemClick(1)}/>
+                            <h1>All Projects</h1>
+                        </div>
                     )
             }
 

@@ -2,17 +2,6 @@ import styles from "./ProjectItem.module.sass"
 import icGithub from "../../common/images/icons8-github.svg"
 import { ReactSVG } from "react-svg";
 
-// {
-//     "id": 0,
-//     "title": "Mario Clone",
-//     "technologies": [technologies.CPP, technologies.SFML],
-//     "github": "google.com",
-//     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-//     "slug": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//     "thumbnail": MarioCloneImg,
-//     "tags": [tags.GAME]
-// },
-
 const ProjectItem = ({project, inversed, onClick}) => {
     return (
         <div className={`${styles.projectItem} ${ inversed ? styles.inversed : "" }`} onClick={onClick}>
