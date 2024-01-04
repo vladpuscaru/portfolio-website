@@ -87,7 +87,7 @@ const Project = ({project, active}) => {
                             <div className={styles.track}>
                                 {
                                     images.map((img, idx) => (
-                                        <div key={idx} className={styles.img} onClick={() => onGalleryClick(idx)}>
+                                        <div key={idx} className={`${styles.img} ${idx === onDisplayIdx ? styles.active : ""}`} onClick={() => onGalleryClick(idx)}>
                                             <img src={img}/>
                                         </div>
                                     ))
@@ -101,7 +101,7 @@ const Project = ({project, active}) => {
 
             <div className={styles.footer}>
                 <h1>Check it on
-                    <a href={project.github}>
+                    <a href={project.github} target={"_blank"}>
                         <ReactSVG src={icGithub} />
                     </a>
                 </h1>
