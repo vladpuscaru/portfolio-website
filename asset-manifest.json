@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio-website/static/css/main.cb2a6046.css",
-    "main.js": "/portfolio-website/static/js/main.1e7e637b.js",
+    "main.js": "/portfolio-website/static/js/main.2f38e6fc.js",
     "static/js/787.6f441b7e.chunk.js": "/portfolio-website/static/js/787.6f441b7e.chunk.js",
     "static/media/p1_3.gif": "/portfolio-website/static/media/p1_3.5d5f7cb3467014684e4e.gif",
-    "static/media/p2.gif": "/portfolio-website/static/media/p2.e425bcb4cac0e4fcb7ab.gif",
     "static/media/p2_2.gif": "/portfolio-website/static/media/p2_2.6b09e153c73ea44bbc4b.gif",
     "static/media/p1_1.png": "/portfolio-website/static/media/p1_1.a801b36b695c06193e47.png",
+    "static/media/p8_2.gif": "/portfolio-website/static/media/p8_2.8e1edda1451e238455bd.gif",
     "static/media/p1_4.gif": "/portfolio-website/static/media/p1_4.7010b8fbefeb880d3528.gif",
     "static/media/p1_2.png": "/portfolio-website/static/media/p1_2.c28824e3091dd90c849e.png",
     "static/media/p1_0.png": "/portfolio-website/static/media/p1_0.98c6f1cee0fe05aa3642.png",
+    "static/media/p8_1.png": "/portfolio-website/static/media/p8_1.17d738ac79c1597ed307.png",
+    "static/media/p8_0.png": "/portfolio-website/static/media/p8_0.a2c13a14eac0990934da.png",
     "static/media/p2_1.png": "/portfolio-website/static/media/p2_1.5c5963fbecd91a85a1c9.png",
     "static/media/logo_ase.png": "/portfolio-website/static/media/logo_ase.fe62f27babd786a03014.png",
     "static/media/p2_0.png": "/portfolio-website/static/media/p2_0.b5bfaf7b2ae545c534ef.png",
@@ -18,6 +20,9 @@
     "static/media/logo_uu.png": "/portfolio-website/static/media/logo_uu.31f3dfdb94672291613c.png",
     "static/media/avatar.png": "/portfolio-website/static/media/avatar.8023e375a3ad8b616e2f.png",
     "static/media/logo_stepit.png": "/portfolio-website/static/media/logo_stepit.640033585ca4976fc1f4.png",
+    "static/media/p4_0.png": "/portfolio-website/static/media/p4_0.95ce40c1c1117261eda2.png",
+    "static/media/p6_1.png": "/portfolio-website/static/media/p6_1.df98e7079565b8752ee6.png",
+    "static/media/p_nopicture.png": "/portfolio-website/static/media/p_nopicture.e09d73c0760137aa0084.png",
     "static/media/logo_epam.png": "/portfolio-website/static/media/logo_epam.9023b57195b555a0b67f.png",
     "static/media/logo_metawander.png": "/portfolio-website/static/media/logo_metawander.b84303d602ab8797b985.png",
     "static/media/logo_deloitte.png": "/portfolio-website/static/media/logo_deloitte.94433d028731fc55af06.png",
@@ -43,11 +48,11 @@
     "static/media/icons8-facebook.svg": "/portfolio-website/static/media/icons8-facebook.9c77ac2740446eb282dfd7b913e45119.svg",
     "static/media/ic_arrow.svg": "/portfolio-website/static/media/ic_arrow.51bf723ca3f11d8480edee94c0d9569b.svg",
     "main.cb2a6046.css.map": "/portfolio-website/static/css/main.cb2a6046.css.map",
-    "main.1e7e637b.js.map": "/portfolio-website/static/js/main.1e7e637b.js.map",
+    "main.2f38e6fc.js.map": "/portfolio-website/static/js/main.2f38e6fc.js.map",
     "787.6f441b7e.chunk.js.map": "/portfolio-website/static/js/787.6f441b7e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb2a6046.css",
-    "static/js/main.1e7e637b.js"
+    "static/js/main.2f38e6fc.js"
   ]
 }
