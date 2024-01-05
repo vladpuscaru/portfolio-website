@@ -102,6 +102,45 @@ const projects = [
         "tags": [tags.GAME, tags.WEB]
     },
     {
+        "id": 10,
+        "title": "Robot Arm Kinematics",
+        "technologies": [technologies.CPP, technologies.SFML],
+        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Forward and inverse kinematics on a robot arm.",
+        "thumbnail": pNoPicture,
+        "images": [pNoPicture],
+        "tags": [tags.GAME]
+    },
+    {
+        "id": 8,
+        "title": "Algorithms Visualized - Web version",
+        "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
+        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Pathfinding algorithm visualized, with animation.",
+        "thumbnail": p80,
+        "images": [p82, p81, p82],
+        "tags": [tags.WEB]
+    },
+    {
+        "id": 9,
+        "title": "Algorithms Visualized - C++ version",
+        "technologies": [technologies.CPP, technologies.SFML],
+        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Pathfinding algorithm visualized, C++ version.",
+        "thumbnail": pNoPicture,
+        "images": [pNoPicture],
+        "tags": [tags.GAME]
+    },
+    {
         "id": 3,
         "title": "Airplanes",
         "technologies": [technologies.NODEJS, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
@@ -166,17 +205,4 @@ const projects = [
         "images": [pNoPicture],
         "tags": [tags.GAME]
     },
-    {
-        "id": 8,
-        "title": "Algorithms Visualized - Web version",
-        "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
-        "github": "https://github.com/vladpuscaru/algorithms-visualized",
-        "description": "" +
-            "" +
-            "",
-        "slug": "Pathfinding algorithm visualized, with animation.",
-        "thumbnail": p80,
-        "images": [p82, p81, p82],
-        "tags": [tags.WEB]
-    }
 ];

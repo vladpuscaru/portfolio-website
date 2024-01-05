@@ -3,12 +3,11 @@ import { useState } from "react";
 import SectionExperience from "./subsections/SectionExperience/SectionExperience";
 import SectionEducation from "./subsections/SectionEducation/SectionEducation";
 import SectionAffiliations from "./subsections/SectionAffiliations/SectionAffiliations";
-import icDownload from "../../common/images/ic_download.svg";
 import { experience } from "../../common/data/resume/experience";
 import { affiliations } from "../../common/data/resume/affiliations";
 import { education } from "../../common/data/resume/education";
-import { ReactSVG } from "react-svg";
 import DownloadButton from "../DownloadButton/DownloadButton";
+import me1 from "../../common/images/me_0.png";
 
 const SectionResume = ({active, mobile}) => {
     const [activeSection, setActiveSection] = useState(0);
@@ -46,7 +45,7 @@ const SectionResume = ({active, mobile}) => {
                         </li>
                     </ul>
                     {
-                        mobile ? <div className={styles.download}><DownloadButton/></div> : ""
+                        mobile ? <div className={styles.download}><DownloadButton/></div> : <div className={styles.avatar}><img src={me1} /></div>
                     }
                 </div>
                 <div className={`${styles.section}`}>

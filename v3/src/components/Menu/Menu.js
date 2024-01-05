@@ -33,8 +33,8 @@ const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
                 (active || activeProject === -1) ? ""
                     :
                     (
-                        <div className={styles.back}>
-                            <ReactSVG src={icBack} onClick={() => onMenuItemClick(1)}/>
+                        <div className={styles.back} onClick={() => onMenuItemClick(1)}>
+                            <ReactSVG src={icBack}/>
                             <h1>All Projects</h1>
                         </div>
                     )

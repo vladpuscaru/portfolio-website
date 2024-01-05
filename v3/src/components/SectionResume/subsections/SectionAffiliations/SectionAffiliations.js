@@ -16,12 +16,12 @@ const SectionAffiliations = ({active, affiliations}) => {
                                 <div className={styles.date}>
                                     <p>{af.startDate} - {af.endDate}</p>
                                 </div>
+                                <p className={styles.description}>{parser.parse(af.description)}</p>
                             </div>
                             <div className={styles.logo}>
                                 <img src={af.club.logo}/>
                             </div>
                         </div>
-                        <p className={styles.description}>{parser.parse(af.description)}</p>
                     </div>
                 ))
             }

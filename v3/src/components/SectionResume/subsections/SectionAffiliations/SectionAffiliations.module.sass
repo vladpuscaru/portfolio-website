@@ -1,6 +1,7 @@
 @import "../../../../common/sass/variables"
 
 .affiliations
+  min-height: 100vh
 
   .item
     margin-left: 25px
@@ -40,10 +41,12 @@
         flex: .2
         max-width: 60%
         margin-top: 25px
+        display: none
 
         @media (min-width: 768px)
           max-width: initial
           margin: 0
+          display: block
 
       .title
         flex: .8

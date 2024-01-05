@@ -6,6 +6,10 @@
   font-family: $fontLight
   color: $white
   display: none
+  text-align: center
+
+  @media (min-width: 768px)
+    text-align: inherit
 
   &.active
     display: block
@@ -20,6 +24,7 @@
         justify-content: center
         align-items: flex-end
         position: relative
+        background-color: $black
 
         &:after
           content: ""

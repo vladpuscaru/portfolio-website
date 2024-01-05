@@ -75,14 +75,6 @@ const Project = ({project, active}) => {
                         <div className={styles.gallery}>
                             <div className={styles.onDisplay}>
                                 <img src={images[onDisplayIdx]}/>
-                                <div className={styles.controls}>
-                                    <div className={styles.btnLeft} onClick={() => onGalleryClick(onDisplayIdx - 1)}>
-                                        <ReactSVG src={icArrow}/>
-                                    </div>
-                                    <div className={styles.btnRight} onClick={() => onGalleryClick(onDisplayIdx + 1)}>
-                                        <ReactSVG src={icArrow}/>
-                                    </div>
-                                </div>
                             </div>
                             <div className={styles.track}>
                                 {

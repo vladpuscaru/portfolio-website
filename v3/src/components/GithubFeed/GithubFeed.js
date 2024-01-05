@@ -1,5 +1,6 @@
 import styles from "./GithubFeed.module.sass";
 import githubIcon from "../../common/images/icons8-github.svg";
+import { ReactSVG } from "react-svg";
 
 const GithubFeed = ({data}) => {
     let weeks = null;
@@ -11,7 +12,7 @@ const GithubFeed = ({data}) => {
             .contributionCalendar
             .weeks;
 
-        weeks = weeks.slice(weeks.length - 20, weeks.length);
+        weeks = weeks.slice(weeks.length - 30, weeks.length);
 
         user = {
             name: data.user.login,
@@ -28,7 +29,7 @@ const GithubFeed = ({data}) => {
                         <img src={user.img}/>
                         <h3><span></span>{user.name}</h3>
                     </div>
-                    <img src={githubIcon}/>
+                    <ReactSVG src={githubIcon}/>
                 </a>
             </div>
             <div className={styles.calendar}>

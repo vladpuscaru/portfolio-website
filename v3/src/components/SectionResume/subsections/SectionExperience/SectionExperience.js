@@ -21,18 +21,25 @@ const SectionExperience = ({active, experience}) => {
             {
                 experience.map((exp, idx) => (
                     <div key={idx} className={styles.item}>
-                        <div className={styles.company}>
-                            <div className={styles.title}>
-                                <h3>{exp.company.name} - <span>{exp.position}</span></h3>
-                                <div className={styles.date}>
-                                    <p>{exp.startDate} - {exp.endDate}</p>
+
+                        <div className={styles.row}>
+                            <div className={styles.meta}>
+                                <div className={styles.company}>
+                                    <div className={styles.title}>
+                                        <h3>{exp.company.name} - <span>{exp.position}</span></h3>
+                                        <div className={styles.date}>
+                                            <p>{exp.startDate} - {exp.endDate}</p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <p className={styles.description}>{parser.parse(exp.description)}</p>
                             </div>
+
                             <div className={styles.logo}>
                                 <img src={exp.company.logo}/>
                             </div>
                         </div>
-                        <p className={styles.description}>{parser.parse(exp.description)}</p>
+
                         <div className={styles.skills}>
                             {
                                 exp.skills.map((skill, i) => (

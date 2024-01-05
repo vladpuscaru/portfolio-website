@@ -5,9 +5,8 @@ import icCrossfit from "../../common/images/ic_crossfit.svg";
 import icGuitar from "../../common/images/ic_guitar.svg";
 import { useState } from "react";
 import { technologies } from "../../common/data/technologies";
-import me0 from "../../common/images/me_0.png";
-import App from "../../App";
 import Appear from "../Appear/Appear";
+import icArrow from "../../common/images/ic_arrow.svg";
 
 const SectionAbout = ({active, onMenuItemClick}) => {
     const [revealBio, setRevealBio] = useState(false);
@@ -32,9 +31,13 @@ const SectionAbout = ({active, onMenuItemClick}) => {
                 <Appear sourceDirection={"right"}>
                     <div className={`${styles.bio} ${revealBio ? styles.active : ""}`}>
                         <div onClick={onRevealClick} className={styles.head}>
-                            Formerly a Team Lead, now back to being a student.
-                            <br/>
-                            Read my story.
+                            <ReactSVG className={styles.arrow} src={icArrow}/>
+                            <span>
+                                Formerly a Team Lead, now back to being a student.
+                                <br/>
+                                Read my story.
+                            </span>
+                            <ReactSVG className={styles.arrow} src={icArrow}/>
                         </div>
 
                         <div className={styles.content}>
@@ -115,18 +118,8 @@ const SectionAbout = ({active, onMenuItemClick}) => {
                             </p>
                         </div>
                         <div className={styles.links}>
-                            <p>
-                                Check out my <span onClick={() => onMenuItemClick(2)}>experience</span> to see who I
-                                worked
-                                for
-                                :).
-                            </p>
-                            <p>
-                                Check out my <span onClick={() => onMenuItemClick(2)}>education</span> to see how this
-                                is
-                                going
-                                :).
-                            </p>
+                            <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>experience</span></a>
+                            <a href={"resume"}><span onClick={() => onMenuItemClick(2)}>education</span></a>
                         </div>
                     </div>
                 </Appear>
@@ -140,7 +133,6 @@ const SectionAbout = ({active, onMenuItemClick}) => {
                     </Appear>
                     <div className={styles.content}>
                         <Appear sourceDirection={"right"}>
-
                             <p>
                                 When it comes to programming, I pride myself for being <strong>language and technology
                                 agnostic</strong>.
@@ -151,21 +143,21 @@ const SectionAbout = ({active, onMenuItemClick}) => {
                                 Nevertheless, as everyone, I do have a fondness for particular tools.
                             </p>
                         </Appear>
-                        <ul>
-                            {technologies.map((tech, idx) => (
-                                <li key={idx}>
-                                    <Appear sourceDirection={"down"}>
-                                        <div className={styles.hover}>
-                                            <h3>{tech.name}</h3>
-                                        </div>
-                                        <img src={tech.logo}/>
-                                    </Appear>
-                                </li>
-                            ))}
-                        </ul>
                     </div>
                 </div>
             </div>
+            <ul>
+                {technologies.map((tech, idx) => (
+                    <li key={idx}>
+                        <Appear sourceDirection={"down"}>
+                            <div className={styles.hover}>
+                                <h3>{tech.name}</h3>
+                            </div>
+                            <img src={tech.logo}/>
+                        </Appear>
+                    </li>
+                ))}
+            </ul>
         </section>
     )
 }

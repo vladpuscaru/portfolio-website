@@ -6,6 +6,23 @@
     margin-left: 25px
     position: relative
 
+    ul
+      text-align: left
+
+    .row
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      .logo
+        display: none
+
+      @media (min-width: 768px)
+        flex-direction: row
+
+        .logo
+          display: block
+
     &:not(:last-of-type)
       padding-bottom: 25px
 

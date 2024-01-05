@@ -51,6 +51,7 @@
 
       .onDisplay
         max-width: 100%
+        max-height: 60vh
         text-align: center
 
         img
@@ -59,43 +60,17 @@
           @media (min-width: 768px)
             width: 80%
 
-        .controls
-          width: 100%
-          margin-top: 5px
-          display: flex
-          justify-content: space-between
-          .btnLeft, .btnRight
-            width: 45%
-            padding: 15px 0
-            border-radius: 4px
-            background-color: $white
-            display: flex
-            justify-content: center
-            align-items: center
-
-            &:hover
-              cursor: pointer
-              background-color: rgba($white, .5)
-
-              svg
-                fill: $white
-
-            svg
-              fill: $black
-
-          .btnLeft
-            svg
-              transform: rotate(180deg)
 
       .track
         display: flex
-        justify-content: space-between
+        justify-content: center
         align-items: center
         flex-wrap: wrap
         margin-top: 15px
 
         .img
-          max-width: 33%
+          max-width: 30%
+          margin: 0 10px
           opacity: .5
 
           &.active
