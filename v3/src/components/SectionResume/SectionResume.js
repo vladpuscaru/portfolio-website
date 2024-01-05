@@ -8,8 +8,9 @@ import { experience } from "../../common/data/resume/experience";
 import { affiliations } from "../../common/data/resume/affiliations";
 import { education } from "../../common/data/resume/education";
 import { ReactSVG } from "react-svg";
+import DownloadButton from "../DownloadButton/DownloadButton";
 
-const SectionResume = ({ active }) => {
+const SectionResume = ({active, mobile}) => {
     const [activeSection, setActiveSection] = useState(0);
 
     const onListItemClick = (idx) => {
@@ -17,16 +18,18 @@ const SectionResume = ({ active }) => {
     }
 
     return (
-        <section id={"resume"} className={`${styles.resume} ${ active ? styles.active : "" }`}>
+        <section id={"resume"} className={`${styles.resume} ${active ? styles.active : ""}`}>
             <div className={styles.header}>
                 <div className={styles.title}>
                     <h2>Software Developer</h2>
                     <span>Specialised in web development with the aim of transitioning to game/engine programming</span>
                 </div>
                 <p className={styles.description}>
-                    I am a Software Engineer from Romania with <strong>5+ years of experience</strong> and demonstrated abilities in multiple areas of development.
+                    I am a Software Engineer from Romania with <strong>5+ years of experience</strong> and demonstrated
+                    abilities in multiple areas of development.
                     <br/>
-                    My main interests revolve around <strong>web</strong>, <strong>cloud</strong> and <string>games</string> programming.
+                    My main interests revolve
+                    around <strong>web</strong>, <strong>cloud</strong> and <string>games</string> programming.
                 </p>
             </div>
             <div className={styles.main}>
@@ -42,10 +45,9 @@ const SectionResume = ({ active }) => {
                             onClick={() => onListItemClick(2)}>Affiliations
                         </li>
                     </ul>
-                    <a className={styles.download}>
-                        <ReactSVG src={icDownload}/>
-                        PDF
-                    </a>
+                    {
+                        mobile ? <div className={styles.download}><DownloadButton/></div> : ""
+                    }
                 </div>
                 <div className={`${styles.section}`}>
                     <SectionExperience active={activeSection === 0} experience={experience}/>

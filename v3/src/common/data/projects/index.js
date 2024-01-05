@@ -1,4 +1,4 @@
-import ProjectTestImg from "../../images/p2.gif";
+import pNoPicture from "../../images/p_nopicture.png";
 import p10 from "../../images/p1_0.png";
 import p11 from "../../images/p1_1.png";
 import p12 from "../../images/p1_2.png";
@@ -7,6 +7,12 @@ import p14 from "../../images/p1_4.gif";
 import p20 from "../../images/p2_0.png";
 import p21 from "../../images/p2_1.png";
 import p22 from "../../images/p2_2.gif";
+import p40 from "../../images/p4_0.png";
+import p60 from "../../images/p6_0.png";
+import p61 from "../../images/p6_1.png";
+import p80 from "../../images/p8_0.png";
+import p81 from "../../images/p8_1.png";
+import p82 from "../../images/p8_2.gif";
 
 const tags = {
     GAME: "Game",
@@ -32,7 +38,8 @@ export const technologies = {
     SPRINGBOOT: {text: "Spring Boot", color: "#2a721f"},
     DOCKER: {text: "Docker", color: "#007b6f"},
     WORDPRESS: {text: "WordPress", color: "#a23d79"},
-    PHP: {text: "PHP", color: "#273814"}
+    PHP: {text: "PHP", color: "#273814"},
+    WFORMS: {text: "Window Forms", color: "#6d8dff"}
 }
 
 export const getTags = () => Object.keys(tags).map(k => tags[k]);
@@ -65,7 +72,7 @@ const projects = [
             "",
         "slug": "A classic NES game programmed in C++, using the SFML library and a custom-built engine based on ECS.",
         "thumbnail": p10,
-        "images": [ p13, p11, p12, p10, p14 ],
+        "images": [p13, p11, p12, p10, p14],
         "tags": [tags.GAME]
     },
     {
@@ -78,51 +85,98 @@ const projects = [
             "",
         "slug": "Top down shooter style of game, mimicking a popular game.",
         "thumbnail": p20,
-        "images": [ p22, p21, p20 ],
+        "images": [p22, p21, p20],
         "tags": [tags.GAME]
     },
     {
         "id": 2,
-        "title": "Test Proj",
-        "technologies": [technologies.TYPESCRIPT, technologies.AWS],
-        "github": "google.com",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "slug": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
-        "thumbnail": ProjectTestImg,
-        "images": [],
+        "title": "Arkanoid (Clone)",
+        "technologies": [technologies.CPP, technologies.SFML],
+        "github": "https://github.com/vladpuscaru/sfml.arkanoid",
+        "description": "" +
+            "" +
+            "",
+        "slug": "My take on the classic arkanoid/breakout game, with custom made sprites.",
+        "thumbnail": pNoPicture,
+        "images": [pNoPicture],
         "tags": [tags.GAME, tags.WEB]
     },
     {
         "id": 3,
-        "title": "Test Proj",
-        "technologies": [technologies.TYPESCRIPT, technologies.AWS],
-        "github": "google.com",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "slug": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
-        "thumbnail": ProjectTestImg,
-        "images": [],
+        "title": "Airplanes",
+        "technologies": [technologies.NODEJS, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
+        "github": "https://github.com/vladpuscaru/airplanes-game",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Multiplayer, online game over websockets",
+        "thumbnail": pNoPicture,
+        "images": [pNoPicture],
         "tags": [tags.GAME, tags.WEB]
     },
     {
         "id": 4,
-        "title": "Test Proj",
-        "technologies": [technologies.TYPESCRIPT, technologies.AWS],
-        "github": "google.com",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "slug": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
-        "thumbnail": ProjectTestImg,
-        "images": [],
+        "title": "Maze Game",
+        "technologies": [technologies.REACTJS, technologies.HTML, technologies.CSS],
+        "github": "https://github.com/vladpuscaru/-react--hidden-maze-game",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Find your way through the maze (static or randomly generated)",
+        "thumbnail": p40,
+        "images": [p40],
         "tags": [tags.GAME, tags.WEB]
     },
     {
         "id": 5,
-        "title": "Test Proj",
-        "technologies": [technologies.TYPESCRIPT, technologies.AWS],
-        "github": "google.com",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "slug": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
-        "thumbnail": ProjectTestImg,
-        "images": [],
-        "tags": [tags.GAME, tags.WEB]
+        "title": "SVG Editor",
+        "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
+        "github": "https://github.com/vladpuscaru/svg-editor",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Web SVG editor. Complete with svg code generation",
+        "thumbnail": pNoPicture,
+        "images": [pNoPicture],
+        "tags": [tags.WEB]
+    },
+    {
+        "id": 6,
+        "title": "WF Snake",
+        "technologies": [technologies.CSHARP, technologies.WFORMS],
+        "github": "https://github.com/vladpuscaru/-WF-Snake",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Snake made using Windows Forms. (First time exploring graphics outside of terminal).",
+        "thumbnail": p60,
+        "images": [p61, p60],
+        "tags": [tags.GAME]
+    },
+    {
+        "id": 7,
+        "title": "Chess",
+        "technologies": [technologies.CPP, technologies.SFML],
+        "github": "https://github.com/vladpuscaru/chess",
+        "description": "" +
+            "" +
+            "",
+        "slug": "My take on the classic chess game, with custom-made graphics.",
+        "thumbnail": pNoPicture,
+        "images": [pNoPicture],
+        "tags": [tags.GAME]
+    },
+    {
+        "id": 8,
+        "title": "Algorithms Visualized - Web version",
+        "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
+        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Pathfinding algorithm visualized, with animation.",
+        "thumbnail": p80,
+        "images": [p82, p81, p82],
+        "tags": [tags.WEB]
     }
 ];

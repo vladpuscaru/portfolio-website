@@ -28,7 +28,7 @@ const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick,
                 {
                     mobile && activeProject !== -1 ? ""
                         :
-                        <SectionResume active={activeSection === 2}/>
+                        <SectionResume active={activeSection === 2} mobile={mobile}/>
                 }
             </div>
 
