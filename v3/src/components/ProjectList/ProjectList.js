@@ -1,5 +1,6 @@
 import styles from "./ProjectList.module.sass"
 import ProjectItem from "../ProjectItem/ProjectItem";
+import Appear from "../Appear/Appear";
 
 export const ProjectList = ({active, projects, onProjectItemClick}) => {
     return (

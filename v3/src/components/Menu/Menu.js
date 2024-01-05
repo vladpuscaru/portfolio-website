@@ -4,6 +4,7 @@ import SocialLinks from "../SocialLinks/SocialLinks";
 import { getProjects } from "../../common/data/projects";
 import icBack from "../../common/images/ic_back.svg";
 import { Fragment } from "react";
+import me1 from "../../common/images/me_1.png";
 
 const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
     return (
@@ -50,6 +51,10 @@ const Menu = ({active, activeSection, activeProject, onMenuItemClick}) => {
             <div className={styles.shapeMobileRight}></div>
             <div className={styles.shapeMobileBottom}></div>
             <div className={styles.shapeMobileLeft}></div>
+
+            <div className={styles.avatar}>
+                <img src={me1}/>
+            </div>
         </nav>
     )
 }

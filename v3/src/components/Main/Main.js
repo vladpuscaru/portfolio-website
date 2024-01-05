@@ -1,5 +1,5 @@
 import styles from "./Main.module.sass"
-import avatarImg from "../../common/images/avatar.png";
+import me1 from "../../common/images/me_1.png";
 import SectionAbout from "../SectionAbout/SectionAbout";
 import SectionProjects from "../SectionProjects/SectionProjects";
 import SectionResume from "../SectionResume/SectionResume";
@@ -12,7 +12,7 @@ const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick,
                 mobile && activeProject !== -1 ? ""
                     :
                     <div className={styles.avatar}>
-                        <img src={avatarImg}/>
+                        <img src={me1}/>
                     </div>
             }
 
@@ -32,7 +32,6 @@ const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick,
                 }
             </div>
 
-            <div className={styles.shadow}></div>
         </div>
     </main>
 }

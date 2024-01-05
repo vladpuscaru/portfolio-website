@@ -1,13 +1,15 @@
 import styles from "./ProjectItem.module.sass"
 import icGithub from "../../common/images/icons8-github.svg"
 import { ReactSVG } from "react-svg";
+import Appear from "../Appear/Appear";
 
 const ProjectItem = ({project, inversed, onClick}) => {
     return (
-        <div className={`${styles.projectItem} ${ inversed ? styles.inversed : "" }`} onClick={onClick}>
+        <div className={`${styles.projectItem} ${inversed ? styles.inversed : ""}`} onClick={onClick}>
             <div className={styles.thumbnail}>
                 <img src={project.thumbnail}/>
             </div>
+
 
             <div className={styles.content}>
                 <div className={styles.title}>

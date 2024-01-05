@@ -3,6 +3,8 @@ import { ProjectList } from "../ProjectList/ProjectList";
 import { useEffect, useState } from "react";
 import { getProjects, getTags } from "../../common/data/projects";
 import Project from "../Project/Project";
+import Appear from "../Appear/Appear";
+import App from "../../App";
 
 const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
     const [data, setData] = useState({
@@ -49,19 +51,24 @@ const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
     return (
         <section id={"projects"} className={`${styles.projects} ${active ? styles.active : ""}`}>
             <div className={`${styles.header} ${activeProject === -1 ? styles.active : ""}`}>
-                <div className={styles.title}>
-                    <h2>A work in progress</h2>
-                </div>
-                <p className={styles.description}>
-                    Most of my work over the years has been mainly back-end web development. As such, my portfolio
-                    section can be thought as rather 'bland'
-                    and small.
-                    Nevertheless, in the last months since I've become a student once again, I had the time to work on
-                    game prototypes that may give you
-                    an insight of my skills and knowledge.
-                    <br/>
-                    Here they are!
-                </p>
+                <Appear sourceDirection={"up"}>
+                    <div className={styles.title}>
+                        <h2>A work in progress</h2>
+                    </div>
+                </Appear>
+                <Appear sourceDirection={"left"}>
+                    <p className={styles.description}>
+                        Most of my work over the years has been mainly back-end web development. As such, my portfolio
+                        section can be thought as rather 'bland'
+                        and small.
+                        Nevertheless, in the last months since I've become a student once again, I had the time to work
+                        on
+                        game prototypes that may give you
+                        an insight of my skills and knowledge.
+                        <br/>
+                        Here they are!
+                    </p>
+                </Appear>
             </div>
             <div className={styles.main}>
                 <div className={`${styles.filters} ${activeProject === -1 ? styles.active : ""}`}>
