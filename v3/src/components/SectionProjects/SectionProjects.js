@@ -50,7 +50,7 @@ const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
         <section id={"projects"} className={`${styles.projects} ${active ? styles.active : ""}`}>
             <div className={`${styles.header} ${activeProject === -1 ? styles.active : ""}`}>
                 <div className={styles.title}>
-                    <h2>A work in progres..</h2>
+                    <h2>A work in progress</h2>
                 </div>
                 <p className={styles.description}>
                     Most of my work over the years has been mainly back-end web development. As such, my portfolio

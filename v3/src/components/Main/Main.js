@@ -4,7 +4,7 @@ import SectionAbout from "../SectionAbout/SectionAbout";
 import SectionProjects from "../SectionProjects/SectionProjects";
 import SectionResume from "../SectionResume/SectionResume";
 
-const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick}) => {
+const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick, onMenuItemClick}) => {
     return <main className={`${styles.main} ${active ? styles.active : ""}`}>
         <div className={`${styles.container} container`}>
 
@@ -20,7 +20,7 @@ const Main = ({active, mobile, activeSection, activeProject, onProjectItemClick}
                 {
                     mobile && activeProject !== -1 ? ""
                         :
-                        <SectionAbout active={activeSection === 0}/>
+                        <SectionAbout active={activeSection === 0} onMenuItemClick={onMenuItemClick}/>
                 }
                 <SectionProjects active={activeSection === 1} activeProject={activeProject}
                                  onProjectItemClick={onProjectItemClick}/>

@@ -22,7 +22,7 @@ const ProjectItem = ({project, inversed, onClick}) => {
                 </div>
 
                 <div className={styles.description}>
-                    <p>{project.description}</p>
+                    <p>{project.slug}</p>
                 </div>
 
                 <div className={styles.technologies}>

@@ -3,6 +3,113 @@
 .about
   min-height: 100vh
   padding-top: 80px
+  overflow-y: scroll
+
+  svg
+    max-width: 1em
+    max-height: 1em
+
+  .main
+    .bio
+      margin: 15px 0
+
+      .head
+        background-color: $blue
+        padding: 15px
+        font-size: 1.2em
+        font-family: $fontBold
+        border-top-left-radius: 4px
+        border-top-right-radius: 4px
+        box-shadow: 0 10px 30px -15px #000
+        text-align: center
+
+        &:hover
+          cursor: pointer
+          background-color: $white
+          color: $black
+
+      .content
+        display: none
+
+      .links
+        padding: 5px 15px
+        background-color: $white
+        border-bottom-left-radius: 4px
+        border-bottom-right-radius: 4px
+        color: $black
+        box-shadow: 0 10px 30px -15px #000
+
+        span
+          color: $blue
+          font-weight: bold
+
+          &:hover
+            cursor: pointer
+
+      &.active
+        background-color: $white
+        color: $black
+        padding: 15px
+        border-radius: 4px
+
+        .head
+          background-color: $white
+          margin: 0
+
+        .content
+          display: block
+          margin: 15px 0
+
+    .tldr
+      .title
+        margin-bottom: 15px
+      .content
+        strong, span
+          color: $black
+          background-color: $white
+          padding: 2px 5px
+          border-radius: 4px
+
+        ul
+          margin: 15px 0
+          display: flex
+          justify-content: center
+          align-items: center
+          flex-wrap: wrap
+          list-style: none
+
+          li
+            width: 45%
+            position: relative
+            opacity: .8
+            text-align: center
+
+            a
+              display: block
+
+            &:hover
+              cursor: pointer
+              opacity: 1
+
+              .hover
+                display: block
+
+            @media (min-width: 768px)
+              width: 15%
+
+              .hover
+                display: none
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                background-color: rgba($black, .7)
+                color: $white
+                padding: 5px
+                border-radius: 4px
+                box-shadow: 0 10px 30px -15px #000
+
+
 
   @media (min-width: 768px)
     display: none

@@ -1,5 +1,12 @@
-import MarioCloneImg from "../../images/p1.gif";
 import ProjectTestImg from "../../images/p2.gif";
+import p10 from "../../images/p1_0.png";
+import p11 from "../../images/p1_1.png";
+import p12 from "../../images/p1_2.png";
+import p13 from "../../images/p1_3.gif";
+import p14 from "../../images/p1_4.gif";
+import p20 from "../../images/p2_0.png";
+import p21 from "../../images/p2_1.png";
+import p22 from "../../images/p2_2.gif";
 
 const tags = {
     GAME: "Game",
@@ -50,25 +57,29 @@ export const getProjects = (filterText, filterTags) => {
 const projects = [
     {
         "id": 0,
-        "title": "Mario Clone",
+        "title": "Super Mario Bros. (Clone)",
         "technologies": [technologies.CPP, technologies.SFML],
-        "github": "google.com",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "slug": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "thumbnail": MarioCloneImg,
-        "images": [ ProjectTestImg, ProjectTestImg, MarioCloneImg, ProjectTestImg ],
+        "github": "https://github.com/vladpuscaru/comp_4300/tree/main/ass3",
+        "description": "" +
+            "" +
+            "",
+        "slug": "A classic NES game programmed in C++, using the SFML library and a custom-built engine based on ECS.",
+        "thumbnail": p10,
+        "images": [ p13, p11, p12, p10, p14 ],
         "tags": [tags.GAME]
     },
     {
         "id": 1,
-        "title": "This is It",
-        "technologies": [technologies.C, technologies.ASM, technologies.JAVA],
-        "github": "google.com",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "slug": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "thumbnail": ProjectTestImg,
-        "images": [],
-        "tags": [tags.WEB]
+        "title": "Shape Wars (Clone)",
+        "technologies": [technologies.CPP, technologies.SFML],
+        "github": "https://github.com/vladpuscaru/comp_4300/tree/main/ass2",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Top down shooter style of game, mimicking a popular game.",
+        "thumbnail": p20,
+        "images": [ p22, p21, p20 ],
+        "tags": [tags.GAME]
     },
     {
         "id": 2,

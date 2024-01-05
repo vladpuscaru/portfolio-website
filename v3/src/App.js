@@ -163,6 +163,7 @@ function App() {
                             <div className={"main"}>
                                 <Main active={active.main} mobile={windowData.mobile} activeSection={active.section}
                                       activeProject={active.project}
+                                      onMenuItemClick={onMenuItemClick}
                                       onProjectItemClick={onProjectItemClick}/>
                             </div>
                             <div className={"footer"}>
