@@ -28,7 +28,7 @@ const SectionResume = ({active, mobile}) => {
                     abilities in multiple areas of development.
                     <br/>
                     My main interests revolve
-                    around <strong>web</strong>, <strong>cloud</strong> and <string>games</string> programming.
+                    around <strong>web</strong>, <strong>cloud</strong> and <strong>games</strong> programming.
                 </p>
             </div>
             <div className={styles.main}>
