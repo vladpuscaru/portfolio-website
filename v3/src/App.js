@@ -113,15 +113,26 @@ function App() {
         }
     }, [windowData.mobile, windowData.scroll]);
 
+    const onBackBtnPressed = () => {
+        if (active.project !== -1) {
+            setActive({
+               ...active,
+               project: -1
+            });
+        }
+    }
+
     useEffect(() => {
         const watch = () => {
             window.addEventListener("scroll", updateWindowData);
             window.addEventListener("resize", updateWindowData);
+            window.addEventListener('hashchange', onBackBtnPressed);
         }
         watch();
         return () => {
             window.removeEventListener("scroll", updateWindowData);
             window.removeEventListener("resize", updateWindowData);
+            window.addEventListener('hashchange', onBackBtnPressed);
         };
     });
 
