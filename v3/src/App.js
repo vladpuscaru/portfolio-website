@@ -113,8 +113,9 @@ function App() {
         }
     }, [windowData.mobile, windowData.scroll]);
 
-    const onBackBtnPressed = () => {
+    const onBackBtnPressed = (e) => {
         if (active.project !== -1) {
+            e.preventDefault();
             setActive({
                ...active,
                project: -1

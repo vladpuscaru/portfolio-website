@@ -69,7 +69,6 @@ const Project = ({project, active}) => {
                             {!!currentImage && (
                                 <Lightbox
                                     enableZoom={false}
-                                    imagePadding={150}
                                     mainSrc={currentImage.original}
                                     imageTitle={currentImage.caption}
                                     mainSrcThumbnail={currentImage.src}
