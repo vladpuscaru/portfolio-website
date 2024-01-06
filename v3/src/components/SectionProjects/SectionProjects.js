@@ -93,7 +93,7 @@ const SectionProjects = ({active, activeProject, onProjectItemClick}) => {
 
                     {
                         projects.map((project, idx) => (
-                            <Project active={activeProject === idx} project={project}/>
+                            <Project key={idx} active={activeProject === idx} project={project}/>
                         ))
                     }
                 </div>

@@ -1,46 +1,34 @@
 import styles from "./Project.module.sass"
 import { Parser } from "html-to-react";
 import { ReactSVG } from "react-svg";
-import icArrow from "../../common/images/ic_arrow.svg";
 import icGithub from "../../common/images/icons8-github.svg";
 import { useState } from "react";
-
-// {
-//     "id": 0,
-//     "title": "Mario Clone",
-//     "technologies": [technologies.CPP, technologies.SFML],
-//     "github": "google.com",
-//     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-//     "slug": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-//     "thumbnail": MarioCloneImg,
-// "images": [],
-//     "tags": [tags.GAME]
-// },
+import Lightbox from "react-image-lightbox";
+import { Gallery } from "react-grid-gallery";
 
 const Project = ({project, active}) => {
-    const [gallery, setGallery] = useState({
-        onDisplayIdx: project.images && project.images.length > 0 ? 0 : null,
-        images: project.images && project.images.length > 0 ? project.images : null
-    });
-    const {onDisplayIdx, images} = gallery;
+    const [index, setIndex] = useState(-1);
+
+    const images = project.images.map(img => ({
+        src: img,
+        original: img,
+        width: 320,
+        height: 180,
+        caption: project.title
+    }));
+
+    const currentImage = images[index];
+    const nextIndex = (index + 1) % images.length;
+    const nextImage = images[nextIndex] || currentImage;
+    const prevIndex = (index + images.length - 1) % images.length;
+    const prevImage = images[prevIndex] || currentImage;
+
+    const handleClick = (index, item) => setIndex(index);
+    const handleClose = () => setIndex(-1);
+    const handleMovePrev = () => setIndex(prevIndex);
+    const handleMoveNext = () => setIndex(nextIndex);
+
     const parser = new Parser();
-
-    const onGalleryClick = (idx) => {
-        if (images && images.length > 0) {
-            if (idx > gallery.images.length - 1) {
-                idx = 0;
-            }
-
-            if (idx < 0) {
-                idx = gallery.images.length - 1;
-            }
-
-            setGallery({
-                ...gallery,
-                onDisplayIdx: idx
-            });
-        }
-    }
 
     return (
         <div className={`${styles.project} ${active ? styles.active : ""}`}>
@@ -72,19 +60,28 @@ const Project = ({project, active}) => {
                 </div>
                 {
                     images && images.length > 0 ?
-                        <div className={styles.gallery}>
-                            <div className={styles.onDisplay}>
-                                <img src={images[onDisplayIdx]}/>
-                            </div>
-                            <div className={styles.track}>
-                                {
-                                    images.map((img, idx) => (
-                                        <div key={idx} className={`${styles.img} ${idx === onDisplayIdx ? styles.active : ""}`} onClick={() => onGalleryClick(idx)}>
-                                            <img src={img}/>
-                                        </div>
-                                    ))
-                                }
-                            </div>
+                        <div>
+                            <Gallery
+                                images={images}
+                                onClick={handleClick}
+                                enableImageSelection={false}
+                            />
+                            {!!currentImage && (
+                                <Lightbox
+                                    enableZoom={false}
+                                    imagePadding={150}
+                                    mainSrc={currentImage.original}
+                                    imageTitle={currentImage.caption}
+                                    mainSrcThumbnail={currentImage.src}
+                                    nextSrc={nextImage.original}
+                                    nextSrcThumbnail={nextImage.src}
+                                    prevSrc={prevImage.original}
+                                    prevSrcThumbnail={prevImage.src}
+                                    onCloseRequest={handleClose}
+                                    onMovePrevRequest={handleMovePrev}
+                                    onMoveNextRequest={handleMoveNext}
+                                />
+                            )}
                         </div>
                         :
                         ""
@@ -94,7 +91,7 @@ const Project = ({project, active}) => {
             <div className={styles.footer}>
                 <h1>Check it on
                     <a href={project.github} target={"_blank"}>
-                        <ReactSVG src={icGithub} />
+                        <ReactSVG src={icGithub}/>
                     </a>
                 </h1>
             </div>

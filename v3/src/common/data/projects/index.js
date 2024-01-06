@@ -13,6 +13,7 @@ import p61 from "../../images/p6_1.png";
 import p80 from "../../images/p8_0.png";
 import p81 from "../../images/p8_1.png";
 import p82 from "../../images/p8_2.gif";
+import p100 from "../../images/p10_0.png";
 
 const tags = {
     GAME: "Game",
@@ -110,8 +111,8 @@ const projects = [
             "" +
             "",
         "slug": "Forward and inverse kinematics on a robot arm.",
-        "thumbnail": pNoPicture,
-        "images": [pNoPicture],
+        "thumbnail": p100,
+        "images": [p100],
         "tags": [tags.GAME]
     },
     {
