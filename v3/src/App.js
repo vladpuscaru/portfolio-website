@@ -4,7 +4,7 @@ import { Fragment, useEffect, useState } from "react";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import axios from "axios";
-import 'react-image-lightbox/style.css';
+import "yet-another-react-lightbox/styles.css";
 
 const token = process.env.REACT_APP_GITHUB_TOKEN;
 const query = `query{ 

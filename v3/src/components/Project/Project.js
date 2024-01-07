@@ -3,30 +3,21 @@ import { Parser } from "html-to-react";
 import { ReactSVG } from "react-svg";
 import icGithub from "../../common/images/icons8-github.svg";
 import { useState } from "react";
-import Lightbox from "react-image-lightbox";
+import Lightbox from "yet-another-react-lightbox";
 import { Gallery } from "react-grid-gallery";
 
 const Project = ({project, active}) => {
-    const [index, setIndex] = useState(-1);
+    const [open, setOpen] = useState(false);
 
     const images = project.images.map(img => ({
         src: img,
         original: img,
-        width: 320,
-        height: 180,
+        width: 1080,
+        height: 720,
         caption: project.title
     }));
 
-    const currentImage = images[index];
-    const nextIndex = (index + 1) % images.length;
-    const nextImage = images[nextIndex] || currentImage;
-    const prevIndex = (index + images.length - 1) % images.length;
-    const prevImage = images[prevIndex] || currentImage;
-
-    const handleClick = (index, item) => setIndex(index);
-    const handleClose = () => setIndex(-1);
-    const handleMovePrev = () => setIndex(prevIndex);
-    const handleMoveNext = () => setIndex(nextIndex);
+    const handleClick = (index, item) => setOpen(true);
 
     const parser = new Parser();
 
@@ -66,22 +57,13 @@ const Project = ({project, active}) => {
                                 onClick={handleClick}
                                 enableImageSelection={false}
                             />
-                            {!!currentImage && (
+                            {
                                 <Lightbox
-                                    reactModalStyle={{ maxHeight: 100 }}
-                                    enableZoom={false}
-                                    mainSrc={currentImage.original}
-                                    imageTitle={currentImage.caption}
-                                    mainSrcThumbnail={currentImage.src}
-                                    nextSrc={nextImage.original}
-                                    nextSrcThumbnail={nextImage.src}
-                                    prevSrc={prevImage.original}
-                                    prevSrcThumbnail={prevImage.src}
-                                    onCloseRequest={handleClose}
-                                    onMovePrevRequest={handleMovePrev}
-                                    onMoveNextRequest={handleMoveNext}
+                                    open={open}
+                                    close={() => setOpen(false)}
+                                    slides={images}
                                 />
-                            )}
+                            }
                         </div>
                         :
                         ""
