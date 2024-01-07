@@ -10,6 +10,15 @@ import p14 from "../../images/p1_4.gif";
 import p20 from "../../images/p2_0.png";
 import p21 from "../../images/p2_1.png";
 import p22 from "../../images/p2_2.gif";
+import p30 from "../../images/p3_0.png";
+import p31 from "../../images/p3_1.png";
+import p32 from "../../images/p3_2.png";
+import p33 from "../../images/p3_3.png";
+import p34 from "../../images/p3_4.png";
+import p35 from "../../images/p3_5.png";
+import p36 from "../../images/p3_6.gif";
+import p37 from "../../images/p3_7.gif";
+import p38 from "../../images/p3_8.gif";
 import p40 from "../../images/p4_0.png";
 import p50 from "../../images/p5_0.png";
 import p51 from "../../images/p5_1.png";
@@ -104,16 +113,16 @@ const projects = [
         "tags": [tags.GAME]
     },
     {
-        "id": 2,
-        "title": "Arkanoid (Clone) - Work in progress",
-        "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/showcase.shapes",
+        "id": 3,
+        "title": "Airplanes",
+        "technologies": [technologies.NODEJS, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
+        "github": "https://github.com/vladpuscaru/showcase.airplanes",
         "description": "" +
             "" +
             "",
-        "slug": "My take on the classic arkanoid/breakout game.",
-        "thumbnail": p00,
-        "images": [p01, p00, p02],
+        "slug": "Multiplayer, online game over websockets",
+        "thumbnail": p30,
+        "images": [p36, p37, p38, p31, p32, p30, p33, p34, p35],
         "tags": [tags.GAME, tags.WEB]
     },
     {
@@ -128,6 +137,19 @@ const projects = [
         "thumbnail": p100,
         "images": [p101, p100, p102],
         "tags": [tags.GAME]
+    },
+    {
+        "id": 2,
+        "title": "Arkanoid (Clone) - Work in progress",
+        "technologies": [technologies.CPP, technologies.SFML],
+        "github": "https://github.com/vladpuscaru/showcase.shapes",
+        "description": "" +
+            "" +
+            "",
+        "slug": "My take on the classic arkanoid/breakout game.",
+        "thumbnail": p00,
+        "images": [p01, p00, p02],
+        "tags": [tags.GAME, tags.WEB]
     },
     {
         "id": 8,
@@ -154,19 +176,6 @@ const projects = [
         "thumbnail": p90,
         "images": [p91, p92, p93, p90],
         "tags": [tags.GAME]
-    },
-    {
-        "id": 3,
-        "title": "Airplanes",
-        "technologies": [technologies.NODEJS, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
-        "github": "https://github.com/vladpuscaru/showcase.airplanes",
-        "description": "" +
-            "" +
-            "",
-        "slug": "Multiplayer, online game over websockets",
-        "thumbnail": pNoPicture,
-        "images": [pNoPicture],
-        "tags": [tags.GAME, tags.WEB]
     },
     {
         "id": 4,
