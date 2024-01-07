@@ -59,7 +59,7 @@ const Project = ({project, active}) => {
                             />
                             {
                                 <Lightbox
-                                    open={open}
+                                    open={open && active}
                                     close={() => setOpen(false)}
                                     slides={images}
                                 />
