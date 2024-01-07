@@ -13,7 +13,9 @@ export const education = [
         degree: "Master's Degree",
         startDate: "2023",
         endDate: "Present",
-        description: "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+        description: "<ul>" +
+            "<li>I am back to school in order to specialise and research in game development-related areas such as <strong>graphics</strong>, <strong>physics</strong>, <strong>crowd simulation</strong></li>" +
+            "</ul>"
     },
     {
         university: {
@@ -24,7 +26,10 @@ export const education = [
         degree: "Private education",
         startDate: "2018",
         endDate: "2019",
-        description: "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+        description: "<ul>" +
+            "<li>Software Development courses at a private institution</li>" +
+            "<li>Curricula included: <strong>C</strong>, <strong>C++</strong>, <strong>C#</strong>, <strong>Algorithms</strong>, and <strong>Design Patterns</strong></li>" +
+            "</ul>"
     },
     {
         university: {
@@ -35,7 +40,9 @@ export const education = [
         degree: "Bachelor's Degree",
         startDate: "2017",
         endDate: "2020",
-        description: "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+        description: "<ul>" +
+            "<li>Final score of 10/10, with the thesis \"IoT Solution for Smart Home\"</li>" +
+            "</ul>"
     },
     {
         university: {
@@ -46,6 +53,6 @@ export const education = [
         degree: "Baccalaureate Diploma",
         startDate: "2012",
         endDate: "2016",
-        description: "Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet."
+        description: ""
     },
 ]

@@ -68,6 +68,7 @@ const Project = ({project, active}) => {
                             />
                             {!!currentImage && (
                                 <Lightbox
+                                    reactModalStyle={{ maxHeight: 100 }}
                                     enableZoom={false}
                                     mainSrc={currentImage.original}
                                     imageTitle={currentImage.caption}

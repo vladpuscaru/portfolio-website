@@ -15,6 +15,7 @@ import p81 from "../../images/p8_1.png";
 import p82 from "../../images/p8_2.gif";
 import p100 from "../../images/p10_0.png";
 import p101 from "../../images/p10_1.gif";
+import p102 from "../../images/p10_2.gif";
 
 const tags = {
     GAME: "Game",
@@ -68,7 +69,7 @@ const projects = [
         "id": 0,
         "title": "Super Mario Bros. (Clone)",
         "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/comp_4300/tree/main/ass3",
+        "github": "https://github.com/vladpuscaru/showcase.mario",
         "description": "" +
             "" +
             "",
@@ -81,7 +82,7 @@ const projects = [
         "id": 1,
         "title": "Shape Wars (Clone)",
         "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/comp_4300/tree/main/ass2",
+        "github": "https://github.com/vladpuscaru/showcase.shapes",
         "description": "" +
             "" +
             "",
@@ -94,7 +95,7 @@ const projects = [
         "id": 2,
         "title": "Arkanoid (Clone)",
         "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/sfml.arkanoid",
+        "github": "https://github.com/vladpuscaru/showcase.shapes",
         "description": "" +
             "" +
             "",
@@ -107,20 +108,20 @@ const projects = [
         "id": 10,
         "title": "Robot Arm Kinematics",
         "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "github": "https://github.com/vladpuscaru/showcase.2dkinematics",
         "description": "" +
             "" +
             "",
         "slug": "Forward and inverse kinematics on a robot arm.",
         "thumbnail": p100,
-        "images": [p101, p100],
+        "images": [p101, p100, p102],
         "tags": [tags.GAME]
     },
     {
         "id": 8,
         "title": "Algorithms Visualized - Web version",
         "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
-        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "github": "https://github.com/vladpuscaru/showcase.algorithms-web",
         "description": "" +
             "" +
             "",
@@ -133,7 +134,7 @@ const projects = [
         "id": 9,
         "title": "Algorithms Visualized - C++ version",
         "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/algorithms-visualized",
+        "github": "https://github.com/vladpuscaru/showcase.algorithms-cpp",
         "description": "" +
             "" +
             "",
@@ -146,7 +147,7 @@ const projects = [
         "id": 3,
         "title": "Airplanes",
         "technologies": [technologies.NODEJS, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
-        "github": "https://github.com/vladpuscaru/airplanes-game",
+        "github": "https://github.com/vladpuscaru/showcase.airplanes",
         "description": "" +
             "" +
             "",
@@ -159,7 +160,7 @@ const projects = [
         "id": 4,
         "title": "Maze Game",
         "technologies": [technologies.REACTJS, technologies.HTML, technologies.CSS],
-        "github": "https://github.com/vladpuscaru/-react--hidden-maze-game",
+        "github": "https://github.com/vladpuscaru/showcase.mazegame",
         "description": "" +
             "" +
             "",
@@ -172,7 +173,7 @@ const projects = [
         "id": 5,
         "title": "SVG Editor",
         "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
-        "github": "https://github.com/vladpuscaru/svg-editor",
+        "github": "https://github.com/vladpuscaru/showcase.svg-editor",
         "description": "" +
             "" +
             "",
@@ -185,7 +186,7 @@ const projects = [
         "id": 6,
         "title": "WF Snake",
         "technologies": [technologies.CSHARP, technologies.WFORMS],
-        "github": "https://github.com/vladpuscaru/-WF-Snake",
+        "github": "https://github.com/vladpuscaru/showcase.wf-snake",
         "description": "" +
             "" +
             "",
@@ -193,18 +194,5 @@ const projects = [
         "thumbnail": p60,
         "images": [p61, p60],
         "tags": [tags.GAME]
-    },
-    {
-        "id": 7,
-        "title": "Chess",
-        "technologies": [technologies.CPP, technologies.SFML],
-        "github": "https://github.com/vladpuscaru/chess",
-        "description": "" +
-            "" +
-            "",
-        "slug": "My take on the classic chess game, with custom-made graphics.",
-        "thumbnail": pNoPicture,
-        "images": [pNoPicture],
-        "tags": [tags.GAME]
-    },
+    }
 ];
