@@ -120,20 +120,22 @@ function App() {
                ...active,
                project: -1
             });
+            return '';
         }
+        return '';
     }
 
     useEffect(() => {
         const watch = () => {
             window.addEventListener("scroll", updateWindowData);
             window.addEventListener("resize", updateWindowData);
-            window.addEventListener('hashchange', onBackBtnPressed);
+            window.addEventListener('beforeunload', onBackBtnPressed);
         }
         watch();
         return () => {
             window.removeEventListener("scroll", updateWindowData);
             window.removeEventListener("resize", updateWindowData);
-            window.addEventListener('hashchange', onBackBtnPressed);
+            window.removeEventListener('beforeunload', onBackBtnPressed);
         };
     });
 
