@@ -1,4 +1,7 @@
 import pNoPicture from "../../images/p_nopicture.png";
+import p00 from "../../images/p0_0.png";
+import p01 from "../../images/p0_1.gif";
+import p02 from "../../images/p0_2.gif";
 import p10 from "../../images/p1_0.png";
 import p11 from "../../images/p1_1.png";
 import p12 from "../../images/p1_2.png";
@@ -8,11 +11,20 @@ import p20 from "../../images/p2_0.png";
 import p21 from "../../images/p2_1.png";
 import p22 from "../../images/p2_2.gif";
 import p40 from "../../images/p4_0.png";
+import p50 from "../../images/p5_0.png";
+import p51 from "../../images/p5_1.png";
+import p52 from "../../images/p5_2.png";
+import p53 from "../../images/p5_3.gif";
+import p54 from "../../images/p5_4.gif";
 import p60 from "../../images/p6_0.png";
 import p61 from "../../images/p6_1.png";
 import p80 from "../../images/p8_0.png";
 import p81 from "../../images/p8_1.png";
 import p82 from "../../images/p8_2.gif";
+import p90 from "../../images/p9_0.png";
+import p91 from "../../images/p9_1.gif";
+import p92 from "../../images/p9_2.gif";
+import p93 from "../../images/p9_3.gif";
 import p100 from "../../images/p10_0.png";
 import p101 from "../../images/p10_1.gif";
 import p102 from "../../images/p10_2.gif";
@@ -93,15 +105,15 @@ const projects = [
     },
     {
         "id": 2,
-        "title": "Arkanoid (Clone)",
+        "title": "Arkanoid (Clone) - Work in progress",
         "technologies": [technologies.CPP, technologies.SFML],
         "github": "https://github.com/vladpuscaru/showcase.shapes",
         "description": "" +
             "" +
             "",
-        "slug": "My take on the classic arkanoid/breakout game, with custom made sprites.",
-        "thumbnail": pNoPicture,
-        "images": [pNoPicture],
+        "slug": "My take on the classic arkanoid/breakout game.",
+        "thumbnail": p00,
+        "images": [p01, p00, p02],
         "tags": [tags.GAME, tags.WEB]
     },
     {
@@ -127,7 +139,7 @@ const projects = [
             "",
         "slug": "Pathfinding algorithm visualized, with animation.",
         "thumbnail": p80,
-        "images": [p82, p81, p82],
+        "images": [p82, p81, p80],
         "tags": [tags.WEB]
     },
     {
@@ -139,8 +151,8 @@ const projects = [
             "" +
             "",
         "slug": "Pathfinding algorithm visualized, C++ version.",
-        "thumbnail": pNoPicture,
-        "images": [pNoPicture],
+        "thumbnail": p90,
+        "images": [p91, p92, p93, p90],
         "tags": [tags.GAME]
     },
     {
@@ -178,8 +190,8 @@ const projects = [
             "" +
             "",
         "slug": "Web SVG editor. Complete with svg code generation",
-        "thumbnail": pNoPicture,
-        "images": [pNoPicture],
+        "thumbnail": p50,
+        "images": [p53, p52, p51, p50, p54],
         "tags": [tags.WEB]
     },
     {
