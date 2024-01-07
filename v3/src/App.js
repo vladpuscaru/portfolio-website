@@ -26,6 +26,7 @@ const query = `query{
 
 function App() {
     const [windowData, setWindowData] = useState({
+        location: window.location,
         scroll: {
             x: 0,
             y: 0
@@ -95,7 +96,6 @@ function App() {
             const prSection = document.getElementById("projects");
             const reSection = document.getElementById("resume");
 
-
             if (abSection && prSection && reSection) {
                 const abScroll = abSection.offsetTop;
                 const prScroll = prSection.offsetTop;
@@ -113,56 +113,166 @@ function App() {
         }
     }, [windowData.mobile, windowData.scroll]);
 
-    const onBackBtnPressed = (e) => {
-        if (active.project !== -1) {
-            e.preventDefault();
-            setActive({
-               ...active,
-               project: -1
-            });
-            return '';
-        }
-        return '';
+    const onBackBtnPressed = () => {
+        setWindowData({
+            ...windowData,
+            location: window.location
+        });
     }
 
     useEffect(() => {
         const watch = () => {
             window.addEventListener("scroll", updateWindowData);
             window.addEventListener("resize", updateWindowData);
-            window.addEventListener('beforeunload', onBackBtnPressed);
+            window.addEventListener('popstate', onBackBtnPressed);
         }
         watch();
         return () => {
             window.removeEventListener("scroll", updateWindowData);
             window.removeEventListener("resize", updateWindowData);
-            window.removeEventListener('beforeunload', onBackBtnPressed);
+            window.removeEventListener('popstate', onBackBtnPressed);
         };
     });
 
-    const onMenuItemClick = (section) => {
-        if (section === undefined) {
+    useEffect(() => {
+        // when u try to access direct link on mobile
+        if (windowData.mobile) {
+            console.log(active.section);
+            const abSection = document.getElementById("about");
+            const prSection = document.getElementById("projects");
+            const reSection = document.getElementById("resume");
+
+            if (abSection && prSection && reSection) {
+
+                const pathSection = window.location.pathname.split("/")[1];
+                console.log(pathSection);
+                if (window.location.pathname.split("/")[1]) {
+                    switch (pathSection) {
+                        case "about":
+                            console.log('x');
+                            window.scrollTo({top: abSection.offsetTop});
+                            break;
+                    }
+                }
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        const path = window.location.pathname.split("?")[0];
+        const params = new URLSearchParams(window.location.search);
+        const menu = params.get('menu');
+
+        if (menu) {
             setActive({
                 ...active,
-                menu: !active.menu,
-                main: !active.main,
-                footer: !active.footer
-            })
-        } else {
+                menu: true,
+                main: false,
+                footer: false
+            });
+        } else if (windowData.mobile && active.menu && !menu) {
+            setActive({
+                ...active,
+                menu: false,
+                main: true,
+                footer: false
+            });
+        } else if (path === '/about') {
             setActive({
                 ...active,
                 project: -1,
                 menu: false,
                 main: true,
                 footer: true,
-                section
+                section: 0
+            });
+        } else if (path === '/projects') {
+            setActive({
+                ...active,
+                project: -1,
+                menu: false,
+                main: true,
+                footer: true,
+                section: 1
+            });
+        } else if (path === '/resume') {
+            setActive({
+                ...active,
+                project: -1,
+                menu: false,
+                main: true,
+                footer: true,
+                section: 2
+            });
+        } else if (path.split("/")[1] === 'projects' && path.split("/")[2]) {
+            setActive({
+                ...active,
+                project: +(path.split("/")[2]),
+                menu: false,
+                main: true,
+                footer: true,
+                section: 1
+            });
+        }
+    }, [windowData]);
+
+    const onMenuItemClick = (section) => {
+        if (windowData.mobile) {
+            if (section === undefined) {
+                setActive({
+                    ...active,
+                    menu: !active.menu
+                });
+            } else {
+                setActive({
+                    ...active,
+                    section,
+                    menu: false
+                });
+            }
+        } else {
+            let newPath = "";
+
+            // eslint-disable-next-line default-case
+            switch (section) {
+                case undefined:
+                    if (windowData.mobile) {
+                        newPath = active.menu ? '' : "?menu=true";
+                    } else {
+                        newPath = active.menu ? window.location.pathname.split("?")[0] : "?menu=true";
+                    }
+                    break;
+                case 0:
+                    newPath = "about";
+                    break;
+                case 1:
+                    newPath = "projects";
+                    break;
+                case 2:
+                    newPath = "resume";
+                    break;
+            }
+
+            // eslint-disable-next-line no-restricted-globals
+            history.pushState(null, "", `${window.location.origin}/${newPath}`);
+
+            setWindowData({
+                ...windowData,
+                location: window.location
             });
         }
     }
 
     const onProjectItemClick = (project) => {
-        setActive({
-            ...active,
-            project
+
+        const newPath = `projects/${project}`;
+
+        // eslint-disable-next-line no-restricted-globals
+        history.pushState({}, "", `${window.location.origin}/${newPath}`);
+
+        setWindowData({
+            ...windowData,
+            location: window.location
         });
     }
 
@@ -172,7 +282,7 @@ function App() {
                 github.loading ? "Loading..."
                     :
                     <Fragment>
-                        <Menu active={active.menu} activeSection={active.section} activeProject={active.project}
+                        <Menu active={active.menu} mobile={windowData.mobile} activeSection={active.section} activeProject={active.project}
                               onMenuItemClick={onMenuItemClick}/>
                         <div className={"content"}>
                             <div className={"main"}>
