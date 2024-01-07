@@ -84,9 +84,23 @@ function App() {
                 x: window.innerWidth,
                 y: window.innerHeight
             },
-            mobile: window.innerWidth <= 768
+            mobile: window.innerWidth <= 768,
         });
     };
+
+    const onBackBtnPressed = () => {
+        if (windowData.mobile) {
+            setActive({
+                ...active,
+                project: -1
+            });
+        } else {
+            setWindowData({
+                ...windowData,
+                location: window.location
+            });
+        }
+    }
 
     useEffect(() => {
         if (windowData.mobile) {
@@ -113,13 +127,6 @@ function App() {
         }
     }, [windowData.mobile, windowData.scroll]);
 
-    const onBackBtnPressed = () => {
-        setWindowData({
-            ...windowData,
-            location: window.location
-        });
-    }
-
     useEffect(() => {
         const watch = () => {
             window.addEventListener("scroll", updateWindowData);
@@ -135,33 +142,11 @@ function App() {
     });
 
     useEffect(() => {
-        // when u try to access direct link on mobile
-        if (windowData.mobile) {
-            console.log(active.section);
-            const abSection = document.getElementById("about");
-            const prSection = document.getElementById("projects");
-            const reSection = document.getElementById("resume");
-
-            if (abSection && prSection && reSection) {
-
-                const pathSection = window.location.pathname.split("/")[1];
-                console.log(pathSection);
-                if (window.location.pathname.split("/")[1]) {
-                    switch (pathSection) {
-                        case "about":
-                            console.log('x');
-                            window.scrollTo({top: abSection.offsetTop});
-                            break;
-                    }
-                }
-            }
-        }
-    }, []);
-
-    useEffect(() => {
         const path = window.location.pathname.split("?")[0];
         const params = new URLSearchParams(window.location.search);
         const menu = params.get('menu');
+
+        const hash = window.location.hash;
 
         if (menu) {
             setActive({
@@ -175,6 +160,25 @@ function App() {
                 ...active,
                 menu: false,
                 main: true,
+                footer: false
+            });
+        } else if (windowData.mobile && hash) {
+          const section = hash.split("#")[1] === 'about' ? 0 : hash.split("#")[1] === 'projects' ? 1 : 2;
+            // eslint-disable-next-line no-restricted-globals
+          history.pushState({}, "", window.location.origin)
+          setActive({
+              ...active,
+              project: -1,
+              menu: false,
+              main: true,
+              footer: true,
+              section
+          });
+        } else if (!windowData.mobile && path === '/') {
+            setActive({
+                ...active,
+                menu: true,
+                main: false,
                 footer: false
             });
         } else if (path === '/about') {
@@ -224,9 +228,12 @@ function App() {
                     menu: !active.menu
                 });
             } else {
+                // eslint-disable-next-line no-restricted-globals
+                history.pushState({}, null, window.location.origin);
                 setActive({
                     ...active,
                     section,
+                    project: -1,
                     menu: false
                 });
             }
@@ -282,7 +289,8 @@ function App() {
                 github.loading ? "Loading..."
                     :
                     <Fragment>
-                        <Menu active={active.menu} mobile={windowData.mobile} activeSection={active.section} activeProject={active.project}
+                        <Menu active={active.menu} mobile={windowData.mobile} activeSection={active.section}
+                              activeProject={active.project}
                               onMenuItemClick={onMenuItemClick}/>
                         <div className={"content"}>
                             <div className={"main"}>
