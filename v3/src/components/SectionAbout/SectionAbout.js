@@ -119,7 +119,7 @@ const SectionAbout = ({active, onMenuItemClick}) => {
                         </div>
                         <div className={styles.links}>
                             <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>experience</span></a>
-                            <a href={"resume"}><span onClick={() => onMenuItemClick(2)}>education</span></a>
+                            <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>education</span></a>
                         </div>
                     </div>
                 </Appear>
