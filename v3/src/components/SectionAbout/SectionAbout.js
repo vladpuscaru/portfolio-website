@@ -117,10 +117,10 @@ const SectionAbout = ({active, onMenuItemClick}) => {
                                                                                              src={icCrossfit}/></strong>
                             </p>
                         </div>
-                        <div className={styles.links}>
-                            <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>experience</span></a>
-                            <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>education</span></a>
-                        </div>
+                        {/*<div className={styles.links}>*/}
+                        {/*    <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>experience</span></a>*/}
+                        {/*    <a href={"#resume"}><span onClick={() => onMenuItemClick(2)}>education</span></a>*/}
+                        {/*</div>*/}
                     </div>
                 </Appear>
 
