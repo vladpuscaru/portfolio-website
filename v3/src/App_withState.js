@@ -26,6 +26,7 @@ const query = `query{
 
 function App() {
     const [windowData, setWindowData] = useState({
+        location: window.location,
         scroll: {
             x: 0,
             y: 0
@@ -83,9 +84,23 @@ function App() {
                 x: window.innerWidth,
                 y: window.innerHeight
             },
-            mobile: window.innerWidth <= 768
+            mobile: window.innerWidth <= 768,
         });
     };
+
+    const onBackBtnPressed = () => {
+        if (windowData.mobile) {
+            setActive({
+                ...active,
+                project: -1
+            });
+        } else {
+            setWindowData({
+                ...windowData,
+                location: window.location
+            });
+        }
+    }
 
     useEffect(() => {
         if (windowData.mobile) {
@@ -94,7 +109,6 @@ function App() {
             const abSection = document.getElementById("about");
             const prSection = document.getElementById("projects");
             const reSection = document.getElementById("resume");
-
 
             if (abSection && prSection && reSection) {
                 const abScroll = abSection.offsetTop;
@@ -113,41 +127,45 @@ function App() {
         }
     }, [windowData.mobile, windowData.scroll]);
 
-    const onBackBtnPressed = (e) => {
-        if (active.project !== -1) {
-            e.preventDefault();
-            setActive({
-                ...active,
-                project: -1
-            });
-            return '';
-        }
-        return '';
-    }
-
     useEffect(() => {
         const watch = () => {
             window.addEventListener("scroll", updateWindowData);
             window.addEventListener("resize", updateWindowData);
-            window.addEventListener('beforeunload', onBackBtnPressed);
+            window.addEventListener('popstate', onBackBtnPressed);
         }
         watch();
         return () => {
             window.removeEventListener("scroll", updateWindowData);
             window.removeEventListener("resize", updateWindowData);
-            window.removeEventListener('beforeunload', onBackBtnPressed);
+            window.removeEventListener('popstate', onBackBtnPressed);
         };
     });
 
-    const onMenuItemClick = (section) => {
-        if (section === undefined) {
+    useEffect(() => {
+        const path = window.location.pathname.split("?")[0];
+        const params = new URLSearchParams(window.location.search);
+        const menu = params.get('menu');
+
+        const hash = window.location.hash;
+
+        if (menu) {
             setActive({
                 ...active,
-                menu: !active.menu,
-                main: !active.main,
-                footer: !active.footer
-            })
-        } else {
+                menu: true,
+                main: false,
+                footer: false
+            });
+        } else if (windowData.mobile && active.menu && !menu) {
+            setActive({
+                ...active,
+                menu: false,
+                main: true,
+                footer: false
+            });
+        } else if (windowData.mobile && hash) {
+            const section = hash.split("#")[1] === 'about' ? 0 : hash.split("#")[1] === 'projects' ? 1 : 2;
+            // eslint-disable-next-line no-restricted-globals
+            history.pushState({}, "", window.location.origin)
             setActive({
                 ...active,
                 project: -1,
@@ -156,13 +174,112 @@ function App() {
                 footer: true,
                 section
             });
+        } else if (!windowData.mobile && path === '/') {
+            setActive({
+                ...active,
+                menu: true,
+                main: false,
+                footer: false
+            });
+        } else if (path === '/about') {
+            setActive({
+                ...active,
+                project: -1,
+                menu: false,
+                main: true,
+                footer: true,
+                section: 0
+            });
+        } else if (path === '/projects') {
+            setActive({
+                ...active,
+                project: -1,
+                menu: false,
+                main: true,
+                footer: true,
+                section: 1
+            });
+        } else if (path === '/resume') {
+            setActive({
+                ...active,
+                project: -1,
+                menu: false,
+                main: true,
+                footer: true,
+                section: 2
+            });
+        } else if (path.split("/")[1] === 'projects' && path.split("/")[2]) {
+            setActive({
+                ...active,
+                project: +(path.split("/")[2]),
+                menu: false,
+                main: true,
+                footer: true,
+                section: 1
+            });
+        }
+    }, [windowData]);
+
+    const onMenuItemClick = (section) => {
+        if (windowData.mobile) {
+            if (section === undefined) {
+                setActive({
+                    ...active,
+                    menu: !active.menu
+                });
+            } else {
+                // eslint-disable-next-line no-restricted-globals
+                history.pushState({}, null, window.location.origin);
+                setActive({
+                    ...active,
+                    section,
+                    project: -1,
+                    menu: false
+                });
+            }
+        } else {
+            let newPath = "";
+
+            // eslint-disable-next-line default-case
+            switch (section) {
+                case undefined:
+                    if (windowData.mobile) {
+                        newPath = active.menu ? '' : "?menu=true";
+                    } else {
+                        newPath = active.menu ? window.location.pathname.split("?")[0] : "?menu=true";
+                    }
+                    break;
+                case 0:
+                    newPath = "about";
+                    break;
+                case 1:
+                    newPath = "projects";
+                    break;
+                case 2:
+                    newPath = "resume";
+                    break;
+            }
+
+            // eslint-disable-next-line no-restricted-globals
+            history.pushState(null, "", `${window.location.origin}/${newPath}`);
+
+            setWindowData({
+                ...windowData,
+                location: window.location
+            });
         }
     }
 
     const onProjectItemClick = (project) => {
-        setActive({
-            ...active,
-            project
+
+        const newPath = `projects/${project}`;
+
+        // eslint-disable-next-line no-restricted-globals
+        history.pushState({}, "", `${window.location.origin}/${newPath}`);
+
+        setWindowData({
+            ...windowData,
+            location: window.location
         });
     }
 
@@ -172,7 +289,8 @@ function App() {
                 github.loading ? "Loading..."
                     :
                     <Fragment>
-                        <Menu active={active.menu} activeSection={active.section} activeProject={active.project}
+                        <Menu active={active.menu} mobile={windowData.mobile} activeSection={active.section}
+                              activeProject={active.project}
                               onMenuItemClick={onMenuItemClick}/>
                         <div className={"content"}>
                             <div className={"main"}>
