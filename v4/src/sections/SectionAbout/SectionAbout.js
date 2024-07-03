@@ -169,18 +169,6 @@ export const SectionAbout = ({active}) => {
                         }
                     </div>
                 </TabPanel>
-                <TabPanel value={value} index={3}>
-                    Item Four
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                    Item Five
-                </TabPanel>
-                <TabPanel value={value} index={5}>
-                    Item Six
-                </TabPanel>
-                <TabPanel value={value} index={6}>
-                    Item Seven
-                </TabPanel>
             </Box>
         </Section>
     );

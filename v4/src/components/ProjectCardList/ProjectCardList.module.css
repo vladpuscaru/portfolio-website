@@ -32,5 +32,20 @@
     border-radius: 5px;
     color: #e1e1e1;
     margin: 0 3px; }
+.projectcardlist .detailsHeader {
+  padding: 5px;
+  text-align: center;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 15px; }
+  .projectcardlist .detailsHeader a {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .projectcardlist .detailsHeader a svg {
+      max-height: 25px; }
+    .projectcardlist .detailsHeader a:hover {
+      color: rgba(225, 225, 225, 0.5); }
+      .projectcardlist .detailsHeader a:hover svg {
+        fill: rgba(225, 225, 225, 0.5); }
 
 /*# sourceMappingURL=ProjectCardList.module.css.map */

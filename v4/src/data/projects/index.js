@@ -37,6 +37,16 @@ import p93 from "./images/p9_3.gif";
 import p100 from "./images/p10_0.png";
 import p101 from "./images/p10_1.gif";
 import p102 from "./images/p10_2.gif";
+import p1010 from "./images/p101_0.png";
+import p1011 from "./images/p101_1.png";
+import p1012 from "./images/p101_2.png";
+import p1013 from "./images/p101_3.png";
+import p1020 from "./images/p102_0.png";
+import p1021 from "./images/p102_1.png";
+import p1022 from "./images/p102_2.png";
+import p1023 from "./images/p102_3.png";
+import p1024 from "./images/p102_4.png";
+import p1025 from "./images/p102_5.png";
 
 const tags = {
     GAME: "Game",
@@ -86,6 +96,32 @@ export const getProjects = (filterText, filterTags) => {
 
 
 const projects = [
+    {
+        "id": 101,
+        "title": "OpenGL Raytracer",
+        "technologies": [technologies.OPENGL, technologies.CSHARP],
+        "github": "https://github.com/vladpuscaru/prac1_raytracer",
+        "description": "" +
+            "" +
+            "",
+        "slug": "OpenTK C# program implementing the ray tracing rendering algorithm",
+        "thumbnail": p1010,
+        "images": [p1010, p1011, p1012, p1013],
+        "tags": [tags.GAME]
+    },
+    {
+        "id": 102,
+        "title": "OpenGL Rasterizer",
+        "technologies": [technologies.OPENGL, technologies.CSHARP],
+        "github": "https://github.com/vladpuscaru/showcase.wf-snake",
+        "description": "" +
+            "" +
+            "",
+        "slug": "OpenTK C# program implementing the rendering through rasterization.",
+        "thumbnail": p1020,
+        "images": [p1020, p1021, p1022, p1023, p1024, p1025],
+        "tags": [tags.GAME]
+    },
     {
         "id": 0,
         "title": "Super Mario Bros. (Clone)",

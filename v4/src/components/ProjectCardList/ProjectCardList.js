@@ -5,6 +5,9 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { useState } from "react";
+import { Box, ImageList, ImageListItem } from "@mui/material";
+import { ReactSVG } from "react-svg";
+import iconGithub from "../../common/icons/icons8-github.svg";
 
 /**
  * Accordion Material UI
@@ -57,7 +60,7 @@ export const ProjectCardList = ({projects}) => {
         <div className={styles.projectcardlist}>
             {
                 projects.map((project, idx) => {
-                    const {title, technologies, github, images} = project;
+                    const {title, technologies, github, slug, description, images} = project;
 
                     return (
                         <Accordion className={styles.project} key={project.id} expanded={expanded === idx}
@@ -79,12 +82,35 @@ export const ProjectCardList = ({projects}) => {
                                 }
                             </AccordionSummary>
                             <AccordionDetails>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                    malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                                    sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                                    sit amet blandit leo lobortis eget.
-                                </p>
+                                <div className={styles.detailsHeader}>
+                                    <a href={github} target={"_blank"}>
+                                        <ReactSVG src={iconGithub}/>
+                                        Check it on GitHub!
+                                    </a>
+                                    <p>{slug}</p>
+                                </div>
+
+                                <div className={styles.detailsDescription}>
+                                    {description}
+                                </div>
+
+                                <div className={styles.detailsImages}>
+
+                                    <Box>
+                                        <ImageList variant="masonry" cols={3} gap={8}>
+                                            {images.map((image, iidx) => (
+                                                <ImageListItem key={iidx}>
+                                                    <img
+                                                        src={image}
+                                                        alt={`${title}-${iidx}`}
+                                                        loading="lazy"
+                                                    />
+                                                </ImageListItem>
+                                            ))}
+                                        </ImageList>
+                                    </Box>
+
+                                </div>
                             </AccordionDetails>
                         </Accordion>
                     )
