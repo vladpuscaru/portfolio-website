@@ -5,7 +5,7 @@ import resume from "../../data/documents/Puscaru_Vlad_Cristian-Resume.pdf";
 
 const DownloadButton = () => {
     return (
-        <a href={resume} download className={styles.download}>
+        <a href={resume} target={"_blank"} className={styles.download}>
             <ReactSVG src={icPDF}/>
             See Resume PDF
         </a>
