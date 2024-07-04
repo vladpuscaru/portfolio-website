@@ -1,0 +1,71 @@
+@import "../../common/sass/variables"
+
+.projectcardlist
+
+  .project
+    background-color: $black
+    color: $white
+    &:nth-of-type(2n)
+      background-color: $gray
+
+    svg
+      fill: $white
+
+    .projectHeadImg
+      width: 212px
+      height: 55px
+      overflow: hidden
+      position: relative
+      transition: all .3s ease-in-out
+
+      &.active
+        height: 100px
+
+      img
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+    h3
+      margin-left: 35px
+      margin-right: auto
+
+    span
+      padding: 5px
+      border-radius: 5px
+      color: $black
+      margin: 0 3px
+
+    img.icon
+      max-width: 25px
+      margin: 0 3px
+
+
+  .detailsHeader
+    padding: 5px
+    text-align: center
+    border-bottom: 1px solid $white
+    margin-bottom: 15px
+
+    a
+      display: flex
+      justify-content: center
+      align-items: center
+
+      &.disabled
+        user-select: none
+        pointer-events: none
+        color: rgba($white, .5)
+
+        svg
+          fill: rgba($white, .5)
+
+      svg
+        max-height: 25px
+
+      &:hover:not(.disabled)
+        color: rgba($white, .5)
+
+        svg
+          fill: rgba($white, .5)
