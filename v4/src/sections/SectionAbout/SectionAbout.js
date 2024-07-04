@@ -7,6 +7,7 @@ import { experience } from "../../data/resume/experience";
 import { Parser } from "html-to-react";
 import { Box, Tab, Tabs } from "@mui/material";
 import { useState } from "react";
+import DownloadButton from "../../components/DownloadButton/DownloadButton";
 
 /**
  * https://mui.com/material-ui/react-tabs/
@@ -24,7 +25,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box sx={{p: 3}}>
+                <Box sx={{paddingLeft: 3}}>
                     {children}
                 </Box>
             )}
@@ -51,14 +52,20 @@ export const SectionAbout = ({active}) => {
     return (
         <Section active={active}>
             <div className={styles.header}>
-                <div className={styles.avatar}>
-                    <img src={githubAvatar} alt={"Github Avatar"}/>
+
+                <div className={styles.top}>
+                    <div className={styles.avatar}>
+                        <img src={githubAvatar} alt={"Github Avatar"}/>
+                    </div>
+
+                    <div className={styles.info}>
+                        <h3>Software Developer</h3>
+                        <p>5+ years of demonstrated experience in building custom enterprise solutions</p>
+                    </div>
                 </div>
 
-                <div className={styles.info}>
-                    <h3>Software Developer</h3>
-                    <p>5+ years of demonstrated experience in building custom enterprise solutions</p>
-                </div>
+                <DownloadButton/>
+
             </div>
 
             <Box
