@@ -47,6 +47,30 @@ import p1022 from "./images/p102_2.png";
 import p1023 from "./images/p102_3.png";
 import p1024 from "./images/p102_4.png";
 import p1025 from "./images/p102_5.png";
+import p1030 from "./images/p103_0.png";
+import p1031 from "./images/p103_1.png";
+import p1032 from "./images/p103_2.png";
+import p1033 from "./images/p103_3.png";
+import p1034 from "./images/p103_4.png";
+import p1035 from "./images/p103_5.png";
+import p1036 from "./images/p103_6.png";
+import p1037 from "./images/p103_7.png";
+import p1038 from "./images/p103_8.png";
+import p1039 from "./images/p103_9.png";
+import p10310 from "./images/p103_10.png";
+import p10311 from "./images/p103_11.png";
+import p10312 from "./images/p103_12.png";
+import p10313 from "./images/p103_13.png";
+import p10314 from "./images/p103_14.png";
+import p10315 from "./images/p103_15.png";
+import p10316 from "./images/p103_16.png";
+import p10317 from "./images/p103_17.png";
+import p10318 from "./images/p103_18.png";
+import p10319 from "./images/p103_19.png";
+
+
+import iconAWS from "../../common/icons/icon-aws.svg";
+import iconCPP from "../../common/icons/icon-cpp.svg";
 
 const tags = {
     GAME: "Game",
@@ -56,23 +80,23 @@ const tags = {
 export const technologies = {
     ASM: {text: "Assembly", color: "#607274"},
     C: {text: "C", color: "#31304D"},
-    CSHARP: {text: "C#", color: "#1f8677"},
-    CPP: {text: "C++", color: "#65B741"},
+    CSHARP: {text: "C#", color: "#1f8677", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"},
+    CPP: {text: "C++", color: "#65B741", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"},
     SFML: {text: "SFML", color: "#EAD7BB"},
-    OPENGL: {text: "OpenGL", color: "#495E57"},
-    REACTJS: {text: "ReactJs", color: "#86A789"},
-    AWS: {text: "AWS", color: "#FF9800"},
-    JAVASCRIPT: {text: "Javascript", color: "#FFC436"},
-    TYPESCRIPT: {text: "TypeScript", color: "#0174BE"},
-    NODEJS: {text: "NodeJs", color: "#00337C"},
-    JAVA: {text: "Java", color: "#BF3131"},
-    HTML: {text: "HTML", color: "#B31312"},
-    CSS: {text: "CSS", color: "#E7BCDE"},
-    UNITY: {text: "Unity", color: "#1F4172"},
-    SPRINGBOOT: {text: "Spring Boot", color: "#2a721f"},
-    DOCKER: {text: "Docker", color: "#007b6f"},
-    WORDPRESS: {text: "WordPress", color: "#a23d79"},
-    PHP: {text: "PHP", color: "#273814"},
+    OPENGL: {text: "OpenGL", color: "#495E57", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-original.svg"},
+    REACTJS: {text: "ReactJs", color: "#86A789", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"},
+    AWS: {text: "AWS", color: "#FF9800", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"},
+    JAVASCRIPT: {text: "Javascript", color: "#FFC436", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"},
+    TYPESCRIPT: {text: "TypeScript", color: "#0174BE", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"},
+    NODEJS: {text: "NodeJs", color: "#00337C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"},
+    JAVA: {text: "Java", color: "#BF3131", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"},
+    HTML: {text: "HTML", color: "#B31312", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"},
+    CSS: {text: "CSS", color: "#E7BCDE", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"},
+    UNITY: {text: "Unity", color: "#1F4172", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-original.svg"},
+    SPRINGBOOT: {text: "Spring Boot", color: "#2a721f", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg"},
+    DOCKER: {text: "Docker", color: "#007b6f", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"},
+    WORDPRESS: {text: "WordPress", color: "#a23d79", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg"},
+    PHP: {text: "PHP", color: "#273814", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"},
     WFORMS: {text: "Window Forms", color: "#6d8dff"}
 }
 
@@ -121,6 +145,19 @@ const projects = [
         "thumbnail": p1020,
         "images": [p1020, p1021, p1022, p1023, p1024, p1025],
         "tags": [tags.GAME]
+    },
+    {
+        "id": 103,
+        "title": "Betting web application",
+        "technologies": [technologies.NODEJS, technologies.REACTJS],
+        "github": "",
+        "description": "" +
+            "" +
+            "",
+        "slug": "Custom betting website. Client commission",
+        "thumbnail": p1030,
+        "images": [p1030, p1031, p1032, p1033, p1034, p1035, p1036, p1037, p1038, p1039, p10310, p10311, p10312, p10313, p10314, p10315, p10316, p10317, p10318, p10319],
+        "tags": [tags.WEB]
     },
     {
         "id": 0,

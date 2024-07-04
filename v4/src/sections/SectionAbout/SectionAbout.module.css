@@ -21,6 +21,9 @@
 .experience .item {
   margin-left: 25px;
   position: relative; }
+  .experience .item img.icon {
+    max-width: 55px;
+    margin: 0 3px; }
   .experience .item ul {
     text-align: left; }
   .experience .item .row {

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Box, ImageList, ImageListItem } from "@mui/material";
 import { ReactSVG } from "react-svg";
 import iconGithub from "../../common/icons/icons8-github.svg";
+import { AlbumProject } from "../AlbumProject/AlbumProject";
 
 /**
  * Accordion Material UI
@@ -49,7 +50,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({theme}) => ({
 }));
 
 export const ProjectCardList = ({projects}) => {
-    const [expanded, setExpanded] = useState(0);
+    const [expanded, setExpanded] = useState(-1);
 
     const handleChange =
         (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -74,19 +75,30 @@ export const ProjectCardList = ({projects}) => {
                                     technologies.map((technology, i) => {
                                         const {text, color} = technology;
 
-                                        return <span
-                                            key={i}
-                                            style={{backgroundColor: color}}
-                                        >{text}</span>
+                                        return technology.icon ?
+                                            <img className={styles.icon} src={technology.icon} alt={text}/>
+                                            :
+                                            <span
+                                                key={i}
+                                                style={{backgroundColor: color}}
+                                            >{text}</span>
                                     })
                                 }
                             </AccordionSummary>
                             <AccordionDetails>
                                 <div className={styles.detailsHeader}>
-                                    <a href={github} target={"_blank"}>
-                                        <ReactSVG src={iconGithub}/>
-                                        Check it on GitHub!
-                                    </a>
+                                    {
+                                        github !== "" ?
+                                            <a href={github} target={"_blank"}>
+                                                <ReactSVG src={iconGithub}/>
+                                                Check it on GitHub!
+                                            </a>
+                                            :
+                                            <a className={styles.disabled} href={github} target={"_blank"}>
+                                                <ReactSVG src={iconGithub}/>
+                                                Code under private license
+                                            </a>
+                                    }
                                     <p>{slug}</p>
                                 </div>
 
@@ -95,20 +107,7 @@ export const ProjectCardList = ({projects}) => {
                                 </div>
 
                                 <div className={styles.detailsImages}>
-
-                                    <Box>
-                                        <ImageList variant="masonry" cols={3} gap={8}>
-                                            {images.map((image, iidx) => (
-                                                <ImageListItem key={iidx}>
-                                                    <img
-                                                        src={image}
-                                                        alt={`${title}-${iidx}`}
-                                                        loading="lazy"
-                                                    />
-                                                </ImageListItem>
-                                            ))}
-                                        </ImageList>
-                                    </Box>
+                                    <AlbumProject images={images.map(img => ({ title, src: img }))} />
 
                                 </div>
                             </AccordionDetails>

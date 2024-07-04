@@ -1,4 +1,5 @@
 import logoROTARY from "../../common/icons/logo_rotary.png";
+import logoUU from "../../common/icons/logo_uu.png";
 
 export const affiliations = [
     {
@@ -18,6 +19,24 @@ export const affiliations = [
                     "Department in one of the biggest district level projects in\n" +
                     "Romania, called \"O cana de fericire\"." +
                 "</li>" +
+            "</ul>"
+    },
+    {
+        club: {
+            name: "Utrecht University",
+            logo: logoUU,
+        },
+        position: "Student Ambassador",
+        startDate: "2023",
+        endDate: "Present",
+        description: "As a student ambassador, I represent the university and my MSc programme. Some of the responsabilities include:" +
+            "<ul>" +
+            "<li>" +
+            "Actively speak with prospect students, answering questions and providing guidance" +
+            "</li>" +
+            "<li>" +
+            "Participate in public events, such as University Open Days" +
+            "</li>" +
             "</ul>"
     },
 ]

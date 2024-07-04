@@ -30,7 +30,10 @@
   .projectcardlist .project span {
     padding: 5px;
     border-radius: 5px;
-    color: #e1e1e1;
+    color: #181818;
+    margin: 0 3px; }
+  .projectcardlist .project img.icon {
+    max-width: 25px;
     margin: 0 3px; }
 .projectcardlist .detailsHeader {
   padding: 5px;
@@ -41,11 +44,17 @@
     display: flex;
     justify-content: center;
     align-items: center; }
+    .projectcardlist .detailsHeader a.disabled {
+      user-select: none;
+      pointer-events: none;
+      color: rgba(225, 225, 225, 0.5); }
+      .projectcardlist .detailsHeader a.disabled svg {
+        fill: rgba(225, 225, 225, 0.5); }
     .projectcardlist .detailsHeader a svg {
       max-height: 25px; }
-    .projectcardlist .detailsHeader a:hover {
+    .projectcardlist .detailsHeader a:hover:not(.disabled) {
       color: rgba(225, 225, 225, 0.5); }
-      .projectcardlist .detailsHeader a:hover svg {
+      .projectcardlist .detailsHeader a:hover:not(.disabled) svg {
         fill: rgba(225, 225, 225, 0.5); }
 
 /*# sourceMappingURL=ProjectCardList.module.css.map */

@@ -6,20 +6,14 @@ import { ProjectCardList } from "../../components/ProjectCardList/ProjectCardLis
 export const SectionProjects = ({active}) => {
     const projects = getProjects();
 
-    // "id": 0,
-    //     "title": "Super Mario Bros. (Clone)",
-    //     "technologies": [technologies.CPP, technologies.SFML],
-    //     "github": "https://github.com/vladpuscaru/showcase.mario",
-    //     "description": "" +
-    // "" +
-    // "",
-    //     "slug": "A classic NES game programmed in C++, using the SFML library and a custom-built engine based on ECS.",
-    //     "thumbnail": p10,
-    //     "images": [p13, p11, p12, p10, p14],
-    //     "tags": [tags.GAME]
-
     return (
         <Section active={active}>
+            <div className={styles.header}>
+                <p>This is a list with some of the latest projects/prototypes which I have worked on</p>
+                <p>The list is curated so that it showcase my determination, passion, skills and knowledge, relevant
+                    to a position as a programmer for game engine/graphics/game systems and tools.
+                </p>
+            </div>
             <ProjectCardList projects={projects} />
         </Section>
     );

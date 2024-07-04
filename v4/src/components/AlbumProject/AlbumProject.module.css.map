@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";EACE,GAAG,EAAE,iDAAiD;EACtD,WAAW,EAAE,eAAe;;EAG5B,GAAG,EAAE,kEAAkE;EACvE,WAAW,EAAE,sBAAsB;ACJrC,IAAI;EACF,QAAQ,EAAE,QAAQ;EAElB,UAAO;IACL,MAAM,EAAE,OAAO;IACf,OAAO,EAAE,GAAE",
+"sources": ["../../common/sass/fonts.sass","AlbumProject.module.sass"],
+"names": [],
+"file": "AlbumProject.module.css"
+}

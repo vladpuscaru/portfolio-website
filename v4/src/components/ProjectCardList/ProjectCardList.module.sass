@@ -34,7 +34,11 @@
     span
       padding: 5px
       border-radius: 5px
-      color: $white
+      color: $black
+      margin: 0 3px
+
+    img.icon
+      max-width: 25px
       margin: 0 3px
 
 
@@ -49,10 +53,18 @@
       justify-content: center
       align-items: center
 
+      &.disabled
+        user-select: none
+        pointer-events: none
+        color: rgba($white, .5)
+
+        svg
+          fill: rgba($white, .5)
+
       svg
         max-height: 25px
 
-      &:hover
+      &:hover:not(.disabled)
         color: rgba($white, .5)
 
         svg

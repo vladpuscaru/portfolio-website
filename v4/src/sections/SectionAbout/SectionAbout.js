@@ -72,9 +72,9 @@ export const SectionAbout = ({active}) => {
                     aria-label="Vertical tabs example"
                     sx={{borderRight: 1, borderColor: 'divider'}}
                 >
-                    <Tab label="Experience" {...a11yProps(0)} />
-                    <Tab label="Education" {...a11yProps(1)} />
-                    <Tab label="Affiliations" {...a11yProps(2)} />
+                    <Tab sx={{color: "#ffffff"}} label="Experience" {...a11yProps(0)} />
+                    <Tab sx={{color: "#ffffff"}} label="Education" {...a11yProps(1)} />
+                    <Tab sx={{color: "#ffffff"}} label="Affiliations" {...a11yProps(2)} />
                 </Tabs>
                 <TabPanel value={value} index={0}>
                     <div className={styles.experience}>
@@ -104,15 +104,18 @@ export const SectionAbout = ({active}) => {
                                     <div className={styles.skills}>
                                         {
                                             exp.skills.map((skill, i) => (
-                                                <div
-                                                    key={i}
-                                                    className={styles.skill}
-                                                    style={{
-                                                        backgroundColor: skill.color,
-                                                        border: `1px solid ${skill.color}`
-                                                    }}>
-                                                    {skill.text}
-                                                </div>
+                                                skill.icon ?
+                                                    <img className={styles.icon} src={skill.icon} alt={skill.text}/>
+                                                    :
+                                                    <div
+                                                        key={i}
+                                                        className={styles.skill}
+                                                        style={{
+                                                            backgroundColor: skill.color,
+                                                            border: `1px solid ${skill.color}`
+                                                        }}>
+                                                        {skill.text}
+                                                    </div>
                                             ))
                                         }
                                     </div>
