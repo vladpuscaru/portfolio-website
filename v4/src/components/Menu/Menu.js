@@ -23,12 +23,6 @@ export const Menu = ({activeSection, onSectionClick}) => {
                     </h3>
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/puscaru.vlad.1/" target={"_blank"}>
-                        <ReactSVG src={iconFacebook}/>
-                    </a>
-                    <a href="https://twitter.com/vcpuscaru" target={"_blank"}>
-                        <ReactSVG src={iconTwitter}/>
-                    </a>
                     <a href="https://www.linkedin.com/in/vlad-cristian-puscaru-2399b6123/" target={"_blank"}>
                         <ReactSVG src={iconLinkedin}/>
                     </a>
