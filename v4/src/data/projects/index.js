@@ -124,7 +124,7 @@ const projects = [
         "id": 101,
         "title": "OpenGL Raytracer",
         "technologies": [technologies.OPENGL, technologies.CSHARP],
-        "github": "https://github.com/vladpuscaru/prac1_raytracer",
+        "github": "https://github.com/vladpuscaru/showcase.raytracer",
         "description": "" +
             "" +
             "",
@@ -137,7 +137,7 @@ const projects = [
         "id": 102,
         "title": "OpenGL Rasterizer",
         "technologies": [technologies.OPENGL, technologies.CSHARP],
-        "github": "https://github.com/vladpuscaru/showcase.wf-snake",
+        "github": "https://github.com/vladpuscaru/showcase.rasterizer",
         "description": "" +
             "" +
             "",
