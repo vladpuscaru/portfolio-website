@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,QAAQ;EACN,OAAO,EAAE,IAAI;EAEb,eAAQ;IACN,OAAO,EAAE,KAAK",
-"sources": ["Section.module.sass"],
-"names": [],
-"file": "Section.module.css"
-}

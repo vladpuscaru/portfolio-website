@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";EACE,GAAG,EAAE,iDAAiD;EACtD,WAAW,EAAE,eAAe;;EAG5B,GAAG,EAAE,kEAAkE;EACvE,WAAW,EAAE,sBAAsB;ACJrC,OAAO;EACL,aAAa,EAAE,iBAAe;EAC9B,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,MAAM;EACf,aAAa,EAAE,IAAI",
-"sources": ["../../common/sass/fonts.sass","SectionProjects.module.sass"],
-"names": [],
-"file": "SectionProjects.module.css"
-}
