@@ -27,7 +27,10 @@ const PageProjects = ({ projects, highlight }: PageProjectsProps) => {
 
 		if (selectedTechs.length !== 0) {
 			x = x.filter((p) =>
-				selectedTechs.every((tech) => p.technologies.map(t => t.text).includes(technologies[tech].text)));
+				selectedTechs.every((tech) =>
+					p.technologies.map(t => t.text).includes(technologies[tech].text)
+				)
+			);
 		}
 
 		return x;
@@ -74,49 +77,75 @@ const PageProjects = ({ projects, highlight }: PageProjectsProps) => {
 				>
 					<h2 className={styles.sectionTitle}>Latest Project</h2>
 
-					<Link to={`${BASE_PATH}/projects/${highlight.id}`} className={styles.highlightLink}>
-						<motion.div
-							className={styles.highlightContent}
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
+					<motion.div
+						className={styles.highlightContent}
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6 }}
+						viewport={{ once: true }}
+					>
+						<motion.img
+							src={highlight.thumbnail}
+							alt={highlight.title}
+							className={styles.highlightImage}
+							loading="lazy"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
 							transition={{ duration: 0.6 }}
-							viewport={{ once: true }}
-						>
-							<motion.img
-								src={highlight.thumbnail}
-								alt={highlight.title}
-								className={styles.highlightImage}
-								loading="lazy"
+						/>
+
+						<div className={styles.highlightInfo}>
+							<h3>{highlight.title}</h3>
+							<div className={styles.highlightTags}>
+								{highlight.tags.map((tag, idx) => (
+									<motion.span
+										key={idx}
+										initial={{ opacity: 0, y: 10 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										transition={{ delay: idx * 0.05 }}
+									>
+										{tag}
+									</motion.span>
+								))}
+							</div>
+							<motion.p
+								className={styles.highlightDescription}
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
-								transition={{ duration: 0.6 }}
-							/>
+								transition={{ delay: 0.2 }}
+							>
+								{highlight.description}
+							</motion.p>
 
-							<div className={styles.highlightInfo}>
-								<h3>{highlight.title}</h3>
-								<div className={styles.highlightTags}>
-									{highlight.tags.map((tag, idx) => (
-										<motion.span
-											key={idx}
-											initial={{ opacity: 0, y: 10 }}
-											whileInView={{ opacity: 1, y: 0 }}
-											transition={{ delay: idx * 0.05 }}
-										>
-											{tag}
-										</motion.span>
-									))}
-								</div>
-								<motion.p
-									className={styles.highlightDescription}
-									initial={{ opacity: 0 }}
-									whileInView={{ opacity: 1 }}
-									transition={{ delay: 0.2 }}
+							{/* 🎮 Play + ℹ️ More Info Buttons */}
+							<div className={styles.highlightButtons}>
+								{highlight.link && (
+									<motion.a
+										href={highlight.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										className={`${styles.highlightBtn} ${styles.playBtn}`}
+										whileHover={{ scale: 1.07 }}
+										whileTap={{ scale: 0.96 }}
+									>
+										🎮 Play on Itch.io
+									</motion.a>
+								)}
+
+								<motion.div
+									whileHover={{ scale: 1.07 }}
+									whileTap={{ scale: 0.96 }}
 								>
-									{highlight.description}
-								</motion.p>
+									<Link
+										to={`${BASE_PATH}/projects/${highlight.id}`}
+										className={`${styles.highlightBtn} ${styles.infoBtn}`}
+									>
+										ℹ️ More Info
+									</Link>
+								</motion.div>
 							</div>
-						</motion.div>
-					</Link>
+						</div>
+					</motion.div>
 				</motion.section>
 
 				{/* 🔍 Search + Filters */}
