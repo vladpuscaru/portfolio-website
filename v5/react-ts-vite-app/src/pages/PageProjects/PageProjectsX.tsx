@@ -5,6 +5,7 @@ import type { Project } from "../../common/types.ts";
 import { Link } from "react-router";
 import { useState, useEffect, useMemo } from "react";
 import { technologies } from "../../assets/data/projects";
+import { BASE_PATH } from "../../assets/data";
 
 interface PageProjectsProps {
 	projects: Project[];
@@ -73,7 +74,7 @@ const PageProjects = ({ projects, highlight }: PageProjectsProps) => {
 				>
 					<h2 className={styles.sectionTitle}>Latest Project</h2>
 
-					<Link to={`/projects/${highlight.id}`} className={styles.highlightLink}>
+					<Link to={`${BASE_PATH}/projects/${highlight.id}`} className={styles.highlightLink}>
 						<motion.div
 							className={styles.highlightContent}
 							initial={{ opacity: 0, y: 20 }}
@@ -178,7 +179,7 @@ const PageProjects = ({ projects, highlight }: PageProjectsProps) => {
 									whileTap={{ scale: 0.98 }}
 								>
 									<Link
-										to={`/projects/${project.id}`}
+										to={`${BASE_PATH}/projects/${project.id}`}
 										style={{
 											backgroundImage: `url(${project.thumbnail})`,
 											backgroundSize: "cover",

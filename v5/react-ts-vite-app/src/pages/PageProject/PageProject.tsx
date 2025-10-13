@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { useState } from "react";
+import { BASE_PATH } from "../../assets/data";
 
 interface PageProjectProps {
 	projects: Project[];
@@ -91,7 +92,7 @@ const PageProject = ({ projects }: PageProjectProps) => {
 					))}
 				</div>
 
-				<Link to="/projects" className={styles.backLink}>
+				<Link to={`${BASE_PATH}/projects`} className={styles.backLink}>
 					← Back to Projects
 				</Link>
 			</motion.div>

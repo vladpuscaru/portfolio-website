@@ -2,20 +2,19 @@ import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router";
 import { Gamepad2 } from "lucide-react";
 import styles from "./MainMenu.module.sass";
+import { BASE_PATH } from "../../assets/data";
 
 const MainMenu = ({items, projects}) => {
 	let location = useLocation();
 
 	let project;
 	let activePath = location.pathname;
-	if (location.pathname.split("/")[1] === "projects") {
-		const projectId = location.pathname.split("/")[2];
+	if (location.pathname.split("/")[2] === "projects") {
+		const projectId = location.pathname.split("/")[3];
 		// console.log(projectId);
 		project = projects.find((p) => p.id === Number(projectId));
-		activePath = "/projects";
+		activePath = `${BASE_PATH}/projects`;
 	}
-
-	// console.log(project);
 
 	return <>
 		<div className={styles.mainmenu}>

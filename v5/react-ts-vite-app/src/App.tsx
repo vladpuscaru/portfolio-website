@@ -11,6 +11,7 @@ import GameOfLifeBackground from "./components/GOLBackground/GOLBackground.tsx";
 import Resume from "./assets/data/documents/resumev5.pdf";
 import ResumeShowcase from "./pages/PageResume/ResumeShowcase.tsx";
 import NetworkBackground from "./components/FlowFieldBackground/FlowFieldBackground.tsx";
+import { BASE_PATH } from "./assets/data";
 
 const App = () => {
 	const projects = getProjects();
@@ -35,29 +36,29 @@ const App = () => {
 
 			<div className="main container">
 				<Routes>
-					<Route index element={<PageHome/>}/>
+					<Route path={`${BASE_PATH}`} element={<PageHome/>}/>
 
 					{/*<Route path={"/resume"} element={<PageResume src={Resume} />}/>*/}
-					<Route path={"/resume"} element={<ResumeShowcase pdfUrl={Resume} />}/>
+					<Route path={`${BASE_PATH}/resume`} element={<ResumeShowcase pdfUrl={Resume} />}/>
 
-					<Route path={"/projects"} element={<PageProjects projects={projects} highlight={projects[projects.length - 1]} />}/>
+					<Route path={`${BASE_PATH}/projects`} element={<PageProjects projects={projects} highlight={projects[projects.length - 1]} />}/>
 
-					<Route path={"/projects/:projectId"} element={<PageProject projects={projects} />}/>
+					<Route path={`${BASE_PATH}/projects/:projectId`} element={<PageProject projects={projects} />}/>
 				</Routes>
 			</div>
 
 			<MainMenu projects={getProjects()} items={
 				[
 					{
-						path: "/resume",
+						path: `${BASE_PATH}/resume`,
 						icon: FileText
 					},
 					{
-						path: "/",
+						path: `${BASE_PATH}`,
 						icon: House
 					},
 					{
-						path: "/projects",
+						path: `${BASE_PATH}/projects`,
 						icon: SquareTerminal
 					}
 				]
