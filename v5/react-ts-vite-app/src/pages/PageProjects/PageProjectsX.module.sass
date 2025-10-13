@@ -1,0 +1,216 @@
+@use "../../common/sass/fonts"
+@import "../../common/sass/variables"
+
+// Palette
+$bg: #0e0e10
+$panel: #18181c
+$accent-gold: #ffcb00
+$accent-blue: #00b3e6
+$text: #f5f5f5
+$text-muted: #bdbdbd
+$shadow: 0 6px 18px rgba(0, 0, 0, 0.5)
+
+.PageProjects
+  min-height: 100vh
+  color: $text
+  padding: 4rem 2rem 6rem
+  display: flex
+  justify-content: center
+  align-items: flex-start
+
+  .projectsContainer
+    width: min(1200px, 95%)
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    gap: 3rem
+
+.sectionWrapper
+  margin-top: 2rem
+
+.sectionTitle
+  font-size: 1.6rem
+  font-weight: 600
+  color: $text
+  margin-bottom: 1rem
+  border-left: 4px solid $accent-gold
+  padding-left: 0.75rem
+  text-shadow: 0 0 10px rgba($accent-gold, 0.3)
+
+// 🌟 Highlighted Project
+.highlightLink
+  text-decoration: none
+  color: inherit
+  display: block
+
+.highlightContent
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 2rem
+  background: linear-gradient(135deg, #1b1611, #2e251d)
+  border-radius: 18px
+  padding: 1.75rem
+  box-shadow: $shadow
+  transition: all 0.25s ease
+  border: 1px solid rgba(255,255,255,0.08)
+
+  &:hover
+    transform: translateY(-3px) scale(1.01)
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45)
+
+.highlightImage
+  width: 280px
+  height: auto
+  border-radius: 12px
+  object-fit: cover
+  flex-shrink: 0
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4)
+
+.highlightInfo
+  flex: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  h3
+    font-size: 1.7rem
+    font-weight: 700
+    color: $text
+    margin-bottom: 0.75rem
+
+.highlightTags
+  display: flex
+  flex-wrap: wrap
+  gap: 0.4rem
+  margin-bottom: 0.75rem
+
+  span
+    background: rgba(255,255,255,0.08)
+    color: $accent-gold
+    padding: 0.3rem 0.75rem
+    border-radius: 8px
+    font-size: 0.8rem
+    border: 1px solid rgba($accent-gold, 0.3)
+
+.highlightDescription
+  color: $text-muted
+  font-size: 0.95rem
+  line-height: 1.55
+  max-width: 600px
+
+@media (max-width: 900px)
+  .highlightContent
+    flex-direction: column
+    align-items: flex-start
+    padding: 1rem
+  .highlightImage
+    width: 100%
+    max-width: 100%
+  .highlightInfo h3
+    font-size: 1.35rem
+
+// 🔍 Search + Filters
+.filtersContainer
+  display: flex
+  flex-wrap: wrap
+  gap: 0.6rem
+  margin-top: 1.25rem
+  justify-content: center
+
+.filterBtn
+  display: flex
+  align-items: center
+  gap: 0.4rem
+  padding: 0.5rem 0.9rem
+  border: 2px solid rgba(255,255,255,0.15)
+  border-radius: 9999px
+  background: rgba(255,255,255,0.02)
+  cursor: pointer
+  font-size: 0.85rem
+  font-weight: 500
+  color: $text-muted
+  transition: all 0.25s ease
+  box-shadow: inset 0 0 8px rgba(255,255,255,0.05)
+
+  img.techIcon
+    width: 16px
+    height: 16px
+
+  &:hover
+    color: $text
+    border-color: rgba(255,255,255,0.35)
+    transform: translateY(-2px)
+
+.activeFilter
+  color: #fff !important
+  background: linear-gradient(145deg, rgba($accent-blue,0.7), rgba($accent-gold,0.7))
+  border: none
+  box-shadow: 0 0 12px rgba($accent-blue, 0.4)
+  transform: scale(1.05)
+
+// 🧱 Project Grid
+.projectsFeed
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+  gap: 1rem
+
+.projectContainer
+  width: 100%
+  position: relative
+  border-radius: 1rem
+  overflow: hidden
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35)
+  transition: transform 0.25s ease, box-shadow 0.25s ease
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45)
+
+  a
+    display: flex
+    position: relative
+    height: 0
+    padding-top: 55%
+    border-radius: inherit
+    overflow: hidden
+    text-decoration: none
+
+  .projectInfo
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    padding: 0.8rem 1rem
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent)
+    display: flex
+    flex-direction: column
+    gap: 0.3rem
+    color: $text
+
+    h3
+      font-size: 1.1rem
+      font-weight: 600
+      color: #fff
+    span
+      font-size: 0.85rem
+      color: $text-muted
+
+.showMoreBtn
+  margin: 3rem auto 0
+  padding: 0.9rem 1.6rem
+  border-radius: 999px
+  border: 1px solid rgba(255,255,255,0.15)
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03))
+  color: $text
+  font-weight: 600
+  letter-spacing: 0.3px
+  cursor: pointer
+  transition: all 0.25s ease
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35)
+  text-align: center
+
+  &:hover
+    background: linear-gradient(135deg, rgba($accent-gold,0.2), rgba($accent-blue,0.2))
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45)
+    transform: translateY(-2px)

@@ -1,0 +1,62 @@
+@use "./fonts"
+@import "./variables"
+
+*, *:after, *:before
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+html, body > #root, .App
+  min-height: 100vh
+  font-family: fonts.$font-family-primary
+  font-weight: fonts.$font-regular
+
+h1, h2, h3
+  font-weight: fonts.$font-bold
+
+em
+  font-style: italic
+
+input[type=text], button
+  font-family: fonts.$font-family-primary
+
+.App
+  overflow: hidden
+  position: relative
+  background: linear-gradient(180deg, $colorDark 0%, #141418 100%)
+  //background: radial-gradient(circle at center, rgba(#ffcb00, 0.05), transparent 70%)
+
+  &__header
+    padding: 35px 0
+
+    h1
+      font-style: normal
+      font-weight: 400
+      text-transform: uppercase
+      letter-spacing: 5px
+      text-align: center
+
+      @media (min-width: 768px)
+        font-size: 64px
+
+
+.main
+  display: flex
+  flex-direction: column
+
+.container
+  position: relative
+  margin: 0 auto
+  padding: 0px 15px
+  overflow: hidden
+  width: 90%
+  @media(min-width: 1900px)
+    width: 1680px
+
+img
+  max-width: 100%
+  height: auto
+
+a
+  text-decoration: none
+  color: inherit

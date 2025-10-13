@@ -1,0 +1,141 @@
+@use "../../common/sass/fonts"
+@import "../../common/sass/variables"
+
+$bg: #0e0e10
+$card: #1a1a1f
+$gold: #ffcb00
+$blue: #00b3e6
+$text: #f5f5f5
+$text-muted: #b8b8b8
+$shadow: 0 6px 20px rgba(0, 0, 0, 0.6)
+
+.PageHome
+  color: $text
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: relative
+  overflow: hidden
+  padding: 4rem 1rem 6rem
+
+.Sections
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  width: 100%
+  gap: 2.5rem
+  z-index: 1
+  position: relative
+
+  // desktop layout
+  @media (min-width: 900px)
+    flex-direction: row
+    justify-content: space-evenly
+    align-items: center
+    gap: 4rem
+
+.SectionLeft, .SectionRight
+  flex: 1
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1rem
+  position: relative
+  z-index: 1
+
+  h1
+    font-family: fonts.$font-cursiveRegular
+    font-size: clamp(1.8rem, 4vw, 2.6rem)
+    line-height: 1.1
+    margin: 0
+    color: $text
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1)
+
+  .img
+    margin-top: 0.75rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-decoration: none
+    transition: transform 0.3s ease, filter 0.3s ease
+
+    &:hover
+      transform: translateY(-4px)
+      filter: brightness(1.15)
+
+    img, svg
+      max-width: clamp(160px, 20vw, 240px)
+      height: auto
+      filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.6))
+
+.Subtitle
+  margin-top: 0.4rem
+  font-size: 1rem
+  font-weight: 400
+  letter-spacing: 0.5px
+  color: $text-muted
+  text-align: center
+
+.SectionLeft .Subtitle
+  color: $gold
+
+.SectionRight .Subtitle
+  color: $blue
+
+// CENTER AVATAR
+.Center
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 2
+  order: 0
+  @media (min-width: 900px)
+    order: 0
+    flex: 0 0 auto
+
+.Avatar
+  position: relative
+  z-index: 2
+  display: flex
+  justify-content: center
+  align-items: center
+  width: clamp(180px, 25vw, 280px)
+  height: clamp(180px, 25vw, 280px)
+  transition: transform 1.5s ease-in-out infinite alternate
+
+  img
+    width: 100%
+    height: auto
+    object-fit: cover
+    position: relative
+
+.Info
+  z-index: 2
+  text-align: center
+  margin-top: 4rem
+  max-width: 700px
+
+  p
+    color: $text-muted
+    font-size: clamp(1rem, 2.3vw, 1.25rem)
+    line-height: 1.6
+    background: rgba(255, 255, 255, 0.03)
+    border-radius: 14px
+    padding: 1.5rem 2rem
+    box-shadow: $shadow
+
+    strong
+      color: $text
+      font-weight: 700
+      text-shadow: 0 0 6px rgba($gold, 0.2)
+
+@media (min-width: 1024px)
+  .Sections
+    gap: 6rem
+  .Info
+    margin-top: 5rem

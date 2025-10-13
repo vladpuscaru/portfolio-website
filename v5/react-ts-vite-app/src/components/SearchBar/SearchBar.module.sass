@@ -1,0 +1,28 @@
+@import "../../common/sass/variables"
+
+.SearchBar
+  display: flex
+  align-items: center
+  margin-bottom: 15px
+  padding: 4px
+
+  .search
+    flex: 1
+    display: flex
+    border-radius: 10px
+    border: 1px solid rgba($colorWhite, .2)
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px
+    padding: 15px 15px
+
+    input
+      flex: 1
+      background-color: rgba($colorDark, 0)
+      border: none
+      color: $colorWhite
+
+      &:focus
+        outline: none
+
+
+  .filters
+    margin-left: 15px
