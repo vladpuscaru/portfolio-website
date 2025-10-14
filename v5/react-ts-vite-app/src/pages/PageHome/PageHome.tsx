@@ -17,7 +17,7 @@ const PageHome = () => {
 					transition={{ duration: 0.8, ease: "easeOut" }}
 				>
 					<h1>Studying at</h1>
-					<a href="#" className={styles.img}>
+					<a href="https://www.uu.nl/en/masters/game-and-media-technology" target={"_blank"} className={styles.img}>
 						<p className={styles.Subtitle}>Game and Media Technology</p>
 						<img src={LogoUU} alt="Utrecht University Logo" />
 					</a>
@@ -43,7 +43,7 @@ const PageHome = () => {
 					transition={{ duration: 0.8, ease: "easeOut" }}
 				>
 					<h1>Working at</h1>
-					<a href="#" className={styles.img}>
+					<a href="https://econowind.nl/" target={"_blank"} className={styles.img}>
 						<p className={styles.Subtitle}>Software Architect & Developer</p>
 						<ReactSVG
 							src={LogoEconowind}
