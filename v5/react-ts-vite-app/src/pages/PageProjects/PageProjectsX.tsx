@@ -114,7 +114,7 @@ const PageProjects = ({ projects, highlight }: PageProjectsProps) => {
 								whileInView={{ opacity: 1 }}
 								transition={{ delay: 0.2 }}
 							>
-								{highlight.description}
+								{`${highlight.description.slice(0, 197)}...`}
 							</motion.p>
 
 							{/* 🎮 Play + ℹ️ More Info Buttons */}

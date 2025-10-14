@@ -73,7 +73,7 @@ const PageProject = ({ projects }: PageProjectProps) => {
 					))}
 				</div>
 
-				<p className={styles.description}>{project.slug}</p>
+				<p className={styles.description}>{project.description}</p>
 
 				{project.github && (
 					<a

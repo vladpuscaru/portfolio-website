@@ -127,9 +127,7 @@ const projects: Project[] = [
         "title": "OpenGL Raytracer",
         "technologies": [technologies.OPENGL, technologies.CSHARP],
         "github": "https://github.com/vladpuscaru/prac1_raytracer",
-        "description": "" +
-            "" +
-            "",
+        "description": "Created as part of a university Graphics course, this project is my implementation of a ray tracer algorithm, developed using C# and OpenTK. It supports plane, sphere, and triangle intersections, along with Phong shading, diffuse texturing, and mirror reflections. Additionally, it includes a debug visualization to help analyze the ray-casting process.",
         "slug": "OpenTK C# program implementing the ray tracing rendering algorithm",
         "thumbnail": p1010,
         "images": [p1010, p1011, p1012, p1013],
@@ -139,10 +137,8 @@ const projects: Project[] = [
         "id": 102,
         "title": "OpenGL Rasterizer",
         "technologies": [technologies.OPENGL, technologies.CSHARP],
-        "github": "https://github.com/vladpuscaru/showcase.wf-snake",
-        "description": "" +
-            "" +
-            "",
+        "github": "https://github.com/vladpuscaru/showcase.rasterizer",
+        "description": "Developed as part of a university Graphics course, this project is a rasterizer application built with the OpenTK library for C#. Its features include spotlights, normal mapping, diffuse and glossy shading, and a movable camera.",
         "slug": "OpenTK C# program implementing the rendering through rasterization.",
         "thumbnail": p1020,
         "images": [p1020, p1021, p1022, p1023, p1024, p1025],
@@ -153,9 +149,7 @@ const projects: Project[] = [
         "title": "Betting web application",
         "technologies": [technologies.NODEJS, technologies.REACTJS],
         "github": "",
-        "description": "" +
-            "" +
-            "",
+        "description": "A commissioned project featuring a full-fledged application built from scratch using the MERN stack (MongoDB, Express, React, and Node.js). In addition to the main application, it also includes a dedicated admin dashboard.",
         "slug": "Custom betting website. Client commission",
         "thumbnail": p1030,
         "images": [p1030, p1031, p1032, p1033, p1034, p1035, p1036, p1037, p1038, p1039, p10310, p10311, p10312, p10313, p10314, p10315, p10316, p10317, p10318, p10319],
@@ -166,9 +160,7 @@ const projects: Project[] = [
         "title": "Super Mario Bros. (Clone)",
         "technologies": [technologies.CPP, technologies.SFML],
         "github": "https://github.com/vladpuscaru/showcase.mario",
-        "description": "" +
-            "" +
-            "",
+        "description": "Another homework assignment from the COMP4300: Introduction to Game Programming course by Dave Churchill (Memorial University). This project is a Super Mario Bros. clone—specifically recreating the first level—and includes debugging tools such as world grid, collision box, and camera boundary visualizations.",
         "slug": "A classic NES game programmed in C++, using the SFML library and a custom-built engine based on ECS.",
         "thumbnail": p10,
         "images": [p13, p11, p12, p10, p14],
@@ -179,9 +171,7 @@ const projects: Project[] = [
         "title": "Shape Wars (Clone)",
         "technologies": [technologies.CPP, technologies.SFML],
         "github": "https://github.com/vladpuscaru/showcase.shapes",
-        "description": "" +
-            "" +
-            "",
+        "description": "A homework assignment from the COMP4300: Introduction to Game Programming course by Dave Churchill (Memorial University), available as a free online lecture series. The project features variable-shaped entities with three or more corners, a complete Entity Management System, and a Dear ImGui-based GUI that allows adding and removing entities dynamically.",
         "slug": "Top down shooter style of game, mimicking a popular game.",
         "thumbnail": p20,
         "images": [p22, p21, p20],
@@ -192,9 +182,7 @@ const projects: Project[] = [
         "title": "Airplanes",
         "technologies": [technologies.NODEJS, technologies.JAVASCRIPT, technologies.HTML, technologies.CSS],
         "github": "https://github.com/vladpuscaru/showcase.airplanes",
-        "description": "" +
-            "" +
-            "",
+        "description": "An online multiplayer game developed using WebSocket technology as a university project. It includes features such as player rankings, real-time chat, and synchronized game rounds across all players.",
         "slug": "Multiplayer, online game over websockets",
         "thumbnail": p30,
         "images": [p36, p37, p38, p31, p32, p30, p33, p34, p35],
@@ -205,9 +193,7 @@ const projects: Project[] = [
         "title": "Robot Arm Kinematics",
         "technologies": [technologies.CPP, technologies.SFML],
         "github": "https://github.com/vladpuscaru/showcase.2dkinematics",
-        "description": "" +
-            "" +
-            "",
+        "description": "A project designed to explore forward and inverse kinematics, featuring a custom user interface built with the Dear ImGui library that provides tools for positioning and coloring",
         "slug": "Forward and inverse kinematics on a robot arm.",
         "thumbnail": p100,
         "images": [p101, p100, p102],
@@ -218,9 +204,7 @@ const projects: Project[] = [
         "title": "Arkanoid (Clone) - Work in progress",
         "technologies": [technologies.CPP, technologies.SFML],
         "github": "https://github.com/vladpuscaru/showcase.shapes",
-        "description": "" +
-            "" +
-            "",
+        "description": "An experiment in collision detection and path tracing, featuring blocks of various sizes along with scoring and life systems.",
         "slug": "My take on the classic arkanoid/breakout game.",
         "thumbnail": p00,
         "images": [p01, p00, p02],
@@ -231,10 +215,8 @@ const projects: Project[] = [
         "title": "Algorithms Visualized - Web version",
         "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
         "github": "https://github.com/vladpuscaru/showcase.algorithms-web",
-        "description": "" +
-            "" +
-            "",
-        "slug": "Pathfinding algorithm visualized, with animation.",
+        "description": "A web-based version of the Algorithms Visualizer (originally built in C++). In addition to visualizing BFS, DFS, and A* algorithms, it includes multiple maps, adjustable animation speeds, and various useful tools to enhance the visualization experience",
+        "slug": "Pathfinding algorithm visualized",
         "thumbnail": p80,
         "images": [p82, p81, p80],
         "tags": [tags.WEB]
@@ -244,9 +226,7 @@ const projects: Project[] = [
         "title": "Algorithms Visualized - C++ version",
         "technologies": [technologies.CPP, technologies.SFML],
         "github": "https://github.com/vladpuscaru/showcase.algorithms-cpp",
-        "description": "" +
-            "" +
-            "",
+        "description": "An application developed while learning pathfinding algorithms, built with C++ and the SFML graphics library. It visualizes popular search algorithms such as BFS, DFS, and A*",
         "slug": "Pathfinding algorithm visualized, C++ version.",
         "thumbnail": p90,
         "images": [p91, p92, p93, p90],
@@ -257,10 +237,8 @@ const projects: Project[] = [
         "title": "Maze Game",
         "technologies": [technologies.REACTJS, technologies.HTML, technologies.CSS],
         "github": "https://github.com/vladpuscaru/showcase.mazegame",
-        "description": "" +
-            "" +
-            "",
-        "slug": "Find your way through the maze (static or randomly generated)",
+        "description": "A project created during my early explorations of React state management. The objective is to navigate through a hidden path, with support for both pre-generated and randomly generated mazes created at runtime.",
+        "slug": "Find your way through the maze",
         "thumbnail": p40,
         "images": [p40],
         "tags": [tags.GAME, tags.WEB]
@@ -270,9 +248,7 @@ const projects: Project[] = [
         "title": "SVG Editor",
         "technologies": [technologies.HTML, technologies.CSS, technologies.JAVASCRIPT],
         "github": "https://github.com/vladpuscaru/showcase.svg-editor",
-        "description": "" +
-            "" +
-            "",
+        "description": "An SVG Editor built with HTML Canvas technology as a university project. It includes a variety of drawing tools—such as lines, ellipses, polygons, and text—and can generate and display the resulting SVG code",
         "slug": "Web SVG editor. Complete with svg code generation",
         "thumbnail": p50,
         "images": [p53, p52, p51, p50, p54],
@@ -283,10 +259,8 @@ const projects: Project[] = [
         "title": "WF Snake",
         "technologies": [technologies.CSHARP, technologies.WFORMS],
         "github": "https://github.com/vladpuscaru/showcase.wf-snake",
-        "description": "" +
-            "" +
-            "",
-        "slug": "Snake made using Windows Forms. (First time exploring graphics outside of terminal).",
+        "description": "One of my earliest experiments with colored graphics in programming, this project was built using C# and Windows Forms and serves as a recreation of the classic Snake game",
+        "slug": "Snake made using Windows Forms",
         "thumbnail": p60,
         "images": [p61, p60],
         "tags": [tags.GAME]
@@ -296,10 +270,8 @@ const projects: Project[] = [
         "title": "Slime Maze",
         "technologies": [technologies.CSHARP, technologies.UNITY, technologies.NODEJS],
         "github": "https://github.com/vladpuscaru/showcase.wf-snake",
-        "description": "" +
-            "" +
-            "",
-        "slug": "",
+        "description": "The game is a top-down maze runner with puzzle-solving elements, where the main objective is to complete levels as quickly as possible. It features special mechanics such as walls that only bullets can pass through, teleportation, and other interactive systems. The game was developed as part of a university course and includes a Node.js server for collecting gameplay data for later analysis",
+        "slug": "Top-Down Maze Runner",
         "link": "https://vladpuscaru.itch.io/infomaigt-group-8",
         "thumbnail": pH0,
         "images": [pH1, pH2, pH3, pH4],
